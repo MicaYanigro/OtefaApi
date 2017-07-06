@@ -7,8 +7,8 @@
     <ProjectGuid>{E6DA9FB5-DCF9-498A-B4B1-E509628EA1B0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sai.Domain</RootNamespace>
-    <AssemblyName>Sai.Domain</AssemblyName>
+    <RootNamespace>Otefa.Domain</RootNamespace>
+    <AssemblyName>Otefa.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -97,7 +97,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sai.Infrastructure\Otefa.Infrastructure.csproj">
+    <ProjectReference Include="..\Otefa.Infrastructure\Otefa.Infrastructure.csproj">
       <Project>{6c967e57-04b1-4cbd-bc00-c4e099d37703}</Project>
       <Name>Otefa.Infrastructure</Name>
     </ProjectReference>

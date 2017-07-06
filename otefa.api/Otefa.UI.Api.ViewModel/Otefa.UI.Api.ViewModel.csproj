@@ -50,7 +50,7 @@
     <Compile Include="Team\PutTeamViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sai.Domain\Otefa.Domain.csproj">
+    <ProjectReference Include="..\Otefa.Domain\Otefa.Domain.csproj">
       <Project>{E6DA9FB5-DCF9-498A-B4B1-E509628EA1B0}</Project>
       <Name>Otefa.Domain</Name>
     </ProjectReference>
