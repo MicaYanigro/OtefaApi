@@ -1,0 +1,15 @@
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Domain\bin\Release\Otefa.Domain.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Domain\bin\Release\Otefa.Domain.pdb
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Domain\bin\Release\Otefa.Infrastructure.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Domain\bin\Release\QuickGraph.Data.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Domain\bin\Release\QuickGraph.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Domain\bin\Release\QuickGraph.Graphviz.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Domain\bin\Release\QuickGraph.Serialization.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Domain\bin\Release\Otefa.Infrastructure.pdb
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Domain\bin\Release\QuickGraph.xml
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Domain\bin\Release\QuickGraph.Data.xml
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Domain\bin\Release\QuickGraph.Graphviz.xml
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Domain\bin\Release\QuickGraph.Serialization.xml
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Domain\obj\Release\Otefa.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Domain\obj\Release\Otefa.Domain.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Domain\obj\Release\Otefa.Domain.pdb
