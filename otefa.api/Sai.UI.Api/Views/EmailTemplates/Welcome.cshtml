@@ -1,0 +1,20 @@
+﻿@model dynamic
+
+<!DOCTYPE html>
+<html lang="es-ar" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+    </head>
+<body>
+     <div ><img src="https://imgur.com/tbG3i8d.png" alt="logo" title="logo" style="display:block; margin: auto; width:112px; height:21px;" /></div>
+    <br />
+    <br />
+    <br />
+    @foreach(var message in Model.Messages)
+    {
+
+            @message
+        <br />
+    }
+</body>
+</html>

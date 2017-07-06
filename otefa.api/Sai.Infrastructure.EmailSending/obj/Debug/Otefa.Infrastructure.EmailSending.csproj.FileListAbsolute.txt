@@ -1,0 +1,13 @@
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\obj\Debug\Otefa.Infrastructure.EmailSending.csprojResolveAssemblyReference.cache
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\bin\Debug\Otefa.Infrastructure.EmailSending.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\bin\Debug\Otefa.Infrastructure.EmailSending.pdb
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\bin\Debug\RazorEngine.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\bin\Debug\Sai.Domain.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\bin\Debug\Sai.Infrastructure.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\bin\Debug\System.Web.Razor.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\bin\Debug\Sai.Domain.pdb
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\bin\Debug\Sai.Infrastructure.pdb
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\bin\Debug\RazorEngine.xml
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\bin\Debug\System.Web.Razor.xml
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\obj\Debug\Otefa.Infrastructure.EmailSending.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\obj\Debug\Otefa.Infrastructure.EmailSending.pdb

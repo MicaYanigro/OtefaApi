@@ -1,0 +1,10 @@
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.UI.Api.ViewModel\bin\Release\Sai.UI.Api.ViewModel.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.UI.Api.ViewModel\bin\Release\Sai.UI.Api.ViewModel.pdb
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.UI.Api.ViewModel\bin\Release\Sai.Domain.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.UI.Api.ViewModel\bin\Release\Sai.Infrastructure.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.UI.Api.ViewModel\bin\Release\Satsuma.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.UI.Api.ViewModel\bin\Release\Sai.Domain.pdb
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.UI.Api.ViewModel\bin\Release\Sai.Infrastructure.pdb
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.UI.Api.ViewModel\obj\Release\Sai.UI.Api.ViewModel.csprojResolveAssemblyReference.cache
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.UI.Api.ViewModel\obj\Release\Sai.UI.Api.ViewModel.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.UI.Api.ViewModel\obj\Release\Sai.UI.Api.ViewModel.pdb

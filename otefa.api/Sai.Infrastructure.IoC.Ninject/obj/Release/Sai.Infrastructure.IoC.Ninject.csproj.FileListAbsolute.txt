@@ -1,0 +1,9 @@
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.IoC.Ninject\bin\Release\Sai.Infrastructure.IoC.Ninject.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.IoC.Ninject\bin\Release\Sai.Infrastructure.IoC.Ninject.pdb
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.IoC.Ninject\bin\Release\Ninject.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.IoC.Ninject\bin\Release\Sai.Infrastructure.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.IoC.Ninject\bin\Release\Sai.Infrastructure.pdb
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.IoC.Ninject\bin\Release\Ninject.xml
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.IoC.Ninject\obj\Release\Sai.Infrastructure.IoC.Ninject.csprojResolveAssemblyReference.cache
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.IoC.Ninject\obj\Release\Sai.Infrastructure.IoC.Ninject.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.IoC.Ninject\obj\Release\Sai.Infrastructure.IoC.Ninject.pdb

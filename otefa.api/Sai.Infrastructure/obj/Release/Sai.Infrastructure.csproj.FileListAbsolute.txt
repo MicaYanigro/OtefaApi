@@ -1,0 +1,4 @@
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure\bin\Release\Sai.Infrastructure.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure\bin\Release\Sai.Infrastructure.pdb
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure\obj\Release\Sai.Infrastructure.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure\obj\Release\Sai.Infrastructure.pdb

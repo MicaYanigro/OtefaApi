@@ -1,0 +1,4 @@
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure\bin\Debug\Sai.Infrastructure.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure\bin\Debug\Sai.Infrastructure.pdb
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure\obj\Debug\Sai.Infrastructure.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure\obj\Debug\Sai.Infrastructure.pdb

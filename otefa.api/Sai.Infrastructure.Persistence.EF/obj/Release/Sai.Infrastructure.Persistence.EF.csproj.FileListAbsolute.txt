@@ -1,0 +1,15 @@
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.Persistence.EF\bin\Release\Sai.Infrastructure.Persistence.EF.dll.config
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.Persistence.EF\bin\Release\Sai.Infrastructure.Persistence.EF.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.Persistence.EF\bin\Release\Sai.Infrastructure.Persistence.EF.pdb
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.Persistence.EF\bin\Release\EntityFramework.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.Persistence.EF\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.Persistence.EF\bin\Release\Sai.Domain.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.Persistence.EF\bin\Release\Sai.Infrastructure.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.Persistence.EF\bin\Release\Satsuma.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.Persistence.EF\bin\Release\Sai.Domain.pdb
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.Persistence.EF\bin\Release\Sai.Infrastructure.pdb
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.Persistence.EF\bin\Release\EntityFramework.xml
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.Persistence.EF\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.Persistence.EF\obj\Release\Sai.Infrastructure.Persistence.EF.csprojResolveAssemblyReference.cache
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.Persistence.EF\obj\Release\Sai.Infrastructure.Persistence.EF.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Infrastructure.Persistence.EF\obj\Release\Sai.Infrastructure.Persistence.EF.pdb

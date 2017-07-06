@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6DA9FB5-DCF9-498A-B4B1-E509628EA1B0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sai.Domain</RootNamespace>
+    <AssemblyName>Sai.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <WarningsAsErrors>612, 618</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <WarningsAsErrors>612,618</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="QuickGraph, Version=3.6.61114.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="QuickGraph.Data, Version=3.6.61114.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="QuickGraph.Graphviz, Version=3.6.61114.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Graphviz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="QuickGraph.Serialization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Serialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Satsuma">
+      <HintPath>..\libs\Satsuma\0.6\Satsuma.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Entities\Player.cs" />
+    <Compile Include="Model\Entities\IEntity.cs" />
+    <Compile Include="Model\Entities\Entity.cs" />
+    <Compile Include="Model\Entities\Roles.cs" />
+    <Compile Include="Model\Entities\Team.cs" />
+    <Compile Include="Model\Exceptions\EmptyDelegateException.cs" />
+    <Compile Include="Model\Exceptions\EmptyNameException.cs" />
+    <Compile Include="Model\Exceptions\ExistantTeamNameException.cs" />
+    <Compile Include="Model\Exceptions\InvalidTeamNameException.cs" />
+    <Compile Include="Model\Exceptions\NullDelegateException.cs" />
+    <Compile Include="Model\Exceptions\NullNameException.cs" />
+    <Compile Include="Model\Exceptions\InvalidPlayerDniException.cs" />
+    <Compile Include="Model\Exceptions\ExistantPlayerDniException.cs" />
+    <Compile Include="Model\Exceptions\ExceptionBase.cs" />
+    <Compile Include="Model\Factories\ITeamFactory.cs" />
+    <Compile Include="Model\Factories\IPlayerFactory.cs" />
+    <Compile Include="Model\Factories\TeamFactory.cs" />
+    <Compile Include="Model\Factories\PlayerFactory.cs" />
+    <Compile Include="Model\Repositories\ITeamRepository.cs" />
+    <Compile Include="Model\Repositories\IRepository.cs" />
+    <Compile Include="Model\Repositories\IPlayerRepository.cs" />
+    <Compile Include="Model\Repositories\IRepositoryContext.cs" />
+    <Compile Include="Model\Services\IEmailSendingService.cs" />
+    <Compile Include="Model\Services\IEmailTemplateService.cs" />
+    <Compile Include="Model\Services\ITeamService.cs" />
+    <Compile Include="Model\Services\IPlayerService.cs" />
+    <Compile Include="Model\Services\ISmtpClientWrapper.cs" />
+    <Compile Include="Model\Services\TeamService.cs" />
+    <Compile Include="Model\Services\PlayerService.cs" />
+    <Compile Include="Model\Services\ServiceBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sai.Infrastructure\Otefa.Infrastructure.csproj">
+      <Project>{6c967e57-04b1-4cbd-bc00-c4e099d37703}</Project>
+      <Name>Otefa.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

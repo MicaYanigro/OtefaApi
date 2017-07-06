@@ -1,0 +1,16 @@
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Domain\bin\Release\Sai.Domain.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Domain\bin\Release\Sai.Domain.pdb
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Domain\bin\Release\QuickGraph.Data.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Domain\bin\Release\QuickGraph.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Domain\bin\Release\QuickGraph.Graphviz.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Domain\bin\Release\QuickGraph.Serialization.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Domain\bin\Release\Sai.Infrastructure.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Domain\bin\Release\Satsuma.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Domain\bin\Release\Sai.Infrastructure.pdb
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Domain\bin\Release\QuickGraph.xml
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Domain\bin\Release\QuickGraph.Data.xml
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Domain\bin\Release\QuickGraph.Graphviz.xml
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Domain\bin\Release\QuickGraph.Serialization.xml
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Domain\obj\Release\Sai.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Domain\obj\Release\Sai.Domain.dll
+C:\Users\Micaela\Documents\Proyectos GIS\Sai.Api\sai.api\Sai.Domain\obj\Release\Sai.Domain.pdb
