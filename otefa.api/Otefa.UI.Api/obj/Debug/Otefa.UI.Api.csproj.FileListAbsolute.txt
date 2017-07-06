@@ -144,6 +144,7 @@ C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.UI.Api\bin\System.Web.Http.O
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.UI.Api\bin\RazorEngine.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.UI.Api\obj\Debug\Otefa.UI.Api.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.UI.Api\obj\Debug\Otefa.UI.Api.pdb
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\obj\Debug\Otefa.UI.Api.csprojResolveAssemblyReference.cache
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\roslyn\csc.exe
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -195,10 +196,12 @@ C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Ninject.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Ninject.Web.Common.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Ninject.Web.Mvc.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\NLog.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.Domain.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.Infrastructure.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.Infrastructure.EmailSending.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.Infrastructure.IoC.Ninject.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.Infrastructure.Persistence.EF.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Owin.dll
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Sai.Infrastructure.IoC.Ninject.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Sai.UI.Api.ViewModel.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\System.AppContext.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\System.Console.dll
@@ -232,10 +235,12 @@ C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\System.Web.We
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\WebActivatorEx.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\WebGrease.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\RazorEngine.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.Domain.pdb
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.Infrastructure.EmailSending.pdb
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Sai.Infrastructure.IoC.Ninject.pdb
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.Infrastructure.IoC.Ninject.pdb
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.Infrastructure.Persistence.EF.pdb
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.Infrastructure.Persistence.EF.dll.config
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.Infrastructure.pdb
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Sai.UI.Api.ViewModel.pdb
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.AI.ServerTelemetryChannel.xml
@@ -283,10 +288,5 @@ C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.Owi
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\System.Web.Http.Owin.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\RazorEngine.xml
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\obj\Debug\Otefa.UI.Api.csprojResolveAssemblyReference.cache
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\obj\Debug\Otefa.UI.Api.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\obj\Debug\Otefa.UI.Api.pdb
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.Domain.dll
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.Infrastructure.dll
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.Domain.pdb
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.Infrastructure.pdb

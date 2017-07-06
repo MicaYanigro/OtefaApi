@@ -11,7 +11,6 @@ C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\bin\Debug\System.Web.Razor.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\obj\Debug\Otefa.Infrastructure.EmailSending.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.EmailSending\obj\Debug\Otefa.Infrastructure.EmailSending.pdb
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.EmailSending\obj\Debug\Otefa.Infrastructure.EmailSending.csprojResolveAssemblyReference.cache
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.EmailSending\bin\Debug\Otefa.Infrastructure.EmailSending.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.EmailSending\bin\Debug\Otefa.Infrastructure.EmailSending.pdb
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.EmailSending\bin\Debug\Otefa.Domain.dll
@@ -22,5 +21,6 @@ C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.EmailSend
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.EmailSending\bin\Debug\Otefa.Infrastructure.pdb
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.EmailSending\bin\Debug\RazorEngine.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.EmailSending\bin\Debug\System.Web.Razor.xml
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.EmailSending\obj\Debug\Otefa.Infrastructure.EmailSending.csprojResolveAssemblyReference.cache
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.EmailSending\obj\Debug\Otefa.Infrastructure.EmailSending.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.EmailSending\obj\Debug\Otefa.Infrastructure.EmailSending.pdb

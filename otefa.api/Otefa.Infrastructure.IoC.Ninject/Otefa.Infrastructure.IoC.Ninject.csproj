@@ -7,8 +7,8 @@
     <ProjectGuid>{93A5AB41-1124-4E9E-93D6-5AD84BC8B57E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sai.Infrastructure.IoC</RootNamespace>
-    <AssemblyName>Sai.Infrastructure.IoC.Ninject</AssemblyName>
+    <RootNamespace>Otefa.Infrastructure.IoC</RootNamespace>
+    <AssemblyName>Otefa.Infrastructure.IoC.Ninject</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

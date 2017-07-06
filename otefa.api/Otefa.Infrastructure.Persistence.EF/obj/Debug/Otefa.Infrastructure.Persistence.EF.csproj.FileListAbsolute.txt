@@ -12,7 +12,6 @@ C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.Persistence.E
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.Persistence.EF\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.Persistence.EF\obj\Debug\Otefa.Infrastructure.Persistence.EF.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.Infrastructure.Persistence.EF\obj\Debug\Otefa.Infrastructure.Persistence.EF.pdb
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.Persistence.EF\obj\Debug\Otefa.Infrastructure.Persistence.EF.csprojResolveAssemblyReference.cache
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.Persistence.EF\bin\Debug\Otefa.Infrastructure.Persistence.EF.dll.config
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.Persistence.EF\bin\Debug\Otefa.Infrastructure.Persistence.EF.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.Persistence.EF\bin\Debug\Otefa.Infrastructure.Persistence.EF.pdb
@@ -24,5 +23,6 @@ C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.Persisten
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.Persistence.EF\bin\Debug\Otefa.Infrastructure.pdb
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.Persistence.EF\bin\Debug\EntityFramework.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.Persistence.EF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.Persistence.EF\obj\Debug\Otefa.Infrastructure.Persistence.EF.csprojResolveAssemblyReference.cache
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.Persistence.EF\obj\Debug\Otefa.Infrastructure.Persistence.EF.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.Persistence.EF\obj\Debug\Otefa.Infrastructure.Persistence.EF.pdb
