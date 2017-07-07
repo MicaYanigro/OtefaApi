@@ -19,11 +19,8 @@ namespace Otefa.Domain.Model.Services
 
         public Player FindPlayerByDni(string dni)
         {
-            var player = PlayerRepository.GetByDni(dni);
-            if (player == null)
-                throw new InvalidPlayerDniException();
-            else
-                return player;
+            return PlayerRepository.GetByDni(dni);
+          
         }
 
 
