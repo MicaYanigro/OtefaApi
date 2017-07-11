@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="EFRepositoryBase.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="HeadquarterRepositoryEF.cs" />
     <Compile Include="TeamRepositoryEF.cs" />
     <Compile Include="PlayerRepositoryEF.cs" />
     <Compile Include="OtefaDataContext.cs" />

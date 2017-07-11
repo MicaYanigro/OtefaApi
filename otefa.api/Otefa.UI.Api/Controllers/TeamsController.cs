@@ -28,7 +28,7 @@ namespace Otefa.UI.Api.Controllers
 
 
         [Route("name")]
-        public Team GetByDni(string name)
+        public Team GetByName(string name)
         {
             return Teamservice.FindTeamByName(name);
         }

@@ -46,6 +46,8 @@
     <Compile Include="Player\PutPlayerViewModel.cs" />
     <Compile Include="Player\PlayerViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Headquarter\PutHeadquarterViewModel.cs" />
+    <Compile Include="Headquarter\HeadquarterViewModel.cs" />
     <Compile Include="Team\TeamViewModel.cs" />
     <Compile Include="Team\PutTeamViewModel.cs" />
   </ItemGroup>
