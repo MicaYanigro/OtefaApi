@@ -19,11 +19,8 @@ namespace Otefa.Domain.Model.Services
 
         public Team FindTeamByName(string name)
         {
-            var Team = TeamRepository.GetByName(name);
-            if (Team == null)
-                throw new InvalidTeamNameException();
-            else
-                return Team;
+            return TeamRepository.GetByName(name);
+
         }
 
 

@@ -16,6 +16,6 @@ namespace Otefa.Infrastructure.Persistence
         {
             return GetDbSet().Where(x => x.Name.Equals(name)).SingleOrDefault();
         }
-           
+
     }
 }
