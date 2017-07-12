@@ -121,6 +121,12 @@ namespace Otefa.Domain.Model.Entities
 
         }
 
+        public void AddPlayerDetails(PlayerDetails playerDetails)
+        {
+            this.playersDetails.Add(playerDetails);
+        }
+
+
         public void Update()
         {
 

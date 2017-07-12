@@ -17,7 +17,14 @@ namespace Otefa.Domain.Model.Services
         public IMatchRepository MatchRepository { get; set; }
 
         [Injectable]
+        public IMatchTeamRepository MatchTeamRepository { get; set; }
+
+        [Injectable]
         public IHeadquarterRepository HeadquarterRepository { get; set; }
+
+        [Injectable]
+        public IPlayerDetailsFactory PlayerDetailsFactory { get; set; }
+        
 
         public Match Create(int headquarterID, DateTime date, IEnumerable<int> teamsID)
         {
@@ -31,6 +38,14 @@ namespace Otefa.Domain.Model.Services
                 return Match;
             }
         }
+
+        public void AddPlayerDetails(int matchTeamID, int playerID, int? goals, bool played, Card? card, string observation)
+        {
+            var matchTeam = MatchTeamRepository.GetById(matchTeamID);
+            var playerDetails = PlayerDetailsFactory.Create(playerID, goals, played, card, observation);
+            matchTeam.AddPlayerDetails(playerDetails);
+        }
+
 
         public void Update(int matchID, int headquarterID, DateTime date, IEnumerable<int> teamsID)
         {

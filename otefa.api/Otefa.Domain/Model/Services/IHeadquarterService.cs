@@ -7,9 +7,9 @@ namespace Otefa.Domain.Model.Services
     {
         Headquarter FindHeadquarterByName(string name);
 
-        Headquarter Create(string name, string adress, string city);
+        Headquarter Create(string name, string address, string city);
 
-        void Update(int headquarterID, string name, string adress, string city);
+        void Update(int headquarterID, string name, string address, string city);
 
         IEnumerable<Headquarter> GetAll();
     }

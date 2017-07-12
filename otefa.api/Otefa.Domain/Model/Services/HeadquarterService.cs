@@ -21,11 +21,11 @@ namespace Otefa.Domain.Model.Services
 
         }
 
-        public Headquarter Create(string name, string adress, string city)
+        public Headquarter Create(string name, string address, string city)
         {
             {
 
-                var Headquarter = HeadquarterFactory.Create(name, adress, city);
+                var Headquarter = HeadquarterFactory.Create(name, address, city);
 
                 HeadquarterRepository.Add(Headquarter);
                 HeadquarterRepository.Context.Commit();
@@ -34,12 +34,12 @@ namespace Otefa.Domain.Model.Services
             }
         }
 
-        public void Update(int headquarterID, string name, string adress, string city)
+        public void Update(int headquarterID, string name, string address, string city)
         {
             var Headquarter = HeadquarterRepository.GetById(headquarterID);
 
             Headquarter.Update(name,
-                        adress,
+                        address,
                         city);
 
             HeadquarterRepository.Update(Headquarter);

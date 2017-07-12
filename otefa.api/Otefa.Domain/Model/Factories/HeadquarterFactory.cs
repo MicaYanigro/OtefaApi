@@ -6,10 +6,10 @@ namespace Otefa.Domain.Model.Factories
     public class HeadquarterFactory : IHeadquarterFactory
     {
     
-        public Headquarter Create(string name, string adress, string city)
+        public Headquarter Create(string name, string address, string city)
         {
             
-            return new Headquarter(name, adress, city);
+            return new Headquarter(name, address, city);
         }
     }
 }

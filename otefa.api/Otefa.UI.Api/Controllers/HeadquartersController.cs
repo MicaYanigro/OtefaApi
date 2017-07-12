@@ -39,7 +39,7 @@ namespace Otefa.UI.Api.Controllers
         {
             try
             {
-                var headquarter = Headquarterservice.Create(HeadquarterViewModel.Name, HeadquarterViewModel.Adress, HeadquarterViewModel.City);
+                var headquarter = Headquarterservice.Create(HeadquarterViewModel.Name, HeadquarterViewModel.address, HeadquarterViewModel.City);
 
                 return Request.CreateResponse(HttpStatusCode.Created, headquarter.GetId());
             }
@@ -61,7 +61,7 @@ namespace Otefa.UI.Api.Controllers
         {
             try
             {
-                Headquarterservice.Update(headquarterID, PutHeadquarterViewModel.Name, PutHeadquarterViewModel.Adress, PutHeadquarterViewModel.City);
+                Headquarterservice.Update(headquarterID, PutHeadquarterViewModel.Name, PutHeadquarterViewModel.address, PutHeadquarterViewModel.City);
 
 
                 return Request.CreateResponse(HttpStatusCode.OK);

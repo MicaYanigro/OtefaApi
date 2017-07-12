@@ -49,12 +49,12 @@ namespace Otefa.UI.Api.Controllers
         }
 
         [HttpPut]
-        [Route("{MatchID}")]
-        public HttpResponseMessage Put([FromUri] int MatchID, [FromBody]PutMatchViewModel PutMatchViewModel)
+        [Route("{matchID}")]
+        public HttpResponseMessage Put([FromUri] int matchID, [FromBody]PutMatchViewModel PutMatchViewModel)
         {
             try
             {
-                MatchService.Update(MatchID, PutMatchViewModel.Headquarter, PutMatchViewModel.Date, PutMatchViewModel.Teams);
+                MatchService.Update(matchID, PutMatchViewModel.Headquarter, PutMatchViewModel.Date, PutMatchViewModel.Teams);
 
 
                 return Request.CreateResponse(HttpStatusCode.OK);

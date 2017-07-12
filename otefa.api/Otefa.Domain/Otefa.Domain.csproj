@@ -91,8 +91,10 @@
     <Compile Include="Model\Exceptions\ExistantPlayerDniException.cs" />
     <Compile Include="Model\Exceptions\ExceptionBase.cs" />
     <Compile Include="Model\Factories\IMatchFactory.cs" />
+    <Compile Include="Model\Factories\IPlayerDetailsFactory.cs" />
     <Compile Include="Model\Factories\ITournamentFactory.cs" />
     <Compile Include="Model\Factories\MatchFactory.cs" />
+    <Compile Include="Model\Factories\PlayerDetailsFactory.cs" />
     <Compile Include="Model\Factories\TournamentFactory.cs" />
     <Compile Include="Model\Factories\IHeadquarterFactory.cs" />
     <Compile Include="Model\Factories\ITeamFactory.cs" />
@@ -100,6 +102,7 @@
     <Compile Include="Model\Factories\HeadquarterFactory.cs" />
     <Compile Include="Model\Factories\TeamFactory.cs" />
     <Compile Include="Model\Factories\PlayerFactory.cs" />
+    <Compile Include="Model\Repositories\IMatchTeamRepository.cs" />
     <Compile Include="Model\Repositories\IMatchRepository.cs" />
     <Compile Include="Model\Repositories\ITournamentRepository.cs" />
     <Compile Include="Model\Repositories\IHeadquarterRepository.cs" />

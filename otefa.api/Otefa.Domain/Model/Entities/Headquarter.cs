@@ -12,17 +12,17 @@ namespace Otefa.Domain.Model.Entities
     {
 
         private string name;
-        private string adress;
+        private string address;
         private string city;
         private bool isActive;
 
-        public Headquarter(string name, string adress, string city)
+        public Headquarter(string name, string address, string city)
         {
             ThrowExceptionIfNullorEmptyName(name);
             VerifyThatAnotherHeadquarterWithSameNameDoesNotExist(name);
 
             Name = name;
-            Adress = adress;
+            Address = address;
             City = city;
 
             IsActive = true;
@@ -54,17 +54,17 @@ namespace Otefa.Domain.Model.Entities
             }
 
         }
-        public string Adress
+        public string Address
         {
 
             get
             {
-                return adress;
+                return address;
             }
 
             protected set
             {
-                adress = value;
+                address = value;
             }
 
         }
@@ -100,14 +100,14 @@ namespace Otefa.Domain.Model.Entities
 
         }
 
-        public void Update(string name, string adress, string city)
+        public void Update(string name, string address, string city)
         {
             ThrowExceptionIfNullorEmptyName(name);
             VerifyThatAnotherHeadquarterWithSameNameDoesNotExist(name);
 
             Name = name;
             City = city;
-            Adress = adress;
+            Address = address;
         }
 
 
@@ -133,7 +133,7 @@ namespace Otefa.Domain.Model.Entities
         public string Name { get; set; }
 
         [StringLength(50)]
-        public string Adress { get; set; }
+        public string Address { get; set; }
 
         [StringLength(50)]
         public string City { get; set; }

@@ -9,7 +9,7 @@ namespace Otefa.UI.Api.ViewModel.Team
         [StringLength(50, MinimumLength = 1)]
         public string Name { get; set; }
         [StringLength(50, MinimumLength = 1)]
-        public string Adress { get; set; }
+        public string address { get; set; }
         public string City { get; set; }
        
 

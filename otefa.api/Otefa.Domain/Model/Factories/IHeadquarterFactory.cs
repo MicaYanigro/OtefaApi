@@ -6,7 +6,7 @@ namespace Otefa.Domain.Model.Factories
     public interface IHeadquarterFactory
     {
 
-        Headquarter Create(string name, string adress, string city);
+        Headquarter Create(string name, string address, string city);
 
     }
 }

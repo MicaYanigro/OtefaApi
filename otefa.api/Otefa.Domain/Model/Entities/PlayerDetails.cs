@@ -15,13 +15,15 @@ namespace Otefa.Domain.Model.Entities
         private int? goals;
         private bool played;
         private Card? card;
+        private string observation;
 
-        public PlayerDetails(Player player, int? goals, bool played, Card? card)
+        public PlayerDetails(Player player, int? goals, bool played, Card? card, string observation)
         {
             Player = player;
             Goals = goals;
             Played = played;
             Card = card;
+            Observation = observation;
         }
 
         public virtual Player Player
@@ -79,6 +81,21 @@ namespace Otefa.Domain.Model.Entities
             protected set
             {
                 card = value;
+            }
+
+        }
+
+        public string Observation
+        {
+
+            get
+            {
+                return observation;
+            }
+
+            protected set
+            {
+                observation = value;
             }
 
         }
