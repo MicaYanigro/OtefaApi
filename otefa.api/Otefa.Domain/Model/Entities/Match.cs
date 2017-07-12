@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace Otefa.Domain.Model.Entities
 {
@@ -66,6 +67,29 @@ namespace Otefa.Domain.Model.Entities
 
             throw new NotImplementedException();
 
+        }
+        
+        public void CalculateFinalPoints()
+        {
+            var team1 = matchTeamList.OrderByDescending(x => x.Goals).First();
+            var team2 = matchTeamList.OrderByDescending(x => x.Goals).Last();
+
+            if (team1.Goals > team2.Goals)
+            {
+                team1.SetFinalPoints(MatchResult.Win);
+                team2.SetFinalPoints(MatchResult.Loose);
+            }
+            else if(team1.Goals < team2.Goals)
+            {
+                team1.SetFinalPoints(MatchResult.Loose);
+                team2.SetFinalPoints(MatchResult.Win);
+            }
+            else
+            {
+                team1.SetFinalPoints(MatchResult.Draw);
+                team2.SetFinalPoints(MatchResult.Draw);
+            }
+            
         }
 
 

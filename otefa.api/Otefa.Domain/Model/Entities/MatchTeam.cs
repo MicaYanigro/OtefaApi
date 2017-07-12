@@ -15,12 +15,14 @@ namespace Otefa.Domain.Model.Entities
         private int? goals;
         private bool? hasBonusPoint;
         private int? finalPoints;
+        private Player figure;
 
-        public MatchTeam(Team team, int? goals, bool? hasBonusPoint)
+        public MatchTeam(Team team, int? goals, bool? hasBonusPoint, Player figure)
         {
             Team = team;
             Goals = goals;
             HasBonusPoint = hasBonusPoint;
+            Figure = figure;
 
         }
 
@@ -38,6 +40,7 @@ namespace Otefa.Domain.Model.Entities
             }
 
         }
+
         public int? Goals
         {
 
@@ -80,6 +83,41 @@ namespace Otefa.Domain.Model.Entities
             {
                 finalPoints = value;
             }
+
+        }
+
+        public virtual Player Figure
+        {
+
+            get
+            {
+                return figure;
+            }
+
+            protected set
+            {
+                figure = value;
+            }
+
+        }
+
+        public void SetFinalPoints(MatchResult matchResult)
+        {
+            switch (matchResult)
+            {
+                case MatchResult.Win:
+                    this.FinalPoints = 3;
+                    break;
+                case MatchResult.Draw:
+                    this.FinalPoints = 2;
+                    break;
+                case MatchResult.Loose:
+                    this.FinalPoints = 1;
+                    break;
+
+            }
+            if (HasBonusPoint == true)
+                this.FinalPoints = +1;
 
         }
 

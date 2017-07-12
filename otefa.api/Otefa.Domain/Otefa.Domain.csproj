@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Entities\PlayerDetails.cs" />
     <Compile Include="Model\Entities\Player.cs" />
     <Compile Include="Model\Entities\IEntity.cs" />
     <Compile Include="Model\Entities\Entity.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Model\Entities\Match.cs" />
     <Compile Include="Model\Entities\Card.cs" />
     <Compile Include="Model\Entities\MatchTeam.cs" />
+    <Compile Include="Model\Entities\MatchResult.cs" />
     <Compile Include="Model\Entities\TournamentDate.cs" />
     <Compile Include="Model\Entities\TournamentFormat.cs" />
     <Compile Include="Model\Entities\Roles.cs" />

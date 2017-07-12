@@ -19,11 +19,18 @@ namespace Otefa.Infrastructure.Persistence
         public DbSet<Player> Players { get; set; }
 
         public DbSet<Team> Teams { get; set; }
+
+        public DbSet<Headquarter> Headquarters { get; set; }
         
+        public DbSet<Match> Matches { get; set; }
+
+        public DbSet<Tournament> Tournaments { get; set; }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
-            
+
         }
 
     }
