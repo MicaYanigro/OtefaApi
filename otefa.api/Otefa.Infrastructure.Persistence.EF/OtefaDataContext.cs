@@ -21,7 +21,7 @@ namespace Otefa.Infrastructure.Persistence
         public DbSet<Team> Teams { get; set; }
 
         public DbSet<Headquarter> Headquarters { get; set; }
-        
+
         public DbSet<Match> Matches { get; set; }
 
         public DbSet<MatchTeam> MatchTeams { get; set; }
@@ -35,6 +35,13 @@ namespace Otefa.Infrastructure.Persistence
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
+            modelBuilder.Entity<Tournament>()
+            .HasMany(m => m.TeamsList)
+            .WithMany();
+
+            modelBuilder.Entity<Tournament>()
+            .HasMany(m => m.HeadquartersList)
+            .WithMany();
 
         }
 
