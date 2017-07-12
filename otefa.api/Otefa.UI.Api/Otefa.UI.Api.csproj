@@ -327,6 +327,7 @@
     <Compile Include="Attributes\AuthorizeRolesAttribute.cs" />
     <Compile Include="Bootstrap.cs" />
     <Compile Include="Controllers\ApiControllerBase.cs" />
+    <Compile Include="Controllers\TournamentsController.cs" />
     <Compile Include="Controllers\HeadquartersController.cs" />
     <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Controllers\PlayersController.cs" />

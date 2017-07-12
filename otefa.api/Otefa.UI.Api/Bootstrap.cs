@@ -22,21 +22,27 @@ namespace Otefa.UI.Api
             // Services
             Container.Current.Register<IPlayerService, PlayerService>();
             Container.Current.Register<ITeamService, TeamService>();
+            Container.Current.Register<IHeadquarterService, HeadquarterService>();
+            Container.Current.Register<ITournamentService, TournamentService>();
             Container.Current.Register<IEmailSendingService, EmailSendingService>();
             Container.Current.Register<IEmailTemplateService, EmailTemplateService>();
             Container.Current.Register<ISmtpClientWrapper, SmtpClientWrapper>();
-        
+
 
             // Factories
             Container.Current.Register<IPlayerFactory, PlayerFactory>();
             Container.Current.Register<ITeamFactory, TeamFactory>();
+            Container.Current.Register<ITournamentFactory, TournamentFactory>();
+            Container.Current.Register<IHeadquarterFactory, HeadquarterFactory>();
 
             IRepositoryContext repositoryContext = new RepositoryContextEF();
             Container.Current.Register(repositoryContext);
-            
+
             Container.Current.Register<IRepositoryContext, RepositoryContextEF>(LifeCycle.PerRequest);
             Container.Current.Register<IPlayerRepository, PlayerRepositoryEF>(LifeCycle.PerRequest);
             Container.Current.Register<ITeamRepository, TeamRepositoryEF>(LifeCycle.PerRequest);
+            Container.Current.Register<ITournamentRepository, TournamentRepositoryEF>(LifeCycle.PerRequest);
+            Container.Current.Register<IHeadquarterRepository, HeadquarterRepositoryEF>(LifeCycle.PerRequest);
         }
 
     }
