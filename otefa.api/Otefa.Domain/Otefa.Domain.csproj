@@ -90,7 +90,9 @@
     <Compile Include="Model\Exceptions\InvalidPlayerDniException.cs" />
     <Compile Include="Model\Exceptions\ExistantPlayerDniException.cs" />
     <Compile Include="Model\Exceptions\ExceptionBase.cs" />
+    <Compile Include="Model\Factories\IMatchFactory.cs" />
     <Compile Include="Model\Factories\ITournamentFactory.cs" />
+    <Compile Include="Model\Factories\MatchFactory.cs" />
     <Compile Include="Model\Factories\TournamentFactory.cs" />
     <Compile Include="Model\Factories\IHeadquarterFactory.cs" />
     <Compile Include="Model\Factories\ITeamFactory.cs" />
@@ -98,13 +100,16 @@
     <Compile Include="Model\Factories\HeadquarterFactory.cs" />
     <Compile Include="Model\Factories\TeamFactory.cs" />
     <Compile Include="Model\Factories\PlayerFactory.cs" />
+    <Compile Include="Model\Repositories\IMatchRepository.cs" />
     <Compile Include="Model\Repositories\ITournamentRepository.cs" />
     <Compile Include="Model\Repositories\IHeadquarterRepository.cs" />
     <Compile Include="Model\Repositories\ITeamRepository.cs" />
     <Compile Include="Model\Repositories\IRepository.cs" />
     <Compile Include="Model\Repositories\IPlayerRepository.cs" />
     <Compile Include="Model\Repositories\IRepositoryContext.cs" />
+    <Compile Include="Model\Services\IMatchService.cs" />
     <Compile Include="Model\Services\ITournamentService.cs" />
+    <Compile Include="Model\Services\MatchService.cs" />
     <Compile Include="Model\Services\TournamentService.cs" />
     <Compile Include="Model\Services\IEmailSendingService.cs" />
     <Compile Include="Model\Services\IEmailTemplateService.cs" />

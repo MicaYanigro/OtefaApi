@@ -24,6 +24,7 @@ namespace Otefa.UI.Api
             Container.Current.Register<ITeamService, TeamService>();
             Container.Current.Register<IHeadquarterService, HeadquarterService>();
             Container.Current.Register<ITournamentService, TournamentService>();
+            Container.Current.Register<IMatchService, MatchService>();
             Container.Current.Register<IEmailSendingService, EmailSendingService>();
             Container.Current.Register<IEmailTemplateService, EmailTemplateService>();
             Container.Current.Register<ISmtpClientWrapper, SmtpClientWrapper>();
@@ -34,6 +35,7 @@ namespace Otefa.UI.Api
             Container.Current.Register<ITeamFactory, TeamFactory>();
             Container.Current.Register<ITournamentFactory, TournamentFactory>();
             Container.Current.Register<IHeadquarterFactory, HeadquarterFactory>();
+            Container.Current.Register<IMatchFactory, MatchFactory>();
 
             IRepositoryContext repositoryContext = new RepositoryContextEF();
             Container.Current.Register(repositoryContext);
@@ -43,6 +45,7 @@ namespace Otefa.UI.Api
             Container.Current.Register<ITeamRepository, TeamRepositoryEF>(LifeCycle.PerRequest);
             Container.Current.Register<ITournamentRepository, TournamentRepositoryEF>(LifeCycle.PerRequest);
             Container.Current.Register<IHeadquarterRepository, HeadquarterRepositoryEF>(LifeCycle.PerRequest);
+            Container.Current.Register<IMatchRepository, MatchRepositoryEF>(LifeCycle.PerRequest);
         }
 
     }

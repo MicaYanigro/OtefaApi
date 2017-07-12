@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Match\MatchViewModel.cs" />
+    <Compile Include="Match\PutHeadquarterViewModel.cs" />
     <Compile Include="Tournament\TournamentViewModel.cs" />
     <Compile Include="Tournament\PutTournamentViewModel.cs" />
     <Compile Include="Player\PutPlayerViewModel.cs" />
