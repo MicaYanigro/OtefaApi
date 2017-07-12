@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Files\Requests\GetByFileNamePathViewModel.cs" />
+    <Compile Include="Files\Requests\PostFileViewModel.cs" />
+    <Compile Include="Files\Requests\GetByFolderPathViewModel.cs" />
+    <Compile Include="Files\Responses\FileViewModel.cs" />
     <Compile Include="Match\MatchViewModel.cs" />
     <Compile Include="Match\PutHeadquarterViewModel.cs" />
     <Compile Include="Tournament\TournamentViewModel.cs" />
