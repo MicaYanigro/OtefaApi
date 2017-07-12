@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Otefa.Domain.Model.Entities
 {
-    public partial class TournamentDate
+    public partial class TournamentDate : Entity
     {
         public DateTime date;
 

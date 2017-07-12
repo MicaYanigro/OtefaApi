@@ -26,6 +26,7 @@ namespace Otefa.Infrastructure.Persistence
 
         public DbSet<Tournament> Tournaments { get; set; }
 
+        public DbSet<TournamentDate> TournamentDates { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
