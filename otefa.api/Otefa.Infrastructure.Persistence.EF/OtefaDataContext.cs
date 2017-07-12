@@ -24,6 +24,10 @@ namespace Otefa.Infrastructure.Persistence
         
         public DbSet<Match> Matches { get; set; }
 
+        public DbSet<MatchTeam> MatchTeams { get; set; }
+
+        public DbSet<PlayerDetails> PlayerDetails { get; set; }
+
         public DbSet<Tournament> Tournaments { get; set; }
 
         public DbSet<TournamentDate> TournamentDates { get; set; }
