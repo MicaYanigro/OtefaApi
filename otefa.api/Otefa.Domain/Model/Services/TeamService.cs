@@ -24,11 +24,11 @@ namespace Otefa.Domain.Model.Services
         }
 
 
-        public Team Create(string name, string teamDelegate, string shieldImage, string teamImage)
+        public Team Create(string name, string teamDelegate, string shieldImage, string teamImage, IEnumerable<int> playersList)
         {
             {
 
-                var Team = TeamFactory.Create(name, teamDelegate, shieldImage, teamImage);
+                var Team = TeamFactory.Create(name, teamDelegate, shieldImage, teamImage, playersList);
 
                 TeamRepository.Add(Team);
                 TeamRepository.Context.Commit();

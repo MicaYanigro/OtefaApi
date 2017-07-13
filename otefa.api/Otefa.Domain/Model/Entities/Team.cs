@@ -117,6 +117,11 @@ namespace Otefa.Domain.Model.Entities
 
         }
 
+        public void AddPlayer(Player player)
+        {
+            this.playersList.Add(player);
+        }
+
         public void Update(string name, string teamDelegate, string shieldImage, string teamImage)
         {
             ThrowExceptionIfNullorEmptyName(name);

@@ -7,7 +7,7 @@ namespace Otefa.Domain.Model.Services
     {
         Team FindTeamByName(string name);
 
-        Team Create(string name, string teamDelegate, string shieldImage, string teamImage);
+        Team Create(string name, string teamDelegate, string shieldImage, string teamImage, IEnumerable<int> playersList);
 
         void Update(int teamID, string name, string teamDelegate, string shieldImage, string teamImage);
 

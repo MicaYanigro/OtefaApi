@@ -40,7 +40,7 @@ namespace Otefa.UI.Api.Controllers
             try
             {
                 var team = Teamservice.Create(TeamViewModel.Name, TeamViewModel.TeamDelegate, TeamViewModel.ShieldImage,
-                                 TeamViewModel.TeamImage);
+                                 TeamViewModel.TeamImage, TeamViewModel.PlayersList);
 
                 return Request.CreateResponse(HttpStatusCode.Created, team.GetId());
             }
@@ -49,7 +49,7 @@ namespace Otefa.UI.Api.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest, new HttpError(e.Message));
             }
         }
-
+        
         [Route("")]
         public IEnumerable<Team> Get()
         {
