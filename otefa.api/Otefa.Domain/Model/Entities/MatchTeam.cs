@@ -3,6 +3,7 @@ using Otefa.Domain.Model.Services;
 using Otefa.Infrastructure.IoC;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Otefa.Domain.Model.Entities
@@ -24,6 +25,7 @@ namespace Otefa.Domain.Model.Entities
             HasBonusPoint = hasBonusPoint;
             Figure = figure;
 
+            playersDetails = new Collection<PlayerDetails>();
         }
 
         public virtual Team Team

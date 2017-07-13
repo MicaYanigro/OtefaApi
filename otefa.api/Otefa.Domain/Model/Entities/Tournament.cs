@@ -3,6 +3,7 @@ using Otefa.Domain.Model.Services;
 using Otefa.Infrastructure.IoC;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Otefa.Domain.Model.Entities
@@ -29,6 +30,11 @@ namespace Otefa.Domain.Model.Entities
             Rules = rules;
             Prices = prices;
             IsActive = true;
+
+            matchesList = new Collection<Match>();
+            tournamentDateList = new Collection<TournamentDate>();
+            teamsList = new Collection<Team>();
+            headquartersList = new Collection<Headquarter>();
         }
 
         private void VerifyThatAnotherTournamentWithSameNameDoesNotExist(string name)

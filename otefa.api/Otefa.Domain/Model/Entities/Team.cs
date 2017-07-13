@@ -3,6 +3,7 @@ using Otefa.Domain.Model.Services;
 using Otefa.Infrastructure.IoC;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Otefa.Domain.Model.Entities
@@ -28,6 +29,7 @@ namespace Otefa.Domain.Model.Entities
             ShieldImage = shieldImage;
             TeamImage = teamImage;
 
+            playersList = new Collection<Player>();
             IsActive = true;
         }
 

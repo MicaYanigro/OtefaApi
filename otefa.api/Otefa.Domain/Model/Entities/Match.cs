@@ -3,6 +3,7 @@ using Otefa.Domain.Model.Services;
 using Otefa.Infrastructure.IoC;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -20,6 +21,8 @@ namespace Otefa.Domain.Model.Entities
         {
             Headquarter = headquarter;
             Date = date;
+
+            matchTeamList = new Collection<MatchTeam>();
         }
 
 
