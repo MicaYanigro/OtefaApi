@@ -16,7 +16,7 @@ using Otefa.UI.Api.ViewModel.Files.Responses;
 
 namespace UI.Api.Controllers
 {
-    [Authorize]
+    //   [Authorize]
     [RoutePrefix("v1/files")]
     public class FilesController : ApiControllerBase
     {
@@ -27,7 +27,7 @@ namespace UI.Api.Controllers
         /// Get all files by folder path.
         /// </summary>
         /// <returns>List files</returns>
-        [Authorize]
+     //   [Authorize]
         [Route("GetByFolderPath")]
         public async Task<IHttpActionResult> Get([FromUri]GetByFolderPathViewModel request)
         {
@@ -71,7 +71,7 @@ namespace UI.Api.Controllers
         /// Get one file by file name path.
         /// </summary>
         /// <returns>File</returns>
-        [Authorize]
+     //   [Authorize]
         [Route("GetByFileNamePath")]
         public async Task<IHttpActionResult> Get([FromUri]GetByFileNamePathViewModel request)
         {
@@ -114,7 +114,7 @@ namespace UI.Api.Controllers
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        [Authorize]
+     //   [Authorize]
         [Route("")]
         public async Task<IHttpActionResult> Delete(string FileNamePath)
         {
@@ -146,7 +146,7 @@ namespace UI.Api.Controllers
         /// Add Files.
         /// </summary>
         /// <returns></returns>
-        [Authorize]
+     //   [Authorize]
         [Route("")]
         public async Task<IHttpActionResult> Post([FromUri]PostFileViewModel request)
         {
