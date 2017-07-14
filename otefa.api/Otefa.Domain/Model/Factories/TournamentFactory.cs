@@ -8,8 +8,6 @@ namespace Otefa.Domain.Model.Factories
 {
     public class TournamentFactory : ITournamentFactory
     {
-        [Injectable]
-        IHeadquarterRepository HeadquarterRepository { get; set; }
 
         public Tournament Create(string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates)
         {
@@ -18,7 +16,7 @@ namespace Otefa.Domain.Model.Factories
 
             foreach (var headquarterID in headquarters)
             {
-                var headquarter = HeadquarterRepository.GetById(headquarterID);
+                var headquarter = Container.Current.Resolve<IHeadquarterRepository>().GetById(headquarterID);
                 tournament.AddHeadquarter(headquarter);
             }
 

@@ -8,16 +8,14 @@ namespace Otefa.Domain.Model.Factories
 {
     public class TeamFactory : ITeamFactory
     {
-        [Injectable]
-        public IPlayerRepository PlayerRepository { get; set; }
-
+      
         public Team Create(string name, string teamDelegate, string shieldImage, string teamImage, IEnumerable<int> playersList)
         {
             var team = new Team(name, teamDelegate, shieldImage, teamImage);
 
             foreach (var playerID in playersList)
             {
-                var player = PlayerRepository.GetById(playerID);
+                var player = Container.Current.Resolve<IPlayerRepository>().GetById(playerID);
                 team.AddPlayer(player);
             }
             

@@ -13,7 +13,7 @@ namespace Otefa.Domain.Model.Factories
 
         public PlayerDetails Create(int playerID, int? goals, bool played, Card? card, string observation)
         {
-            var player = PlayerRepository.GetById(playerID);
+            var player = Container.Current.Resolve<IPlayerRepository>().GetById(playerID);
 
             return new PlayerDetails(player, goals, played,  card, observation);
         }

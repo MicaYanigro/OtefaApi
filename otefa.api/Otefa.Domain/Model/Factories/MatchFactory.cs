@@ -8,8 +8,6 @@ namespace Otefa.Domain.Model.Factories
 {
     public class MatchFactory : IMatchFactory
     {
-        [Injectable]
-        ITeamRepository TeamRepository { get; set; }
 
         public Match Create(Headquarter headquarter, DateTime date, IEnumerable<int> teamsID)
         {
@@ -18,7 +16,7 @@ namespace Otefa.Domain.Model.Factories
 
             foreach (var teamID in teamsID)
             {
-                var team = TeamRepository.GetById(teamID);
+                var team = Container.Current.Resolve<ITeamRepository>().GetById(teamID);
                 var matchTeam = new MatchTeam(team, null, null, null);
                 Match.AddMatchTeam(matchTeam);
             }
