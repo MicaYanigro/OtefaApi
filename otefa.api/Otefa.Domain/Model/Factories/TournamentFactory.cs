@@ -9,7 +9,7 @@ namespace Otefa.Domain.Model.Factories
     public class TournamentFactory : ITournamentFactory
     {
 
-        public Tournament Create(string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates)
+        public Tournament Create(string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers)
         {
 
             var tournament = new Tournament(name, (TournamentFormat)tournamentFormat, (ClasificationFormat)clasificationFormat, rules, prices);
@@ -26,6 +26,23 @@ namespace Otefa.Domain.Model.Factories
                 tournament.AddTournamentDate(tournamentDateEntity);
             }
 
+            foreach (var dictionary in teamsPlayers)
+            {
+                var teamID = dictionary.Key;
+                var players = dictionary.Value;
+
+                var team = Container.Current.Resolve<ITeamRepository>().GetById(teamID);
+
+                var teamPlayers = new TournamentTeamPlayers(team);
+
+                foreach (var playerID in players)
+                {
+                    var player = Container.Current.Resolve<IPlayerRepository>().GetById(playerID);
+                    teamPlayers.AddPlayer(player);
+                }
+
+                tournament.AddTeamPlayers(teamPlayers);
+            }
 
             return tournament;
         }

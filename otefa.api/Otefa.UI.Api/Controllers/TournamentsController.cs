@@ -40,7 +40,7 @@ namespace Otefa.UI.Api.Controllers
             try
             {
                 var Tournament = Tournamentservice.Create(TournamentViewModel.Name, TournamentViewModel.TournamentFormat, TournamentViewModel.ClasificationFormat,
-                                                          TournamentViewModel.Rules, TournamentViewModel.Prices, TournamentViewModel.Headquarters, TournamentViewModel.Dates);
+                                                          TournamentViewModel.Rules, TournamentViewModel.Prices, TournamentViewModel.Headquarters, TournamentViewModel.Dates, TournamentViewModel.TeamsPlayers);
 
                 return Request.CreateResponse(HttpStatusCode.Created, Tournament.GetId());
             }

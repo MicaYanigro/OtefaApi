@@ -26,11 +26,11 @@ namespace Otefa.Domain.Model.Services
 
         }
 
-        public Tournament Create(string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates)
+        public Tournament Create(string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers)
         {
             {
 
-                var tournament = TournamentFactory.Create(name, tournamentFormat, clasificationFormat, rules, prices, headquarters, tournamentDates);
+                var tournament = TournamentFactory.Create(name, tournamentFormat, clasificationFormat, rules, prices, headquarters, tournamentDates, teamsPlayers);
 
                 TournamentRepository.Add(tournament);
                 TournamentRepository.Context.Commit();

@@ -73,6 +73,7 @@
     <Compile Include="Model\Entities\Card.cs" />
     <Compile Include="Model\Entities\MatchTeam.cs" />
     <Compile Include="Model\Entities\MatchResult.cs" />
+    <Compile Include="Model\Entities\TournamentTeamPlayers.cs" />
     <Compile Include="Model\Entities\TournamentDate.cs" />
     <Compile Include="Model\Entities\TournamentFormat.cs" />
     <Compile Include="Model\Entities\Roles.cs" />
