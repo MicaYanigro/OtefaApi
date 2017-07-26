@@ -12,5 +12,6 @@ namespace Otefa.Domain.Model.Services
         void Update(int teamID, string name, string teamDelegate, string shieldImage, string teamImage);
 
         IEnumerable<Team> GetAll();
+        Team GetByID(int id);
     }
 }

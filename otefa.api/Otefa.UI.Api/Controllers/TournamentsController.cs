@@ -26,6 +26,11 @@ namespace Otefa.UI.Api.Controllers
             this.Tournamentservice = Tournamentservice;
         }
 
+        [Route("id")]
+        public Tournament GetByID(int id)
+        {
+            return Tournamentservice.GetByID(id);
+        }
 
         [Route("name")]
         public Tournament GetByName(string name)

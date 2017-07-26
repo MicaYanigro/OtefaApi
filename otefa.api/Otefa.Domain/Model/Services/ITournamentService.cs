@@ -13,5 +13,7 @@ namespace Otefa.Domain.Model.Services
         void Update(int tournamentID, string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates);
 
         IEnumerable<Tournament> GetAll();
+
+        Tournament GetByID(int id);
     }
 }

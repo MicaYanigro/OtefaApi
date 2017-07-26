@@ -23,6 +23,12 @@ namespace Otefa.Domain.Model.Services
 
         }
 
+        public Team GetByID(int id)
+        {
+            return TeamRepository.GetById(id);
+
+        }
+
 
         public Team Create(string name, string teamDelegate, string shieldImage, string teamImage, IEnumerable<int> playersList)
         {

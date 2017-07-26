@@ -19,6 +19,11 @@ namespace Otefa.Domain.Model.Services
         [Injectable]
         public IHeadquarterRepository HeadquarterRepository { get; set; }
 
+        public Tournament GetByID(int id)
+        {
+            return TournamentRepository.GetById(id);
+
+        }
 
         public Tournament FindTournamentByName(string name)
         {

@@ -26,6 +26,11 @@ namespace Otefa.UI.Api.Controllers
             this.Teamservice = Teamservice;
         }
 
+        [Route("id")]
+        public Team GetByID(int id)
+        {
+            return Teamservice.GetByID(id);
+        }
 
         [Route("name")]
         public Team GetByName(string name)
