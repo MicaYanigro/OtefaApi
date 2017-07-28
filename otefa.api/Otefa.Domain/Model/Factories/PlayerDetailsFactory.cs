@@ -8,9 +8,6 @@ namespace Otefa.Domain.Model.Factories
     public class PlayerDetailsFactory : IPlayerDetailsFactory
     {
 
-        [Injectable]
-        IPlayerRepository PlayerRepository { get; set; }
-
         public PlayerDetails Create(int playerID, int? goals, bool played, Card? card, string observation)
         {
             var player = Container.Current.Resolve<IPlayerRepository>().GetById(playerID);

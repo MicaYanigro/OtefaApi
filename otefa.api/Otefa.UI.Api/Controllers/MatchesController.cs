@@ -54,7 +54,7 @@ namespace Otefa.UI.Api.Controllers
         {
             try
             {
-                MatchService.Update(matchID, PutMatchViewModel.Headquarter, PutMatchViewModel.Date, PutMatchViewModel.Teams);
+                MatchService.Update(matchID, PutMatchViewModel.Headquarter, PutMatchViewModel.Date);
 
 
                 return Request.CreateResponse(HttpStatusCode.OK);
