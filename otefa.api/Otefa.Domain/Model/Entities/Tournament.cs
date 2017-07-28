@@ -163,10 +163,12 @@ namespace Otefa.Domain.Model.Entities
             this.teamPlayersList.Add(teamPlayers);
         }
 
-        public void Update(string name, TournamentFormat tournamentFormat, ClasificationFormat clasificationFormat, string rules, string prices, IEnumerable<Headquarter> headquarters, IEnumerable<TournamentDate> tournamentDates)
+        public void Update(string name, TournamentFormat tournamentFormat, ClasificationFormat clasificationFormat, string rules, string prices, IEnumerable<Headquarter> headquarters, IEnumerable<TournamentDate> tournamentDates, IEnumerable<TournamentTeamPlayers> teamPlayers)
         {
             ThrowExceptionIfNullorEmptyName(name);
-            VerifyThatAnotherTournamentWithSameNameDoesNotExist(name);
+
+            if (this.name != name)
+                VerifyThatAnotherTournamentWithSameNameDoesNotExist(name);
 
             Name = name;
             TournamentFormat = tournamentFormat;
@@ -174,17 +176,24 @@ namespace Otefa.Domain.Model.Entities
             Rules = rules;
             Prices = prices;
 
-            headquartersList.Clear();
+            this.headquartersList.Clear();
             foreach (var headquarter in headquarters)
             {
                 headquartersList.Add(headquarter);
             }
 
-            tournamentDateList.Clear();
+            this.tournamentDateList.Clear();
             foreach (var tournamentDate in tournamentDates)
             {
                 tournamentDateList.Add(tournamentDate);
             }
+
+            this.teamPlayersList.Clear();
+            foreach (var teamPlayer in teamPlayers)
+            {
+                teamPlayersList.Add(teamPlayer);
+            }
+
 
         }
 

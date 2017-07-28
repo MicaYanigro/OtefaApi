@@ -44,7 +44,7 @@ namespace Otefa.Domain.Model.Services
             }
         }
 
-        public void Update(int tournamentID, string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates)
+        public void Update(int tournamentID, string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers)
         {
             var Tournament = TournamentRepository.GetById(tournamentID);
 
@@ -64,7 +64,26 @@ namespace Otefa.Domain.Model.Services
                 tournamentDateList.Add(tournamentDateEntity);
 
             }
-            Tournament.Update(name, (TournamentFormat)tournamentFormat, (ClasificationFormat)clasificationFormat, rules, prices, headquarterList, tournamentDateList);
+
+            foreach (var dictionary in teamsPlayers)
+            {
+                var ttpList = new List<TournamentTeamPlayers>();
+                var teamID = dictionary.Key;
+                var players = dictionary.Value;
+
+                var team = Container.Current.Resolve<ITeamRepository>().GetById(teamID);
+
+                var teamPlayers = new TournamentTeamPlayers(team);
+
+                foreach (var playerID in players)
+                {
+                    var player = Container.Current.Resolve<IPlayerRepository>().GetById(playerID);
+                    teamPlayers.AddPlayer(player);
+                }
+                ttpList.Add(teamPlayers);
+            }
+
+            Tournament.Update(name, (TournamentFormat)tournamentFormat, (ClasificationFormat)clasificationFormat, rules, prices, headquarterList, tournamentDateList, ttpList);
 
             TournamentRepository.Update(Tournament);
             TournamentRepository.Context.Commit();

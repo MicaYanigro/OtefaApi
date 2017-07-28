@@ -24,7 +24,7 @@ namespace Otefa.Domain.Model.Services
 
         [Injectable]
         public IPlayerDetailsFactory PlayerDetailsFactory { get; set; }
-        
+
 
         public Match Create(int headquarterID, DateTime date, IEnumerable<int> teamsID)
         {
@@ -47,13 +47,13 @@ namespace Otefa.Domain.Model.Services
         }
 
 
-        public void Update(int matchID, int headquarterID, DateTime date, IEnumerable<int> teamsID)
+        public void Update(int matchID, int headquarterID, DateTime date)
         {
             var match = MatchRepository.GetById(matchID);
 
             var headquarter = HeadquarterRepository.GetById(headquarterID);
-
-            match.Update();
+            
+            match.Update(headquarter, date);
 
             MatchRepository.Update(match);
             MatchRepository.Context.Commit();

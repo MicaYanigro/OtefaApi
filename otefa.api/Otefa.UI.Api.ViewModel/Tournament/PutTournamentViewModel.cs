@@ -14,5 +14,6 @@ namespace Otefa.UI.Api.ViewModel.Team
         public string Prices { get; set; }
         public List<int> Headquarters { get; set; }
         public List<DateTime> Dates { get; set; }
+        public Dictionary<int, List<int>> TeamsPlayers { get; set; }
     }
 }

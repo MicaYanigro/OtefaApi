@@ -26,13 +26,15 @@ namespace Otefa.UI.Api.Controllers
             this.Tournamentservice = Tournamentservice;
         }
 
-        [Route("id")]
+        [HttpGet]
+        [Route("{id}")]
         public Tournament GetByID(int id)
         {
             return Tournamentservice.GetByID(id);
         }
 
-        [Route("name")]
+        [HttpGet]
+        [Route("{name}")]
         public Tournament GetByName(string name)
         {
             return Tournamentservice.FindTournamentByName(name);
@@ -68,7 +70,7 @@ namespace Otefa.UI.Api.Controllers
             try
             {
                 Tournamentservice.Update(tournamentID, PutTournamentViewModel.Name, PutTournamentViewModel.TournamentFormat, PutTournamentViewModel.ClasificationFormat,
-                                                          PutTournamentViewModel.Rules, PutTournamentViewModel.Prices, PutTournamentViewModel.Headquarters, PutTournamentViewModel.Dates);
+                                                          PutTournamentViewModel.Rules, PutTournamentViewModel.Prices, PutTournamentViewModel.Headquarters, PutTournamentViewModel.Dates, PutTournamentViewModel.TeamsPlayers);
 
 
                 return Request.CreateResponse(HttpStatusCode.OK);

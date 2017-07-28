@@ -65,11 +65,10 @@ namespace Otefa.Domain.Model.Entities
             this.matchTeamList.Add(matchTeam);
         }
 
-        public void Update()
+        public void Update(Headquarter headquarter, DateTime date)
         {
-
-            throw new NotImplementedException();
-
+            this.headquarter = headquarter;
+            this.date = date;
         }
         
         public void CalculateFinalPoints()
