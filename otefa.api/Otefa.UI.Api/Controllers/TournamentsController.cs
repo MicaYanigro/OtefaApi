@@ -34,7 +34,7 @@ namespace Otefa.UI.Api.Controllers
         }
 
         [HttpGet]
-        [Route("{name}")]
+        [Route("Get/{name}")]
         public Tournament GetByName(string name)
         {
             return Tournamentservice.FindTournamentByName(name);

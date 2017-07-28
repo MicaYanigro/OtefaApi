@@ -27,7 +27,7 @@ namespace Otefa.UI.Api.Controllers
         }
 
 
-        [Route("name")]
+        [Route("get/{name}")]
         public Headquarter GetByName(string name)
         {
             return Headquarterservice.FindHeadquarterByName(name);

@@ -27,7 +27,7 @@ namespace Otefa.UI.Api.Controllers
         }
 
 
-        [Route("dni")]
+        [Route("Dni/{dni}")]
         public Player GetByDni(string dni)
         {
             return Playerservice.FindPlayerByDni(dni);
