@@ -17,7 +17,7 @@ namespace Otefa.Domain.Model.Entities
         private Headquarter headquarter;
         private DateTime date;
 
-        public Match(Headquarter headquarter, DateTime Date)
+        public Match(Headquarter headquarter, DateTime date)
         {
             Headquarter = headquarter;
             Date = date;
