@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace Otefa.Domain.Model.Entities
 {
@@ -124,17 +125,24 @@ namespace Otefa.Domain.Model.Entities
             this.playersList.Add(player);
         }
 
-        public void Update(string name, string teamDelegate, string shieldImage, string teamImage)
+        public void Update(string name, string teamDelegate, string shieldImage, string teamImage, IEnumerable<Player> players)
         {
             ThrowExceptionIfNullorEmptyName(name);
             ThrowExceptionIfNullorEmptyDelegate(teamDelegate);
-            VerifyThatAnotherTeamWithSameNameDoesNotExist(name);
+
+            if (this.Name != name)
+                VerifyThatAnotherTeamWithSameNameDoesNotExist(name);
 
             Name = name;
             TeamDelegate = teamDelegate;
             ShieldImage = shieldImage;
             TeamImage = teamImage;
 
+            this.playersList.Clear();
+            foreach (var player in players)
+            {
+                playersList.Add(player);
+            }
         }
 
 

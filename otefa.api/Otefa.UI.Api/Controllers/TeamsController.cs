@@ -68,7 +68,7 @@ namespace Otefa.UI.Api.Controllers
             try
             {
                 Teamservice.Update(teamID, PutTeamViewModel.Name, PutTeamViewModel.TeamDelegate, PutTeamViewModel.ShieldImage,
-                                    PutTeamViewModel.TeamImage);
+                                    PutTeamViewModel.TeamImage, PutTeamViewModel.PlayersList);
 
 
                 return Request.CreateResponse(HttpStatusCode.OK);

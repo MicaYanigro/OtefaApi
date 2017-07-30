@@ -17,6 +17,10 @@ namespace Otefa.Domain.Model.Services
         [Injectable]
         public ITeamRepository TeamRepository { get; set; }
 
+        [Injectable]
+        public IPlayerRepository PlayerRepository { get; set; }
+        
+
         public Team FindTeamByName(string name)
         {
             return TeamRepository.GetByName(name);
@@ -43,14 +47,22 @@ namespace Otefa.Domain.Model.Services
             }
         }
 
-        public void Update(int teamID, string name, string teamDelegate, string shieldImage, string teamImage)
+        public void Update(int teamID, string name, string teamDelegate, string shieldImage, string teamImage, IEnumerable<int> playersList)
         {
             var team = TeamRepository.GetById(teamID);
+
+            var players = new List<Player>();
+            foreach (var playerID in playersList)
+            {
+                var player = PlayerRepository.GetById(playerID);
+                players.Add(player);
+            }
 
             team.Update(name,
                         teamDelegate,
                         shieldImage,
-                        teamImage);
+                        teamImage, 
+                        players);
 
             TeamRepository.Update(team);
             TeamRepository.Context.Commit();

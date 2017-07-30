@@ -9,7 +9,7 @@ namespace Otefa.Domain.Model.Services
 
         Team Create(string name, string teamDelegate, string shieldImage, string teamImage, IEnumerable<int> playersList);
 
-        void Update(int teamID, string name, string teamDelegate, string shieldImage, string teamImage);
+        void Update(int teamID, string name, string teamDelegate, string shieldImage, string teamImage, IEnumerable<int> playersList);
 
         IEnumerable<Team> GetAll();
         Team GetByID(int id);
