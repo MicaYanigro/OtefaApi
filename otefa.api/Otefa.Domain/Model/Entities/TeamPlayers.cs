@@ -23,7 +23,7 @@ namespace Otefa.Domain.Model.Entities
         }
         
 
-        public Team Team
+        public virtual Team Team
         {
 
             get
