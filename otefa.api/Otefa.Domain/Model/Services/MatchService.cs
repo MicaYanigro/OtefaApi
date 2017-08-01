@@ -59,6 +59,17 @@ namespace Otefa.Domain.Model.Services
             MatchRepository.Context.Commit();
         }
 
+        public void LoadResults(int matchTeamID, int goals, bool hasBonusPoint)
+        {
+            var matchTeam = MatchTeamRepository.GetById(matchTeamID);
+
+            matchTeam.Update(goals, hasBonusPoint);
+
+            MatchTeamRepository.Update(matchTeam);
+            MatchTeamRepository.Context.Commit();
+        }
+
+
         public IEnumerable<Match> GetAll()
         {
             return MatchRepository.All();

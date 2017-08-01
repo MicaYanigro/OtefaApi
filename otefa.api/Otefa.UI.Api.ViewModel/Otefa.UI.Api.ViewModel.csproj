@@ -47,8 +47,10 @@
     <Compile Include="Files\Requests\PostFileViewModel.cs" />
     <Compile Include="Files\Requests\GetByFolderPathViewModel.cs" />
     <Compile Include="Files\Responses\FileViewModel.cs" />
+    <Compile Include="Match\ResultsMatchViewModel.cs" />
     <Compile Include="Match\MatchViewModel.cs" />
     <Compile Include="Match\PutHeadquarterViewModel.cs" />
+    <Compile Include="Player\PlayersDetailsViewModel.cs" />
     <Compile Include="Tournament\TournamentViewModel.cs" />
     <Compile Include="Tournament\PutTournamentViewModel.cs" />
     <Compile Include="Player\PutPlayerViewModel.cs" />

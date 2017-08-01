@@ -65,5 +65,23 @@ namespace Otefa.UI.Api.Controllers
             }
         }
 
+        [HttpPut]
+        [Route("results/{matchID}")]
+        public HttpResponseMessage LoadResults([FromUri] int matchID, [FromBody] ResultsMatchViewModel ResultsMatchViewModel)
+        {
+            try
+            {
+               
+              //  MatchService.LoadResults(matchID, ResultsMatchViewModel.MatchTeamID, ResultsMatchViewModel.Goals, ResultsMatchViewModel.HasBonusPoint, ResultsMatchViewModel.FigureID, ResultsMatchViewModel.PlayersDetails);
+
+
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (ExceptionBase e)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, new HttpError(e.Message));
+            }
+        }
+
     }
 }

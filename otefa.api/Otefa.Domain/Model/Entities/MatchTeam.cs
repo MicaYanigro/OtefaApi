@@ -129,10 +129,10 @@ namespace Otefa.Domain.Model.Entities
         }
 
 
-        public void Update()
+        public void Update(int goals, bool hasBonusPoint)
         {
-
-            throw new NotImplementedException();
+            this.goals = goals;
+            this.hasBonusPoint = hasBonusPoint;
         }
 
     }
