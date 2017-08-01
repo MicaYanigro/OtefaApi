@@ -4,6 +4,7 @@ using Otefa.Domain.Model.Repositories;
 using Otefa.Infrastructure.IoC;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 
 namespace Otefa.Domain.Model.Services
 {
@@ -24,6 +25,10 @@ namespace Otefa.Domain.Model.Services
 
         [Injectable]
         public IPlayerDetailsFactory PlayerDetailsFactory { get; set; }
+
+        [Injectable]
+        public IPlayerRepository PlayerRepository { get; set; }
+
 
 
         public Match Create(int headquarterID, DateTime date, IEnumerable<int> teamsID)
@@ -52,21 +57,31 @@ namespace Otefa.Domain.Model.Services
             var match = MatchRepository.GetById(matchID);
 
             var headquarter = HeadquarterRepository.GetById(headquarterID);
-            
+
             match.Update(headquarter, date);
 
             MatchRepository.Update(match);
             MatchRepository.Context.Commit();
         }
+        
 
-        public void LoadResults(int matchTeamID, int goals, bool hasBonusPoint)
+        public void LoadResults(int matchID, int matchTeamID, int goals, bool hasBonusPoint, int figureID, IEnumerable<ExpandoObject> playersDetails)
         {
-            var matchTeam = MatchTeamRepository.GetById(matchTeamID);
+            var match = MatchRepository.GetById(matchID);
 
-            matchTeam.Update(goals, hasBonusPoint);
+            var figure = PlayerRepository.GetById(figureID);
+            var playerDetailsList = new List<PlayerDetails>();
 
-            MatchTeamRepository.Update(matchTeam);
-            MatchTeamRepository.Context.Commit();
+            foreach (dynamic playerDetail in playersDetails)
+            {
+                var playerDetailEntity = PlayerDetailsFactory.Create(playerDetail.PlayerID, playerDetail.Goals, playerDetail.Played, playerDetail.Card, playerDetail.Observation);
+                playerDetailsList.Add(playerDetailEntity);
+            }
+
+            match.UpdateMatchTeam(matchTeamID, goals, hasBonusPoint, figure, playerDetailsList);
+
+            MatchRepository.Update(match);
+            MatchRepository.Context.Commit();
         }
 
 

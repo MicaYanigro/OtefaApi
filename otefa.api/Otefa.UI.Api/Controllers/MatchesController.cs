@@ -2,8 +2,10 @@
 using Otefa.Domain.Model.Exceptions;
 using Otefa.Domain.Model.Services;
 using Otefa.Infrastructure.IoC;
+using Otefa.UI.Api.ViewModel.Player;
 using Otefa.UI.Api.ViewModel.Team;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -71,8 +73,9 @@ namespace Otefa.UI.Api.Controllers
         {
             try
             {
-               
-              //  MatchService.LoadResults(matchID, ResultsMatchViewModel.MatchTeamID, ResultsMatchViewModel.Goals, ResultsMatchViewModel.HasBonusPoint, ResultsMatchViewModel.FigureID, ResultsMatchViewModel.PlayersDetails);
+
+                var playersDetails = ConvertPlayerDetailsViewModelCollectionToDynamicCollection(ResultsMatchViewModel.PlayersDetails);
+                MatchService.LoadResults(matchID, ResultsMatchViewModel.MatchTeamID, ResultsMatchViewModel.Goals, ResultsMatchViewModel.HasBonusPoint, ResultsMatchViewModel.FigureID, playersDetails);
 
 
                 return Request.CreateResponse(HttpStatusCode.OK);
@@ -81,6 +84,26 @@ namespace Otefa.UI.Api.Controllers
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest, new HttpError(e.Message));
             }
+
+      
+        }
+
+        public IEnumerable<ExpandoObject> ConvertPlayerDetailsViewModelCollectionToDynamicCollection(IEnumerable<PlayersDetailsViewModel> playersDetails)
+        {
+            var items = new List<ExpandoObject>();
+            foreach (var playerDetails in playersDetails)
+            {
+                dynamic item = new ExpandoObject();
+
+                item.PlayerID = playerDetails.PlayerID;
+                item.Goals = playerDetails.Goals;
+                item.Played = playerDetails.Played;
+                item.Card = playerDetails.Card;
+                item.Observation = playerDetails.Observation;
+             
+                items.Add(item);
+            }
+            return items;
         }
 
     }

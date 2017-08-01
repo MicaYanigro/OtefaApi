@@ -1,4 +1,5 @@
 ﻿using Otefa.Domain.Model.Exceptions;
+using Otefa.Domain.Model.Repositories;
 using Otefa.Domain.Model.Services;
 using Otefa.Infrastructure.IoC;
 using System;
@@ -70,7 +71,8 @@ namespace Otefa.Domain.Model.Entities
             this.headquarter = headquarter;
             this.date = date;
         }
-        
+
+     
         public void CalculateFinalPoints()
         {
             var team1 = matchTeamList.OrderByDescending(x => x.Goals).First();
@@ -94,7 +96,12 @@ namespace Otefa.Domain.Model.Entities
             
         }
 
-
+        public void UpdateMatchTeam(int matchTeamID, int goals, bool hasBonusPoint, Player figure, List<PlayerDetails> playerDetailsList)
+        {
+            var matchTeam = Container.Current.Resolve<IMatchTeamRepository>().GetById(matchTeamID);
+            matchTeam.Update(goals, hasBonusPoint, figure, playerDetailsList);
+            CalculateFinalPoints();
+        }
     }
 
     public class MatchMetadata

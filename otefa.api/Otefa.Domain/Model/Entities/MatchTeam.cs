@@ -129,10 +129,17 @@ namespace Otefa.Domain.Model.Entities
         }
 
 
-        public void Update(int goals, bool hasBonusPoint)
+        public void Update(int goals, bool hasBonusPoint, Player figure, IEnumerable<PlayerDetails> playerDetailsList)
         {
             this.goals = goals;
             this.hasBonusPoint = hasBonusPoint;
+            this.figure = figure;
+
+            this.playersDetails.Clear();
+            foreach (var playerDetail in playerDetailsList)
+            {
+                playersDetails.Add(playerDetail);
+            }
         }
 
     }
