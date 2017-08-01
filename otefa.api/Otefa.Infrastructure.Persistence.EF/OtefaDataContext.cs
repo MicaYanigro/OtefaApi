@@ -36,6 +36,7 @@ namespace Otefa.Infrastructure.Persistence
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<TeamPlayers>().ToTable("TournamentTeamPlayers");
 
             modelBuilder.Entity<Tournament>()
             .HasMany(m => m.TeamPlayersList);
@@ -47,6 +48,11 @@ namespace Otefa.Infrastructure.Persistence
             modelBuilder.Entity<TeamPlayers>()
             .HasMany(m => m.PlayersList)
             .WithMany();
+
+            modelBuilder.Entity<Team>()
+            .HasMany(m => m.PlayersList)
+            .WithMany()
+            .Map(m => m.ToTable("TeamPlayers"));
 
 
         }
