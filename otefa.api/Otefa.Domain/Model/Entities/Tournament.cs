@@ -33,7 +33,7 @@ namespace Otefa.Domain.Model.Entities
 
             matchesList = new Collection<Match>();
             tournamentDateList = new Collection<TournamentDate>();
-            teamPlayersList = new Collection<TournamentTeamPlayers>();
+            teamPlayersList = new Collection<TeamPlayers>();
             headquartersList = new Collection<Headquarter>();
         }
 
@@ -158,12 +158,12 @@ namespace Otefa.Domain.Model.Entities
             this.tournamentDateList.Add(tournamentDate);
         }
 
-        public void AddTeamPlayers(TournamentTeamPlayers teamPlayers)
+        public void AddTeamPlayers(TeamPlayers teamPlayers)
         {
             this.teamPlayersList.Add(teamPlayers);
         }
 
-        public void Update(string name, TournamentFormat tournamentFormat, ClasificationFormat clasificationFormat, string rules, string prices, IEnumerable<Headquarter> headquarters, IEnumerable<TournamentDate> tournamentDates, IEnumerable<TournamentTeamPlayers> teamPlayers)
+        public void Update(string name, TournamentFormat tournamentFormat, ClasificationFormat clasificationFormat, string rules, string prices, IEnumerable<Headquarter> headquarters, IEnumerable<TournamentDate> tournamentDates, IEnumerable<TeamPlayers> teamPlayers)
         {
             ThrowExceptionIfNullorEmptyName(name);
 
@@ -281,8 +281,8 @@ namespace Otefa.Domain.Model.Entities
         }
 
         [Obsolete]
-        public virtual ICollection<TournamentTeamPlayers> TeamPlayersList { get; set; }
-        protected ICollection<TournamentTeamPlayers> teamPlayersList
+        public virtual ICollection<TeamPlayers> TeamPlayersList { get; set; }
+        protected ICollection<TeamPlayers> teamPlayersList
         {
 #pragma warning disable 612, 618
             get

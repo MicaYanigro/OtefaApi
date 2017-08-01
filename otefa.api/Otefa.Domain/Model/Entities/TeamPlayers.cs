@@ -9,12 +9,12 @@ using System.ComponentModel.DataAnnotations;
 namespace Otefa.Domain.Model.Entities
 {
 
-    public partial class TournamentTeamPlayers : Entity
+    public partial class TeamPlayers : Entity
     {
 
         private Team team;
 
-        public TournamentTeamPlayers(Team team)
+        public TeamPlayers(Team team)
         {
             Team = team;
 
@@ -48,15 +48,15 @@ namespace Otefa.Domain.Model.Entities
 
     }
 
-    public class TournamentTeamPlayersMetadata
+    public class TeamPlayersMetadata
     {
      
     }
 
-    [MetadataType(typeof(TournamentTeamPlayersMetadata))]
-    public partial class TournamentTeamPlayers
+    [MetadataType(typeof(TeamPlayersMetadata))]
+    public partial class TeamPlayers
     {
-        protected TournamentTeamPlayers()
+        protected TeamPlayers()
         { }
 
 

@@ -32,19 +32,22 @@ namespace Otefa.Infrastructure.Persistence
 
         public DbSet<TournamentDate> TournamentDates { get; set; }
 
-        public DbSet<TournamentTeamPlayers> TournamentTeamPlayers { get; set; }
+        public DbSet<TeamPlayers> TeamPlayers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
             modelBuilder.Entity<Tournament>()
-            .HasMany(m => m.TeamPlayersList)
-            .WithMany()
-            .Map(m => m.ToTable("TournamentTeamsPlayers"));
+            .HasMany(m => m.TeamPlayersList);
 
             modelBuilder.Entity<Tournament>()
             .HasMany(m => m.HeadquartersList)
             .WithMany();
+
+            modelBuilder.Entity<TeamPlayers>()
+            .HasMany(m => m.PlayersList)
+            .WithMany();
+
 
         }
 

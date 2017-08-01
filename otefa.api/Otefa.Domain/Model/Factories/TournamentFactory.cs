@@ -33,7 +33,7 @@ namespace Otefa.Domain.Model.Factories
 
                 var team = Container.Current.Resolve<ITeamRepository>().GetById(teamID);
 
-                var teamPlayers = new TournamentTeamPlayers(team);
+                var teamPlayers = new TeamPlayers(team);
 
                 foreach (var playerID in players)
                 {

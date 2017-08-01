@@ -49,7 +49,7 @@ namespace Otefa.Domain.Model.Services
             var Tournament = TournamentRepository.GetById(tournamentID);
 
             var headquarterList = new List<Headquarter> { };
-            var ttpList = new List<TournamentTeamPlayers>();
+            var ttpList = new List<TeamPlayers>();
 
             foreach (var headquarterID in headquarters)
             {
@@ -74,7 +74,7 @@ namespace Otefa.Domain.Model.Services
 
                 var team = Container.Current.Resolve<ITeamRepository>().GetById(teamID);
 
-                var teamPlayers = new TournamentTeamPlayers(team);
+                var teamPlayers = new TeamPlayers(team);
 
                 foreach (var playerID in players)
                 {
