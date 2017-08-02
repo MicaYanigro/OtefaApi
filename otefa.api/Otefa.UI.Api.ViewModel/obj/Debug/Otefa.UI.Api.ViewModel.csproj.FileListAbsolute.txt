@@ -7,12 +7,12 @@ C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.UI.Api.ViewModel\bin\Debug\S
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.UI.Api.ViewModel\obj\Debug\Otefa.UI.Api.ViewModel.csprojResolveAssemblyReference.cache
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.UI.Api.ViewModel\obj\Debug\Sai.UI.Api.ViewModel.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.UI.Api.ViewModel\obj\Debug\Sai.UI.Api.ViewModel.pdb
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api.ViewModel\bin\Debug\Sai.UI.Api.ViewModel.dll
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api.ViewModel\bin\Debug\Sai.UI.Api.ViewModel.pdb
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api.ViewModel\bin\Debug\Otefa.UI.Api.ViewModel.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api.ViewModel\bin\Debug\Otefa.UI.Api.ViewModel.pdb
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api.ViewModel\bin\Debug\Otefa.Domain.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api.ViewModel\bin\Debug\Otefa.Infrastructure.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api.ViewModel\bin\Debug\Otefa.Domain.pdb
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api.ViewModel\bin\Debug\Otefa.Infrastructure.pdb
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api.ViewModel\obj\Debug\Otefa.UI.Api.ViewModel.csprojResolveAssemblyReference.cache
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api.ViewModel\obj\Debug\Sai.UI.Api.ViewModel.dll
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api.ViewModel\obj\Debug\Sai.UI.Api.ViewModel.pdb
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api.ViewModel\obj\Debug\Otefa.UI.Api.ViewModel.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api.ViewModel\obj\Debug\Otefa.UI.Api.ViewModel.pdb

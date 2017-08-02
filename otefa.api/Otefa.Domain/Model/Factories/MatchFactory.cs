@@ -17,7 +17,7 @@ namespace Otefa.Domain.Model.Factories
             foreach (var teamID in teamsID)
             {
                 var team = Container.Current.Resolve<ITeamRepository>().GetById(teamID);
-                var matchTeam = new MatchTeam(team, null, null, null);
+                var matchTeam = new MatchTeam(team, null, null);
                 Match.AddMatchTeam(matchTeam);
             }
 
