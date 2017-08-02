@@ -17,12 +17,12 @@ namespace Otefa.Domain.Model.Entities
 
         private Headquarter headquarter;
         private DateTime date;
+        private Player figure;
 
         public Match(Headquarter headquarter, DateTime date)
         {
             Headquarter = headquarter;
             Date = date;
-
             matchTeamList = new Collection<MatchTeam>();
         }
 
@@ -56,6 +56,22 @@ namespace Otefa.Domain.Model.Entities
 
         }
 
+
+        public virtual Player Figure
+        {
+
+            get
+            {
+                return figure;
+            }
+
+            protected set
+            {
+                figure = value;
+            }
+
+        }
+
         public IEnumerable<MatchTeam> GetTeams()
         {
             return matchTeamList;
@@ -72,7 +88,7 @@ namespace Otefa.Domain.Model.Entities
             this.date = date;
         }
 
-     
+
         public void CalculateFinalPoints()
         {
             var team1 = matchTeamList.OrderByDescending(x => x.Goals).First();
@@ -83,7 +99,7 @@ namespace Otefa.Domain.Model.Entities
                 team1.SetFinalPoints(MatchResult.Win);
                 team2.SetFinalPoints(MatchResult.Loose);
             }
-            else if(team1.Goals < team2.Goals)
+            else if (team1.Goals < team2.Goals)
             {
                 team1.SetFinalPoints(MatchResult.Loose);
                 team2.SetFinalPoints(MatchResult.Win);
@@ -93,13 +109,16 @@ namespace Otefa.Domain.Model.Entities
                 team1.SetFinalPoints(MatchResult.Draw);
                 team2.SetFinalPoints(MatchResult.Draw);
             }
-            
+
         }
 
         public void UpdateMatchTeam(int matchTeamID, int goals, bool hasBonusPoint, Player figure, List<PlayerDetails> playerDetailsList)
         {
+            if (figure != null)
+                Figure = figure;
+
             var matchTeam = Container.Current.Resolve<IMatchTeamRepository>().GetById(matchTeamID);
-            matchTeam.Update(goals, hasBonusPoint, figure, playerDetailsList);
+            matchTeam.Update(goals, hasBonusPoint, playerDetailsList);
             CalculateFinalPoints();
         }
     }

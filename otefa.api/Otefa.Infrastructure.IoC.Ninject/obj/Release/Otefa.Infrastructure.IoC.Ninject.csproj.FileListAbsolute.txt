@@ -1,5 +1,3 @@
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.IoC.Ninject\bin\Release\Sai.Infrastructure.IoC.Ninject.dll
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.IoC.Ninject\bin\Release\Sai.Infrastructure.IoC.Ninject.pdb
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.IoC.Ninject\bin\Release\Ninject.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.IoC.Ninject\bin\Release\Ninject.Web.Common.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.IoC.Ninject\bin\Release\Otefa.Infrastructure.dll
@@ -7,5 +5,7 @@ C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.IoC.Ninje
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.IoC.Ninject\bin\Release\Ninject.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.IoC.Ninject\bin\Release\Ninject.Web.Common.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.IoC.Ninject\obj\Release\Otefa.Infrastructure.IoC.Ninject.csprojResolveAssemblyReference.cache
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.IoC.Ninject\obj\Release\Sai.Infrastructure.IoC.Ninject.dll
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.IoC.Ninject\obj\Release\Sai.Infrastructure.IoC.Ninject.pdb
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.IoC.Ninject\bin\Release\Otefa.Infrastructure.IoC.Ninject.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.IoC.Ninject\bin\Release\Otefa.Infrastructure.IoC.Ninject.pdb
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.IoC.Ninject\obj\Release\Otefa.Infrastructure.IoC.Ninject.dll
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure.IoC.Ninject\obj\Release\Otefa.Infrastructure.IoC.Ninject.pdb

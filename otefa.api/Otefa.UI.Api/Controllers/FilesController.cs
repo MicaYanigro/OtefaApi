@@ -37,7 +37,7 @@ namespace UI.Api.Controllers
                     return BadRequest("Request is null.");
 
                 DirectoryInfo folder = null;
-                var path = HttpRuntime.AppDomainAppPath + RelativePathUploads + request.FolderPath;
+                var path = HttpRuntime.AppDomainAppVirtualPath + RelativePathUploads + request.FolderPath;
                 var files = new List<FileViewModel>();
 
                 if (Directory.Exists(path))
@@ -63,7 +63,8 @@ namespace UI.Api.Controllers
             catch (Exception ex)
             {
                 logger.Error(ex);
-                return BadRequest(HttpStatusCode.InternalServerError.ToString());
+                return BadRequest(ex.Message + " ---- " + HttpRuntime.AppDomainAppPath);
+            //    return BadRequest(HttpStatusCode.InternalServerError.ToString());
             }
         }
 

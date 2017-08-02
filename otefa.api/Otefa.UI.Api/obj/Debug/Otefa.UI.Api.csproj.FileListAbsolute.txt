@@ -144,19 +144,6 @@ C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.UI.Api\bin\System.Web.Http.O
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.UI.Api\bin\RazorEngine.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.UI.Api\obj\Debug\Otefa.UI.Api.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\sai.api\Sai.UI.Api\obj\Debug\Otefa.UI.Api.pdb
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\obj\Debug\Otefa.UI.Api.csprojResolveAssemblyReference.cache
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\roslyn\csc.exe
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\roslyn\vbc.exe
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\roslyn\VBCSCompiler.exe
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\NLog.config
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.UI.Api.dll.config
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Otefa.UI.Api.dll
@@ -174,7 +161,6 @@ C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.App
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.AspNet.Identity.Core.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
@@ -247,7 +233,6 @@ C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.AI.
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.AI.Web.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.ApplicationInsights.xml
-C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.Extensions.Caching.Abstractions.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.Extensions.Caching.Memory.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
@@ -288,5 +273,6 @@ C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.Owi
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\System.Web.Http.Owin.xml
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\bin\RazorEngine.xml
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\obj\Debug\Otefa.UI.Api.csprojResolveAssemblyReference.cache
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\obj\Debug\Otefa.UI.Api.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.UI.Api\obj\Debug\Otefa.UI.Api.pdb

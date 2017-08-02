@@ -74,7 +74,7 @@ namespace Otefa.Domain.Model.Services
 
             foreach (dynamic playerDetail in playersDetails)
             {
-                var playerDetailEntity = PlayerDetailsFactory.Create(playerDetail.PlayerID, playerDetail.Goals, playerDetail.Played, playerDetail.Card, playerDetail.Observation);
+                var playerDetailEntity = PlayerDetailsFactory.Create(playerDetail.PlayerID, playerDetail.Goals, playerDetail.Played, (Card)playerDetail.Card, playerDetail.Observation);
                 playerDetailsList.Add(playerDetailEntity);
             }
 

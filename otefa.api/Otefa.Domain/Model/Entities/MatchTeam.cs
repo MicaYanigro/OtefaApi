@@ -16,14 +16,12 @@ namespace Otefa.Domain.Model.Entities
         private int? goals;
         private bool? hasBonusPoint;
         private int? finalPoints;
-        private Player figure;
 
-        public MatchTeam(Team team, int? goals, bool? hasBonusPoint, Player figure)
+        public MatchTeam(Team team, int? goals, bool? hasBonusPoint)
         {
             Team = team;
             Goals = goals;
             HasBonusPoint = hasBonusPoint;
-            Figure = figure;
 
             playersDetails = new Collection<PlayerDetails>();
         }
@@ -88,20 +86,6 @@ namespace Otefa.Domain.Model.Entities
 
         }
 
-        public virtual Player Figure
-        {
-
-            get
-            {
-                return figure;
-            }
-
-            protected set
-            {
-                figure = value;
-            }
-
-        }
 
         public void SetFinalPoints(MatchResult matchResult)
         {
@@ -129,11 +113,10 @@ namespace Otefa.Domain.Model.Entities
         }
 
 
-        public void Update(int goals, bool hasBonusPoint, Player figure, IEnumerable<PlayerDetails> playerDetailsList)
+        public void Update(int goals, bool hasBonusPoint, IEnumerable<PlayerDetails> playerDetailsList)
         {
             this.goals = goals;
             this.hasBonusPoint = hasBonusPoint;
-            this.figure = figure;
 
             this.playersDetails.Clear();
             foreach (var playerDetail in playerDetailsList)

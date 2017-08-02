@@ -7,8 +7,8 @@
     <ProjectGuid>{D645024D-8F98-46F4-A591-737B28211444}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sai.UI.Api.ViewModel</RootNamespace>
-    <AssemblyName>Sai.UI.Api.ViewModel</AssemblyName>
+    <RootNamespace>Otefa.UI.Api.ViewModel</RootNamespace>
+    <AssemblyName>Otefa.UI.Api.ViewModel</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

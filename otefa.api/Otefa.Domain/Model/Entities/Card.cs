@@ -2,7 +2,8 @@
 {
     public enum Card
     {
-       Yellow = 1,
+       None = 0,
+       Yellow,
        Red
     }
 }
