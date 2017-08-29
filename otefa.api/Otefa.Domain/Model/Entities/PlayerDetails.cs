@@ -4,6 +4,7 @@ using Otefa.Infrastructure.IoC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Otefa.Domain.Model.Entities
 {
@@ -17,13 +18,14 @@ namespace Otefa.Domain.Model.Entities
         private Card? card;
         private string observation;
 
-        public PlayerDetails(Player player, int? goals, bool played, Card? card, string observation)
+        public PlayerDetails(MatchTeam matchTeam, Player player, int? goals, bool played, Card? card, string observation)
         {
             Player = player;
             Goals = goals;
             Played = played;
             Card = card;
             Observation = observation;
+            this.matchTeam = matchTeam;
         }
 
         public virtual Player Player
@@ -112,7 +114,24 @@ namespace Otefa.Domain.Model.Entities
     {
         protected PlayerDetails()
         { }
-        
+
+        [Obsolete]
+        public virtual MatchTeam MatchTeam { get; set; }
+
+        [NotMapped]
+        private MatchTeam matchTeam
+        {
+#pragma warning disable 612, 618
+            get
+            {
+                return MatchTeam;
+            }
+            set
+            {
+                MatchTeam = value;
+            }
+#pragma warning restore 612, 618
+        }
     }
 
 }

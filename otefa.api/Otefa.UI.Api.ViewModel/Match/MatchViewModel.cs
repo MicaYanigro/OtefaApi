@@ -6,6 +6,7 @@ namespace Otefa.UI.Api.ViewModel.Team
 {
     public class MatchViewModel
     {
+        public int Tournament { get; set; }
 
         public int Headquarter { get; set; }
 

@@ -12,6 +12,8 @@ namespace Otefa.UI.Api.ViewModel.Team
 
         public int Goals { get; set; }
 
+        public int AgainstGoals { get; set; }
+
         public bool HasBonusPoint { get; set; }
 
         public int FigureID { get; set; }

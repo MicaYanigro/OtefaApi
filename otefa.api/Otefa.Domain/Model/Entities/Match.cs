@@ -98,6 +98,7 @@ namespace Otefa.Domain.Model.Entities
             {
                 team1.SetFinalPoints(MatchResult.Win);
                 team2.SetFinalPoints(MatchResult.Loose);
+                
             }
             else if (team1.Goals < team2.Goals)
             {
@@ -112,13 +113,13 @@ namespace Otefa.Domain.Model.Entities
 
         }
 
-        public void UpdateMatchTeam(int matchTeamID, int goals, bool hasBonusPoint, Player figure, List<PlayerDetails> playerDetailsList)
+        public void UpdateMatchTeam(int matchTeamID, int goals, int againstGoals, bool hasBonusPoint, Player figure, List<PlayerDetails> playerDetailsList)
         {
             if (figure != null)
                 Figure = figure;
 
             var matchTeam = Container.Current.Resolve<IMatchTeamRepository>().GetById(matchTeamID);
-            matchTeam.Update(goals, hasBonusPoint, playerDetailsList);
+            matchTeam.Update(goals, againstGoals, hasBonusPoint, playerDetailsList);
             CalculateFinalPoints();
         }
     }

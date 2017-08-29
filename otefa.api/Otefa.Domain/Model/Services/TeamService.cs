@@ -73,6 +73,7 @@ namespace Otefa.Domain.Model.Services
             return TeamRepository.All();
 
         }
+           
 
     }
 }

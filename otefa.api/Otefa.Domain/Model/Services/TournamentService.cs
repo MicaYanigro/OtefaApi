@@ -4,6 +4,7 @@ using Otefa.Domain.Model.Repositories;
 using Otefa.Infrastructure.IoC;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 
 namespace Otefa.Domain.Model.Services
 {
@@ -18,6 +19,11 @@ namespace Otefa.Domain.Model.Services
 
         [Injectable]
         public IHeadquarterRepository HeadquarterRepository { get; set; }
+
+        [Injectable]
+        public IMatchTeamRepository MatchTeamRepository { get; set; }
+
+
 
         public Tournament GetByID(int id)
         {
@@ -68,7 +74,7 @@ namespace Otefa.Domain.Model.Services
 
             foreach (var dictionary in teamsPlayers)
             {
-              
+
                 var teamID = dictionary.Key;
                 var players = dictionary.Value;
 
@@ -93,6 +99,13 @@ namespace Otefa.Domain.Model.Services
         public IEnumerable<Tournament> GetAll()
         {
             return TournamentRepository.All();
+
+        }
+
+        public IEnumerable<ExpandoObject> GetTournamentPositions(int tournamentID)
+        {
+
+            return MatchTeamRepository.GetTournamentPositions(tournamentID);
 
         }
 

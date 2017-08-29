@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Otefa.Domain.Model.Entities
 {
@@ -14,14 +15,20 @@ namespace Otefa.Domain.Model.Entities
 
         private Team team;
         private int? goals;
+        private int? againstGoals;
         private bool? hasBonusPoint;
         private int? finalPoints;
+        private MatchResult result;
 
-        public MatchTeam(Team team, int? goals, bool? hasBonusPoint)
+        public MatchTeam(Tournament tournament, Team team, int? goals, int? againstGoals, bool? hasBonusPoint)
         {
+            this.tournament = tournament;
+
             Team = team;
             Goals = goals;
+            AgainstGoals = againstGoals;
             HasBonusPoint = hasBonusPoint;
+
 
             playersDetails = new Collection<PlayerDetails>();
         }
@@ -56,6 +63,21 @@ namespace Otefa.Domain.Model.Entities
 
         }
 
+        public int? AgainstGoals
+        {
+
+            get
+            {
+                return againstGoals;
+            }
+
+            protected set
+            {
+                againstGoals = value;
+            }
+
+        }
+
         public bool? HasBonusPoint
         {
 
@@ -86,6 +108,21 @@ namespace Otefa.Domain.Model.Entities
 
         }
 
+        public MatchResult Result
+        {
+
+            get
+            {
+                return result;
+            }
+
+            protected set
+            {
+                result = value;
+            }
+
+        }
+
 
         public void SetFinalPoints(MatchResult matchResult)
         {
@@ -103,8 +140,9 @@ namespace Otefa.Domain.Model.Entities
 
             }
             if (HasBonusPoint == true)
-                this.FinalPoints = +1;
+                this.FinalPoints = this.FinalPoints + 1;
 
+            this.result = matchResult;
         }
 
         public void AddPlayerDetails(PlayerDetails playerDetails)
@@ -113,9 +151,10 @@ namespace Otefa.Domain.Model.Entities
         }
 
 
-        public void Update(int goals, bool hasBonusPoint, IEnumerable<PlayerDetails> playerDetailsList)
+        public void Update(int goals, int againstGoals, bool hasBonusPoint, IEnumerable<PlayerDetails> playerDetailsList)
         {
             this.goals = goals;
+            this.againstGoals = againstGoals;
             this.hasBonusPoint = hasBonusPoint;
 
             this.playersDetails.Clear();
@@ -148,6 +187,27 @@ namespace Otefa.Domain.Model.Entities
             }
 #pragma warning restore 612, 618
         }
+
+        [Obsolete]
+        public virtual Tournament Tournament { get; set; }
+
+        [NotMapped]
+        private Tournament tournament
+        {
+#pragma warning disable 612, 618
+            get
+            {
+                return Tournament;
+            }
+            set
+            {
+                Tournament = value;
+            }
+#pragma warning restore 612, 618
+        }
+
+
+
 
     }
 

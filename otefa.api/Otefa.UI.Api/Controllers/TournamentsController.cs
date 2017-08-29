@@ -4,6 +4,7 @@ using Otefa.Domain.Model.Services;
 using Otefa.Infrastructure.IoC;
 using Otefa.UI.Api.ViewModel.Team;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -63,6 +64,12 @@ namespace Otefa.UI.Api.Controllers
             return Tournamentservice.GetAll();
         }
 
+        [Route("{tournamentID}/positions")]
+        public IEnumerable<ExpandoObject> GetPositions([FromUri] int tournamentID)
+        {
+            return Tournamentservice.GetTournamentPositions(tournamentID);
+        }
+        
         [HttpPut]
         [Route("{tournamentID}")]
         public HttpResponseMessage Put([FromUri] int tournamentID, [FromBody]PutTournamentViewModel PutTournamentViewModel)

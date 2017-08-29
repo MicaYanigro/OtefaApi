@@ -1,6 +1,7 @@
 ﻿using Otefa.Domain.Model.Entities;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 
 namespace Otefa.Domain.Model.Services
 {
@@ -15,5 +16,7 @@ namespace Otefa.Domain.Model.Services
         IEnumerable<Tournament> GetAll();
 
         Tournament GetByID(int id);
+
+        IEnumerable<ExpandoObject> GetTournamentPositions(int tournamentID);
     }
 }

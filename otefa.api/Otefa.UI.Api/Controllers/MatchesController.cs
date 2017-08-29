@@ -34,7 +34,7 @@ namespace Otefa.UI.Api.Controllers
         {
             try
             {
-                var Match = MatchService.Create(MatchViewModel.Headquarter, MatchViewModel.Date, MatchViewModel.Teams);
+                var Match = MatchService.Create(MatchViewModel.Tournament, MatchViewModel.Headquarter, MatchViewModel.Date, MatchViewModel.Teams);
 
                 return Request.CreateResponse(HttpStatusCode.Created, Match.GetId());
             }
@@ -75,7 +75,7 @@ namespace Otefa.UI.Api.Controllers
             {
 
                 var playersDetails = ConvertPlayerDetailsViewModelCollectionToDynamicCollection(ResultsMatchViewModel.PlayersDetails);
-                MatchService.LoadResults(matchID, ResultsMatchViewModel.MatchTeamID, ResultsMatchViewModel.Goals, ResultsMatchViewModel.HasBonusPoint, ResultsMatchViewModel.FigureID, playersDetails);
+                MatchService.LoadResults(matchID, ResultsMatchViewModel.MatchTeamID, ResultsMatchViewModel.Goals, ResultsMatchViewModel.AgainstGoals, ResultsMatchViewModel.HasBonusPoint, ResultsMatchViewModel.FigureID, playersDetails);
 
 
                 return Request.CreateResponse(HttpStatusCode.OK);

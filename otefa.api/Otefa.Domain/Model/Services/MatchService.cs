@@ -31,11 +31,11 @@ namespace Otefa.Domain.Model.Services
 
 
 
-        public Match Create(int headquarterID, DateTime date, IEnumerable<int> teamsID)
+        public Match Create(int tournamentID, int headquarterID, DateTime date, IEnumerable<int> teamsID)
         {
             {
                 var headquarter = HeadquarterRepository.GetById(headquarterID);
-                var Match = MatchFactory.Create(headquarter, date, teamsID);
+                var Match = MatchFactory.Create(tournamentID, headquarter, date, teamsID);
 
                 MatchRepository.Add(Match);
                 MatchRepository.Context.Commit();
@@ -47,7 +47,7 @@ namespace Otefa.Domain.Model.Services
         public void AddPlayerDetails(int matchTeamID, int playerID, int? goals, bool played, Card? card, string observation)
         {
             var matchTeam = MatchTeamRepository.GetById(matchTeamID);
-            var playerDetails = PlayerDetailsFactory.Create(playerID, goals, played, card, observation);
+            var playerDetails = PlayerDetailsFactory.Create(matchTeam, playerID, goals, played, card, observation);
             matchTeam.AddPlayerDetails(playerDetails);
         }
 
@@ -65,20 +65,20 @@ namespace Otefa.Domain.Model.Services
         }
         
 
-        public void LoadResults(int matchID, int matchTeamID, int goals, bool hasBonusPoint, int figureID, IEnumerable<ExpandoObject> playersDetails)
+        public void LoadResults(int matchID, int matchTeamID, int goals, int againstGoals, bool hasBonusPoint, int figureID, IEnumerable<ExpandoObject> playersDetails)
         {
             var match = MatchRepository.GetById(matchID);
-
+            var matchTeam = MatchTeamRepository.GetById(matchTeamID); 
             var figure = PlayerRepository.GetById(figureID);
             var playerDetailsList = new List<PlayerDetails>();
 
             foreach (dynamic playerDetail in playersDetails)
             {
-                var playerDetailEntity = PlayerDetailsFactory.Create(playerDetail.PlayerID, playerDetail.Goals, playerDetail.Played, (Card)playerDetail.Card, playerDetail.Observation);
+                var playerDetailEntity = PlayerDetailsFactory.Create(matchTeam, playerDetail.PlayerID, playerDetail.Goals, playerDetail.Played, (Card)playerDetail.Card, playerDetail.Observation);
                 playerDetailsList.Add(playerDetailEntity);
             }
 
-            match.UpdateMatchTeam(matchTeamID, goals, hasBonusPoint, figure, playerDetailsList);
+            match.UpdateMatchTeam(matchTeamID, goals, againstGoals, hasBonusPoint, figure, playerDetailsList);
 
             MatchRepository.Update(match);
             MatchRepository.Context.Commit();

@@ -1,6 +1,7 @@
 ﻿using Otefa.Domain.Model.Entities;
 using Otefa.Domain.Model.Repositories;
 using Otefa.Infrastructure.Persistence;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Otefa.Infrastructure.Persistence
@@ -16,6 +17,6 @@ namespace Otefa.Infrastructure.Persistence
         {
             return GetDbSet().Where(x => x.Name.Equals(name)).SingleOrDefault();
         }
-
+        
     }
 }

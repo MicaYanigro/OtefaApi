@@ -4,6 +4,6 @@ namespace Otefa.Domain.Model.Factories
 {
     public interface IPlayerDetailsFactory
     {
-        PlayerDetails Create(int playerID, int? goals, bool played, Card? card, string observation);
+        PlayerDetails Create(MatchTeam matchTeam, int playerID, int? goals, bool played, Card? card, string observation);
     }
 }
