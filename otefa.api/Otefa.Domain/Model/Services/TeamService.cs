@@ -5,6 +5,7 @@ using Otefa.Domain.Model.Repositories;
 using Otefa.Infrastructure.IoC;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 
 namespace Otefa.Domain.Model.Services
 {
@@ -19,7 +20,11 @@ namespace Otefa.Domain.Model.Services
 
         [Injectable]
         public IPlayerRepository PlayerRepository { get; set; }
-        
+
+        [Injectable]
+        public IMatchTeamRepository MatchTeamRepository { get; set; }
+
+
 
         public Team FindTeamByName(string name)
         {
@@ -61,7 +66,7 @@ namespace Otefa.Domain.Model.Services
             team.Update(name,
                         teamDelegate,
                         shieldImage,
-                        teamImage, 
+                        teamImage,
                         players);
 
             TeamRepository.Update(team);
@@ -73,7 +78,13 @@ namespace Otefa.Domain.Model.Services
             return TeamRepository.All();
 
         }
-           
+
+        public IEnumerable<ExpandoObject> GetTeamStadistics(int teamID)
+        {
+
+            return MatchTeamRepository.GetTeamStadistics(teamID);
+
+        }
 
     }
 }

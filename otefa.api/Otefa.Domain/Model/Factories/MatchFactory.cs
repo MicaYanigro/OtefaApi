@@ -18,7 +18,7 @@ namespace Otefa.Domain.Model.Factories
             {
                 var team = Container.Current.Resolve<ITeamRepository>().GetById(teamID);
                 var tournament = Container.Current.Resolve<ITournamentRepository>().GetById(tournamentID);
-                var matchTeam = new MatchTeam(tournament, team, null, null, null);
+                var matchTeam = new MatchTeam(tournament, Match, team, null, null, null);
                 Match.AddMatchTeam(matchTeam);
             }
 

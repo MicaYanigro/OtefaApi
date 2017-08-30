@@ -108,6 +108,6 @@ namespace Otefa.Domain.Model.Services
             return MatchTeamRepository.GetTournamentPositions(tournamentID);
 
         }
-
+        
     }
 }

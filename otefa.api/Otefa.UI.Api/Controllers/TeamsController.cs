@@ -4,6 +4,7 @@ using Otefa.Domain.Model.Services;
 using Otefa.Infrastructure.IoC;
 using Otefa.UI.Api.ViewModel.Team;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -59,6 +60,12 @@ namespace Otefa.UI.Api.Controllers
         public IEnumerable<Team> Get()
         {
             return Teamservice.GetAll();
+        }
+
+        [Route("{teamID}/stadistics")]
+        public IEnumerable<ExpandoObject> GetStadistics([FromUri] int teamID)
+        {
+            return Teamservice.GetTeamStadistics(teamID);
         }
 
         [HttpPut]
