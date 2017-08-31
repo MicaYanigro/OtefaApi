@@ -18,5 +18,9 @@ namespace Otefa.Domain.Model.Services
         Tournament GetByID(int id);
 
         IEnumerable<ExpandoObject> GetTournamentPositions(int tournamentID);
+
+        void GenerateFixture(int tournamentID);
+
+        IEnumerable<Match> GetAllMatches(int tournamentID);
     }
 }

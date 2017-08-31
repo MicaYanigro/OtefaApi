@@ -28,6 +28,9 @@ namespace Otefa.UI.Api
             Container.Current.Register<IEmailSendingService, EmailSendingService>();
             Container.Current.Register<IEmailTemplateService, EmailTemplateService>();
             Container.Current.Register<ISmtpClientWrapper, SmtpClientWrapper>();
+            Container.Current.Register<IFixtureGenerator, FixtureGenerator>();
+
+
 
 
             // Factories

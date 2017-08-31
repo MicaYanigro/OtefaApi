@@ -41,6 +41,13 @@ namespace Otefa.UI.Api.Controllers
             return Tournamentservice.FindTournamentByName(name);
         }
 
+        [HttpGet]
+        [Route("{tournamentID}/matches")]
+        public IEnumerable<Match> GetMatches(int tournamentID)
+        {
+            return Tournamentservice.GetAllMatches(tournamentID);
+        }
+
         [HttpPost]
         [Route("")]
         public HttpResponseMessage Post(TournamentViewModel TournamentViewModel)
@@ -51,6 +58,22 @@ namespace Otefa.UI.Api.Controllers
                                                           TournamentViewModel.Rules, TournamentViewModel.Prices, TournamentViewModel.Headquarters, TournamentViewModel.Dates, TournamentViewModel.TeamsPlayers);
 
                 return Request.CreateResponse(HttpStatusCode.Created, Tournament.GetId());
+            }
+            catch (ExceptionBase e)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, new HttpError(e.Message));
+            }
+        }
+
+        [HttpPost]
+        [Route("{tournamentID}/fixture")]
+        public HttpResponseMessage GenerateFixture(int tournamentID)
+        {
+            try
+            {
+                Tournamentservice.GenerateFixture(tournamentID);
+
+                return Request.CreateResponse(HttpStatusCode.Created);
             }
             catch (ExceptionBase e)
             {
@@ -69,7 +92,7 @@ namespace Otefa.UI.Api.Controllers
         {
             return Tournamentservice.GetTournamentPositions(tournamentID);
         }
-        
+
         [HttpPut]
         [Route("{tournamentID}")]
         public HttpResponseMessage Put([FromUri] int tournamentID, [FromBody]PutTournamentViewModel PutTournamentViewModel)

@@ -50,6 +50,7 @@ namespace Otefa.UI.Api.Controllers
             return MatchService.GetAll();
         }
 
+     
         [HttpPut]
         [Route("{matchID}")]
         public HttpResponseMessage Put([FromUri] int matchID, [FromBody]PutMatchViewModel PutMatchViewModel)

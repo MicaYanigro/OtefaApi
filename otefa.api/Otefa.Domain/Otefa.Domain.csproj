@@ -111,6 +111,8 @@
     <Compile Include="Model\Repositories\IRepository.cs" />
     <Compile Include="Model\Repositories\IPlayerRepository.cs" />
     <Compile Include="Model\Repositories\IRepositoryContext.cs" />
+    <Compile Include="Model\Services\FixtureGenerator.cs" />
+    <Compile Include="Model\Services\IFixtureGenerator.cs" />
     <Compile Include="Model\Services\IMatchService.cs" />
     <Compile Include="Model\Services\ITournamentService.cs" />
     <Compile Include="Model\Services\MatchService.cs" />

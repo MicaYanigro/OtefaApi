@@ -153,6 +153,11 @@ namespace Otefa.Domain.Model.Entities
             return tournamentDateList;
         }
 
+        public IEnumerable<TeamPlayers> GetTeamPlayers()
+        {
+            return teamPlayersList;
+        }
+
         public void AddTournamentDate(TournamentDate tournamentDate)
         {
             this.tournamentDateList.Add(tournamentDate);
@@ -161,6 +166,16 @@ namespace Otefa.Domain.Model.Entities
         public void AddTeamPlayers(TeamPlayers teamPlayers)
         {
             this.teamPlayersList.Add(teamPlayers);
+        }
+
+        public IEnumerable<Match> GetMatches()
+        {
+            return matchesList;
+        }
+
+        public void AddMatch(Match match)
+        {
+            this.matchesList.Add(match);
         }
 
         public void Update(string name, TournamentFormat tournamentFormat, ClasificationFormat clasificationFormat, string rules, string prices, IEnumerable<Headquarter> headquarters, IEnumerable<TournamentDate> tournamentDates, IEnumerable<TeamPlayers> teamPlayers)

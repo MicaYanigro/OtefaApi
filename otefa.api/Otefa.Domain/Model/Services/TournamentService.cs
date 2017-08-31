@@ -5,6 +5,7 @@ using Otefa.Infrastructure.IoC;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
+using System.Linq;
 
 namespace Otefa.Domain.Model.Services
 {
@@ -23,6 +24,13 @@ namespace Otefa.Domain.Model.Services
         [Injectable]
         public IMatchTeamRepository MatchTeamRepository { get; set; }
 
+        [Injectable]
+        public IFixtureGenerator FixtureGenerator { get; set; }
+
+        [Injectable]
+        public IMatchRepository MatchRepository { get; set; }
+
+
 
 
         public Tournament GetByID(int id)
@@ -37,6 +45,12 @@ namespace Otefa.Domain.Model.Services
 
         }
 
+        public IEnumerable<Match> GetAllMatches(int tournamentID)
+        {
+            var tournament = GetByID(tournamentID);
+            return tournament.GetMatches();
+        }
+
         public Tournament Create(string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers)
         {
             {
@@ -48,6 +62,24 @@ namespace Otefa.Domain.Model.Services
 
                 return tournament;
             }
+        }
+
+        public void GenerateFixture(int tournamentID)
+        {
+            var tournament = TournamentRepository.GetById(tournamentID);
+            var teamsPlayersList = tournament.GetTeamPlayers();
+            var teamsList = teamsPlayersList.Select(x => x.Team).ToList();
+            //var fixture = FixtureGenerator.GenerateRoundRobin(teamsList.Count());
+
+            var result = FixtureGenerator.CreateMatches(teamsList, tournament);
+
+            foreach (var match in result)
+            {
+                MatchRepository.Add(match);
+            }
+
+            TournamentRepository.Update(tournament);
+            TournamentRepository.Context.Commit();
         }
 
         public void Update(int tournamentID, string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers)
@@ -108,6 +140,6 @@ namespace Otefa.Domain.Model.Services
             return MatchTeamRepository.GetTournamentPositions(tournamentID);
 
         }
-        
+
     }
 }
