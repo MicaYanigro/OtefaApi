@@ -159,7 +159,7 @@ namespace Otefa.Domain.Model.Services
                     int secondTeam = (day + teamsSize - idx) % teamsSize;
                     Console.WriteLine("{0} vs {1}", teams[firstTeam], teams[secondTeam]);
 
-                    var match = new Match(null, DateTime.Now, day + 1);
+                    var match = new Match(tournament.GetHeadquarter().FirstOrDefault(), DateTime.Now, day + 1);
 
                     var matchTeam1 = new MatchTeam(tournament, match, teams[firstTeam], null, null, null);
                     var matchTeam2 = new MatchTeam(tournament, match, teams[secondTeam], null, null, null);
