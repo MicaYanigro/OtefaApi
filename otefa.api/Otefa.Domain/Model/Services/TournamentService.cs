@@ -48,7 +48,8 @@ namespace Otefa.Domain.Model.Services
         public IEnumerable<Match> GetAllMatches(int tournamentID)
         {
             var tournament = GetByID(tournamentID);
-            return tournament.GetMatches();
+            var result = tournament.GetMatches().OrderBy(x => x.Round); //Se ordena por fecha (ronda)
+            return result;
         }
 
         public Tournament Create(string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers)

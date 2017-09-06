@@ -12,6 +12,8 @@ namespace Otefa.UI.Api.ViewModel.Team
 
         public DateTime Date { get; set; }
 
+        public int Round { get; set; }
+
         public List<int> Teams { get; set; }
 
     }

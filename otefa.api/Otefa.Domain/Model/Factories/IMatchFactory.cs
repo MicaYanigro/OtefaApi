@@ -6,6 +6,6 @@ namespace Otefa.Domain.Model.Factories
 {
     public interface IMatchFactory
     {
-        Match Create(int tournamentID, Headquarter headquarter, DateTime date, IEnumerable<int> teamsID);
+        Match Create(int tournamentID, Headquarter headquarter, DateTime date, int round, IEnumerable<int> teamsID);
     }
 }

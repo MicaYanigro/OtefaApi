@@ -34,7 +34,7 @@ namespace Otefa.UI.Api.Controllers
         {
             try
             {
-                var Match = MatchService.Create(MatchViewModel.Tournament, MatchViewModel.Headquarter, MatchViewModel.Date, MatchViewModel.Teams);
+                var Match = MatchService.Create(MatchViewModel.Tournament, MatchViewModel.Headquarter, MatchViewModel.Date, MatchViewModel.Round, MatchViewModel.Teams);
 
                 return Request.CreateResponse(HttpStatusCode.Created, Match.GetId());
             }

@@ -9,10 +9,10 @@ namespace Otefa.Domain.Model.Factories
     public class MatchFactory : IMatchFactory
     {
 
-        public Match Create(int tournamentID, Headquarter headquarter, DateTime date, IEnumerable<int> teamsID)
+        public Match Create(int tournamentID, Headquarter headquarter, DateTime date, int round, IEnumerable<int> teamsID)
         {
 
-            var Match = new Match(headquarter, date);
+            var Match = new Match(headquarter, date, round);
 
             foreach (var teamID in teamsID)
             {

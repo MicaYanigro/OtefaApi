@@ -18,11 +18,14 @@ namespace Otefa.Domain.Model.Entities
         private Headquarter headquarter;
         private DateTime date;
         private Player figure;
+        private int round;
 
-        public Match(Headquarter headquarter, DateTime date)
+
+        public Match(Headquarter headquarter, DateTime date, int round)
         {
             Headquarter = headquarter;
             Date = date;
+            Round = round;
             matchTeamList = new Collection<MatchTeam>();
         }
 
@@ -71,6 +74,22 @@ namespace Otefa.Domain.Model.Entities
             }
 
         }
+
+        public int Round
+        {
+
+            get
+            {
+                return round;
+            }
+
+            protected set
+            {
+                round = value;
+            }
+
+        }
+
 
         public IEnumerable<MatchTeam> GetTeams()
         {
