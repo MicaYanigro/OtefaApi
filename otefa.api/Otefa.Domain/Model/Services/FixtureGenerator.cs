@@ -128,6 +128,7 @@ namespace Otefa.Domain.Model.Services
 
         public IEnumerable<Match> CreateMatches(List<Team> ListTeam, Tournament tournament)
         {
+            var headquarterDefault = tournament.GetHeadquarter().FirstOrDefault();
             List<Match> MatchesList = new List<Match>();
 
             if (ListTeam.Count() % 2 != 0)
@@ -147,11 +148,21 @@ namespace Otefa.Domain.Model.Services
 
             for (int day = 0; day < numDays; day++)
             {
-                Console.WriteLine("Day {0}", (day + 1));
-
+                var currentDay = day + 1;
                 int teamIdx = day % teamsSize;
 
                 Console.WriteLine("{0} vs {1}", teams[teamIdx], ListTeam[0]);
+
+                var firstMatch = new Match(headquarterDefault, DateTime.Now, currentDay);
+
+                var firstMatchTeam1 = new MatchTeam(tournament, firstMatch, teams[teamIdx], null, null, null);
+                var firstMatchTeam2 = new MatchTeam(tournament, firstMatch, ListTeam[0], null, null, null);
+
+                firstMatch.AddMatchTeam(firstMatchTeam1);
+                firstMatch.AddMatchTeam(firstMatchTeam2);
+
+                MatchesList.Add(firstMatch);
+                tournament.AddMatch(firstMatch);
 
                 for (int idx = 1; idx < halfSize; idx++)
                 {
@@ -159,7 +170,7 @@ namespace Otefa.Domain.Model.Services
                     int secondTeam = (day + teamsSize - idx) % teamsSize;
                     Console.WriteLine("{0} vs {1}", teams[firstTeam], teams[secondTeam]);
 
-                    var match = new Match(tournament.GetHeadquarter().FirstOrDefault(), DateTime.Now, day + 1);
+                    var match = new Match(headquarterDefault, DateTime.Now, currentDay);
 
                     var matchTeam1 = new MatchTeam(tournament, match, teams[firstTeam], null, null, null);
                     var matchTeam2 = new MatchTeam(tournament, match, teams[secondTeam], null, null, null);

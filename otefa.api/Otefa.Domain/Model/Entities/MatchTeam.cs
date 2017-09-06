@@ -190,7 +190,7 @@ namespace Otefa.Domain.Model.Entities
         }
 
         [Obsolete]
-        public virtual Tournament Tournament { get; set; }
+        public Tournament Tournament { get; set; }
 
         [NotMapped]
         private Tournament tournament
@@ -208,7 +208,7 @@ namespace Otefa.Domain.Model.Entities
         }
 
         [Obsolete]
-        public virtual Match Match { get; set; }
+        public Match Match { get; set; }
 
         [NotMapped]
         private Match match
