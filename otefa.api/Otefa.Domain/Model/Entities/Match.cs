@@ -139,7 +139,7 @@ namespace Otefa.Domain.Model.Entities
 
             var matchTeam = Container.Current.Resolve<IMatchTeamRepository>().GetById(matchTeamID);
             matchTeam.Update(goals, againstGoals, hasBonusPoint, playerDetailsList);
-            CalculateFinalPoints();
+         //   CalculateFinalPoints();
         }
     }
 

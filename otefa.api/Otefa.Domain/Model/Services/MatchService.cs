@@ -79,6 +79,7 @@ namespace Otefa.Domain.Model.Services
             }
 
             match.UpdateMatchTeam(matchTeamID, goals, againstGoals, hasBonusPoint, figure, playerDetailsList);
+            match.CalculateFinalPoints();
 
             MatchRepository.Update(match);
             MatchRepository.Context.Commit();

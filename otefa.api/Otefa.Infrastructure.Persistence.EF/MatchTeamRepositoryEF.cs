@@ -23,19 +23,15 @@ namespace Otefa.Infrastructure.Persistence
             foreach (var team in TeamGroups)
             {
                 var teamName = team.Key.Name;
-                int? teamPoints = 0;
-                var playedGames = team.Count();
+                int? teamPoints = team.Sum(x => x.FinalPoints);
+                var playedGames = team.Where(x => x.FinalPoints != null).Count();
                 var wonGames = team.Where(x => x.Result == MatchResult.Win).Count();
                 var drawGames = team.Where(x => x.Result == MatchResult.Draw).Count();
                 var looseGames = team.Where(x => x.Result == MatchResult.Loose).Count();
                 var totalGoals = team.Sum(x => x.Goals);
                 var againstGoals = team.Sum(x => x.AgainstGoals);
-
-                foreach (var details in team)
-                {
-                    teamPoints = teamPoints + details.FinalPoints;
-                }
-
+                var difGoal = totalGoals - againstGoals;
+                
 
                 dynamic item = new ExpandoObject();
 
@@ -45,6 +41,9 @@ namespace Otefa.Infrastructure.Persistence
                 item.WonGames = wonGames;
                 item.DrawGames = drawGames;
                 item.LooseGames = looseGames;
+                item.Goals = totalGoals;
+                item.AgainstGoals = againstGoals;
+                item.DifGoal = difGoal;
 
                 items.Add(item);
 
