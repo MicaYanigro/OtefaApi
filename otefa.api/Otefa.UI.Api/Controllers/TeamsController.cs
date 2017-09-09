@@ -68,6 +68,12 @@ namespace Otefa.UI.Api.Controllers
             return Teamservice.GetTeamStadistics(teamID);
         }
 
+        [Route("{teamID}/historicalStadistics")]
+        public ExpandoObject HistoricalStadistics([FromUri] int teamID)
+        {
+            return Teamservice.GetHistoricalStadistics(teamID);
+        }
+
         [HttpPut]
         [Route("{teamID}")]
         public HttpResponseMessage Put([FromUri] int teamID, [FromBody]PutTeamViewModel PutTeamViewModel)

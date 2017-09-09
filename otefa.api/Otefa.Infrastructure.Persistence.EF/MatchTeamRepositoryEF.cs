@@ -22,31 +22,33 @@ namespace Otefa.Infrastructure.Persistence
 
             foreach (var team in TeamGroups)
             {
-                var teamName = team.Key.Name;
-                int? teamPoints = team.Sum(x => x.FinalPoints);
-                var playedGames = team.Where(x => x.FinalPoints != null).Count();
-                var wonGames = team.Where(x => x.Result == MatchResult.Win).Count();
-                var drawGames = team.Where(x => x.Result == MatchResult.Draw).Count();
-                var looseGames = team.Where(x => x.Result == MatchResult.Loose).Count();
-                var totalGoals = team.Sum(x => x.Goals);
-                var againstGoals = team.Sum(x => x.AgainstGoals);
-                var difGoal = totalGoals - againstGoals;
-                
+                if (team.Key.Name != "Bye")
+                {
+                    var teamName = team.Key.Name;
+                    int? teamPoints = team.Sum(x => x.FinalPoints);
+                    var playedGames = team.Where(x => x.FinalPoints != null).Count();
+                    var wonGames = team.Where(x => x.Result == MatchResult.Win).Count();
+                    var drawGames = team.Where(x => x.Result == MatchResult.Draw).Count();
+                    var looseGames = team.Where(x => x.Result == MatchResult.Loose).Count();
+                    var totalGoals = team.Sum(x => x.Goals);
+                    var againstGoals = team.Sum(x => x.AgainstGoals);
+                    var difGoal = totalGoals - againstGoals;
 
-                dynamic item = new ExpandoObject();
 
-                item.Team = teamName;
-                item.FinalPoints = teamPoints;
-                item.PlayedGames = playedGames;
-                item.WonGames = wonGames;
-                item.DrawGames = drawGames;
-                item.LooseGames = looseGames;
-                item.Goals = totalGoals;
-                item.AgainstGoals = againstGoals;
-                item.DifGoal = difGoal;
+                    dynamic item = new ExpandoObject();
 
-                items.Add(item);
+                    item.Team = teamName;
+                    item.FinalPoints = teamPoints;
+                    item.PlayedGames = playedGames;
+                    item.WonGames = wonGames;
+                    item.DrawGames = drawGames;
+                    item.LooseGames = looseGames;
+                    item.Goals = totalGoals;
+                    item.AgainstGoals = againstGoals;
+                    item.DifGoal = difGoal;
 
+                    items.Add(item);
+                }
             }
 
             var result = items.OrderByDescending(x => ((IDictionary<string, object>)x)["FinalPoints"]);
@@ -84,11 +86,38 @@ namespace Otefa.Infrastructure.Persistence
                 items.Add(item);
 
             }
-                    
+
             return items;
 
         }
 
+
+        public ExpandoObject GetHistoricalStadistics(int teamID)
+        {
+
+            var MatchesList = GetDbSet().Where(x => x.Team.Id == teamID);
+
+            var playedGames = MatchesList.Where(x => x.FinalPoints != null).Count();
+            var wonGames = MatchesList.Where(x => x.Result == MatchResult.Win).Count();
+            var drawGames = MatchesList.Where(x => x.Result == MatchResult.Draw).Count();
+            var looseGames = MatchesList.Where(x => x.Result == MatchResult.Loose).Count();
+            var totalGoals = MatchesList.Sum(x => x.Goals);
+            var againstGoals = MatchesList.Sum(x => x.AgainstGoals);
+            var difGoal = totalGoals - againstGoals;
+
+
+            dynamic item = new ExpandoObject();
+
+            item.PlayedGames = playedGames;
+            item.WonGames = wonGames;
+            item.DrawGames = drawGames;
+            item.LooseGames = looseGames;
+            item.Goals = totalGoals;
+            item.AgainstGoals = againstGoals;
+            item.DifGoal = difGoal;
+
+            return item;
+        }
 
     }
 }

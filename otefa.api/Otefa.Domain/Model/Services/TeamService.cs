@@ -86,5 +86,11 @@ namespace Otefa.Domain.Model.Services
 
         }
 
+        public ExpandoObject GetHistoricalStadistics(int teamID)
+        {
+
+            return MatchTeamRepository.GetHistoricalStadistics(teamID);
+
+        }
     }
 }

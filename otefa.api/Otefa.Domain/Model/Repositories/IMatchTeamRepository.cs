@@ -8,5 +8,6 @@ namespace Otefa.Domain.Model.Repositories
     {
         IEnumerable<ExpandoObject> GetTournamentPositions(int tournamentID);
         IEnumerable<ExpandoObject> GetTeamStadistics(int teamID);
+        ExpandoObject GetHistoricalStadistics(int teamID);
     }
 }
