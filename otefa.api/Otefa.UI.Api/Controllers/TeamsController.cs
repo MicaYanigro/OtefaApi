@@ -74,6 +74,12 @@ namespace Otefa.UI.Api.Controllers
             return Teamservice.GetHistoricalStadistics(teamID);
         }
 
+        [Route("{teamID}/upcomingMatches")]
+        public IEnumerable<Match> UpcomingMatches([FromUri] int teamID)
+        {
+            return Teamservice.GetUpcomingMatches(teamID);
+        }
+
         [HttpPut]
         [Route("{teamID}")]
         public HttpResponseMessage Put([FromUri] int teamID, [FromBody]PutTeamViewModel PutTeamViewModel)

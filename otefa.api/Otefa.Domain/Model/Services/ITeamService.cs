@@ -19,5 +19,6 @@ namespace Otefa.Domain.Model.Services
         IEnumerable<ExpandoObject> GetTeamStadistics(int teamID);
 
         ExpandoObject GetHistoricalStadistics(int teamID);
+        IEnumerable<Match> GetUpcomingMatches(int teamID);
     }
 }

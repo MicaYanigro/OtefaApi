@@ -1,6 +1,7 @@
 ﻿using Otefa.Domain.Model.Entities;
 using Otefa.Domain.Model.Repositories;
 using Otefa.Infrastructure.Persistence;
+using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
@@ -119,5 +120,10 @@ namespace Otefa.Infrastructure.Persistence
             return item;
         }
 
+        public IEnumerable<Match> GetUpcomingMatches(int teamID)
+        {
+            var MatchesList = GetDbSet().Where(x => x.Team.Id == teamID).Select(x => x.Match);
+            return MatchesList.Where(x => x.Date >= DateTime.Now).OrderBy(x => x.Date);
+        }
     }
 }

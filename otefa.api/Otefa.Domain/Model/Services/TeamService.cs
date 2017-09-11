@@ -92,5 +92,14 @@ namespace Otefa.Domain.Model.Services
             return MatchTeamRepository.GetHistoricalStadistics(teamID);
 
         }
+
+        public IEnumerable<Match> GetUpcomingMatches(int teamID)
+        {
+
+            return MatchTeamRepository.GetUpcomingMatches(teamID);
+
+        }
+
+        
     }
 }
