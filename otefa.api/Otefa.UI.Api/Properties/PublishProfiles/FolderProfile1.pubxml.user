@@ -137,7 +137,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/06/2017 13:31:41</publishTime>
     </File>
     <File Include="bin/Otefa.UI.Api.dll">
-      <publishTime>09/13/2017 17:07:53</publishTime>
+      <publishTime>09/13/2017 19:01:37</publishTime>
     </File>
     <File Include="bin/Otefa.UI.Api.ViewModel.dll">
       <publishTime>09/13/2017 17:07:51</publishTime>
@@ -308,7 +308,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/06/2017 13:20:04</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/13/2017 17:07:55</publishTime>
+      <publishTime>09/13/2017 18:36:00</publishTime>
     </File>
   </ItemGroup>
 </Project>
