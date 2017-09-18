@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Emails\EmailViewModel.cs" />
     <Compile Include="Files\Requests\GetByFileNamePathViewModel.cs" />
     <Compile Include="Files\Requests\PostFileViewModel.cs" />
     <Compile Include="Files\Requests\GetByFolderPathViewModel.cs" />

@@ -15,36 +15,27 @@ namespace Otefa.Infrastructure.EmailSending
         [Injectable]
         public ISmtpClientWrapper SmtpClientWrapper { get; set; }
 
-        public void Send(string subject, string body, string to)
+        public void Send(string body, string replyTo)
         {
-
-            if (to == null)
-            {
-                throw new ArgumentException("To cannot be null");
-            }
-
-            if (!to.Any())
-            {
-                throw new ArgumentException("To cannot be empty");
-            }
-
+            
             var username = ConfigurationManager.AppSettings["Username"];
             var password = ConfigurationManager.AppSettings["Password"];
-
+            var subject = "Consulta desde pagina web";
+            var to = ConfigurationManager.AppSettings["FromAddress"];
             SmtpClientWrapper.Host = ConfigurationManager.AppSettings["Host"];
-            SmtpClientWrapper.Port = int.Parse(ConfigurationManager.AppSettings["Port"]);
+            //SmtpClientWrapper.Port = int.Parse(ConfigurationManager.AppSettings["Port"]);
             SmtpClientWrapper.UseDefaultCredentials = false;
             SmtpClientWrapper.Credentials = new NetworkCredential(username, password);
-
+           
             SmtpClientWrapper.EnableSsl = bool.Parse(ConfigurationManager.AppSettings["EnableSsl"]);
             SmtpClientWrapper.DeliveryMethod = SmtpDeliveryMethod.Network;
             SmtpClientWrapper.Timeout = int.Parse(ConfigurationManager.AppSettings["Timeout"]);
 
-            SmtpClientWrapper.Send(subject, body, to);
+            SmtpClientWrapper.Send(subject, body, to, replyTo);
 
         }
 
-        public void Send(string subject, string body, IEnumerable<string> to)
+        public void Send(string subject, string body, IEnumerable<string> to, string replyTo)
         {
 
             if (to == null)
@@ -62,7 +53,8 @@ namespace Otefa.Infrastructure.EmailSending
             var password = ConfigurationManager.AppSettings["Password"];
 
             SmtpClientWrapper.Host = ConfigurationManager.AppSettings["Host"];
-            SmtpClientWrapper.Port = int.Parse(ConfigurationManager.AppSettings["Port"]);
+      
+            //SmtpClientWrapper.Port = int.Parse(ConfigurationManager.AppSettings["Port"]);
             SmtpClientWrapper.UseDefaultCredentials = false;
             SmtpClientWrapper.Credentials = new NetworkCredential(username, password);
 
@@ -70,7 +62,7 @@ namespace Otefa.Infrastructure.EmailSending
             SmtpClientWrapper.DeliveryMethod = SmtpDeliveryMethod.Network;
             SmtpClientWrapper.Timeout = int.Parse(ConfigurationManager.AppSettings["Timeout"]);
 
-            SmtpClientWrapper.Send(subject, body, to);
+            SmtpClientWrapper.Send(subject, body, to, replyTo);
 
         }
 
