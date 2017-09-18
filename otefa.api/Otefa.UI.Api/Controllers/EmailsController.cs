@@ -6,10 +6,10 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Sai.UI.Api.Controllers
+namespace Otefa.UI.Api.Controllers
 {
     [RoutePrefix("v1/emails")]
-    public class EmailsController : ApiController
+    public class EmailsController : ApiControllerBase
     {
 
         [Injectable]

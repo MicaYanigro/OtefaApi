@@ -29,9 +29,7 @@ namespace Otefa.UI.Api
             Container.Current.Register<IEmailTemplateService, EmailTemplateService>();
             Container.Current.Register<ISmtpClientWrapper, SmtpClientWrapper>();
             Container.Current.Register<IFixtureGenerator, FixtureGenerator>();
-
-
-
+            
 
             // Factories
             Container.Current.Register<IPlayerFactory, PlayerFactory>();
