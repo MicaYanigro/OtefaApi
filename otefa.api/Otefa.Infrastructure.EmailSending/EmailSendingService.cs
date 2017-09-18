@@ -23,7 +23,7 @@ namespace Otefa.Infrastructure.EmailSending
             var subject = "Consulta desde pagina web";
             var to = ConfigurationManager.AppSettings["FromAddress"];
             SmtpClientWrapper.Host = ConfigurationManager.AppSettings["Host"];
-            //SmtpClientWrapper.Port = int.Parse(ConfigurationManager.AppSettings["Port"]);
+            SmtpClientWrapper.Port = int.Parse(ConfigurationManager.AppSettings["Port"]);
             SmtpClientWrapper.UseDefaultCredentials = false;
             SmtpClientWrapper.Credentials = new NetworkCredential(username, password);
            
@@ -54,7 +54,7 @@ namespace Otefa.Infrastructure.EmailSending
 
             SmtpClientWrapper.Host = ConfigurationManager.AppSettings["Host"];
       
-            //SmtpClientWrapper.Port = int.Parse(ConfigurationManager.AppSettings["Port"]);
+            SmtpClientWrapper.Port = int.Parse(ConfigurationManager.AppSettings["Port"]);
             SmtpClientWrapper.UseDefaultCredentials = false;
             SmtpClientWrapper.Credentials = new NetworkCredential(username, password);
 
