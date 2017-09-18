@@ -21,7 +21,7 @@ namespace Otefa.Infrastructure.EmailSending
             var username = ConfigurationManager.AppSettings["Username"];
             var password = ConfigurationManager.AppSettings["Password"];
             var subject = "Consulta desde pagina web";
-            var to = ConfigurationManager.AppSettings["FromAddress"];
+            var to = ConfigurationManager.AppSettings["ToAddress"];
             SmtpClientWrapper.Host = ConfigurationManager.AppSettings["Host"];
             SmtpClientWrapper.Port = int.Parse(ConfigurationManager.AppSettings["Port"]);
             SmtpClientWrapper.UseDefaultCredentials = false;
