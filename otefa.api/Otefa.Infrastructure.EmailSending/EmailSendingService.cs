@@ -15,7 +15,7 @@ namespace Otefa.Infrastructure.EmailSending
         [Injectable]
         public ISmtpClientWrapper SmtpClientWrapper { get; set; }
 
-        public void Send(string body, string replyTo)
+        public void Send(string body, IEnumerable<string> replyTo)
         {
             
             var username = ConfigurationManager.AppSettings["Username"];
@@ -35,7 +35,7 @@ namespace Otefa.Infrastructure.EmailSending
 
         }
 
-        public void Send(string subject, string body, IEnumerable<string> to, string replyTo)
+        public void Send(string subject, string body, IEnumerable<string> to, IEnumerable<string> replyTo)
         {
 
             if (to == null)

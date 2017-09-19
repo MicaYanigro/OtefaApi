@@ -8,7 +8,7 @@ namespace Otefa.Infrastructure.EmailSending
     public class SmtpClientWrapper : SmtpClient, ISmtpClientWrapper
     {
 
-        public void Send(string subject, string body, string to, string replyTo)
+        public void Send(string subject, string body, string to, IEnumerable<string> replyTo)
         {
 
             var from = ConfigurationManager.AppSettings["fromAddress"];
@@ -21,14 +21,19 @@ namespace Otefa.Infrastructure.EmailSending
                 IsBodyHtml = true
             })
             {
-               message.To.Add(to);
+                message.To.Add(to);
 
-               base.Send(message);
+                foreach (var email in replyTo)
+                {
+                    message.ReplyToList.Add(email);
+                }
+
+                base.Send(message);
             }
 
         }
 
-        public void Send(string subject, string body, IEnumerable<string> to, string replyTo)
+        public void Send(string subject, string body, IEnumerable<string> to, IEnumerable<string> replyTo)
         {
 
             var from = ConfigurationManager.AppSettings["fromAddress"];
@@ -36,7 +41,6 @@ namespace Otefa.Infrastructure.EmailSending
             using (var message = new MailMessage()
             {
                 From = new MailAddress(from),
-                ReplyTo = new MailAddress(replyTo),
                 Subject = subject,
                 Body = body,
                 IsBodyHtml = true
@@ -46,6 +50,11 @@ namespace Otefa.Infrastructure.EmailSending
                 foreach (var email in to)
                 {
                     message.To.Add(email);
+                }
+
+                foreach (var email in replyTo)
+                {
+                    message.ReplyToList.Add(email);
                 }
 
                 base.Send(message);

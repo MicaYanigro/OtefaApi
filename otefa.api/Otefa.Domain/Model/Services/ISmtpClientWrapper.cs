@@ -13,7 +13,7 @@ namespace Otefa.Domain.Model.Services
         bool EnableSsl { get; set; }
         SmtpDeliveryMethod DeliveryMethod { get; set; }
         int Timeout { get; set; }
-        void Send(string subject, string body, string to, string replyTo);
-        void Send(string subject, string body, IEnumerable<string> to, string replyTo);
+        void Send(string subject, string body, string to, IEnumerable<string> replyTo);
+        void Send(string subject, string body, IEnumerable<string> to, IEnumerable<string> replyTo);
     }
 }

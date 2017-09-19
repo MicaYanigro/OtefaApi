@@ -28,7 +28,7 @@ namespace Otefa.UI.Api.Controllers
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest, new HttpError(e.Message));
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, new HttpError("Email could not be sent"));
             }

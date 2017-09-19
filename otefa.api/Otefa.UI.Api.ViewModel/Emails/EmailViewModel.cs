@@ -6,6 +6,6 @@ namespace Otefa.UI.Api.ViewModel.Emails
     {
         public string Body { get; set; }
 
-        public string ReplyTo { get; set; }
+        public List<string> ReplyTo { get; set; }
     }
 }
