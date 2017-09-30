@@ -36,6 +36,8 @@ namespace Otefa.Infrastructure.Persistence
 
         public DbSet<Group> Groups { get; set; }
 
+        public DbSet<New> News { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TeamPlayers>().ToTable("TournamentTeamPlayers");

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Otefa.UI.Api.ViewModel.Team
+namespace Otefa.UI.Api.ViewModel.Headquarter
 {
     public class PutHeadquarterViewModel
     {

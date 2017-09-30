@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="EFRepositoryBase.cs" />
     <Compile Include="GroupRepositoryEF.cs" />
+    <Compile Include="NewRepositoryEF.cs" />
     <Compile Include="MatchTeamRepositoryEF.cs" />
     <Compile Include="MatchRepositoryEF.cs" />
     <Compile Include="TournamentRepositoryEF.cs" />

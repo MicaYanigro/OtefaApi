@@ -29,7 +29,8 @@ namespace Otefa.UI.Api
             Container.Current.Register<IEmailTemplateService, EmailTemplateService>();
             Container.Current.Register<ISmtpClientWrapper, SmtpClientWrapper>();
             Container.Current.Register<IFixtureGenerator, FixtureGenerator>();
-            
+            Container.Current.Register<INewService, NewService>();
+
 
             // Factories
             Container.Current.Register<IPlayerFactory, PlayerFactory>();
@@ -49,6 +50,9 @@ namespace Otefa.UI.Api
             Container.Current.Register<IHeadquarterRepository, HeadquarterRepositoryEF>(LifeCycle.PerRequest);
             Container.Current.Register<IMatchRepository, MatchRepositoryEF>(LifeCycle.PerRequest);
             Container.Current.Register<IMatchTeamRepository, MatchTeamRepositoryEF>(LifeCycle.PerRequest);
+            Container.Current.Register<IGroupRepository, GroupRepositoryEF>(LifeCycle.PerRequest);
+            Container.Current.Register<INewRepository, NewRepositoryEF>(LifeCycle.PerRequest);
+
         }
 
     }

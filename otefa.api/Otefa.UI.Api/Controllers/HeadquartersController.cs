@@ -2,6 +2,7 @@
 using Otefa.Domain.Model.Exceptions;
 using Otefa.Domain.Model.Services;
 using Otefa.Infrastructure.IoC;
+using Otefa.UI.Api.ViewModel.Headquarter;
 using Otefa.UI.Api.ViewModel.Team;
 using System.Collections.Generic;
 using System.Net;

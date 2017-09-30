@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Entities\Group.cs" />
+    <Compile Include="Model\Entities\New.cs" />
     <Compile Include="Model\Entities\PlayerDetails.cs" />
     <Compile Include="Model\Entities\Player.cs" />
     <Compile Include="Model\Entities\IEntity.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Model\Factories\HeadquarterFactory.cs" />
     <Compile Include="Model\Factories\TeamFactory.cs" />
     <Compile Include="Model\Factories\PlayerFactory.cs" />
+    <Compile Include="Model\Repositories\INewRepository.cs" />
     <Compile Include="Model\Repositories\IGroupRepository.cs" />
     <Compile Include="Model\Repositories\IMatchTeamRepository.cs" />
     <Compile Include="Model\Repositories\IMatchRepository.cs" />
@@ -114,6 +116,8 @@
     <Compile Include="Model\Repositories\IPlayerRepository.cs" />
     <Compile Include="Model\Repositories\IRepositoryContext.cs" />
     <Compile Include="Model\Services\FixtureGenerator.cs" />
+    <Compile Include="Model\Services\INewService.cs" />
+    <Compile Include="Model\Services\NewService.cs" />
     <Compile Include="Model\Services\IFixtureGenerator.cs" />
     <Compile Include="Model\Services\IMatchService.cs" />
     <Compile Include="Model\Services\ITournamentService.cs" />

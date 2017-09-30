@@ -48,6 +48,8 @@
     <Compile Include="Files\Requests\PostFileViewModel.cs" />
     <Compile Include="Files\Requests\GetByFolderPathViewModel.cs" />
     <Compile Include="Files\Responses\FileViewModel.cs" />
+    <Compile Include="New\NewViewModel.cs" />
+    <Compile Include="New\PutNewViewModel.cs" />
     <Compile Include="Match\ResultsMatchViewModel.cs" />
     <Compile Include="Match\MatchViewModel.cs" />
     <Compile Include="Match\PutHeadquarterViewModel.cs" />

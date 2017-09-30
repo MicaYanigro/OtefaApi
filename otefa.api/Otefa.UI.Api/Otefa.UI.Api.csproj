@@ -323,6 +323,7 @@
     <Compile Include="Controllers\ApiControllerBase.cs" />
     <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Controllers\EmailsController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\MatchesController.cs" />
     <Compile Include="Controllers\TournamentsController.cs" />
     <Compile Include="Controllers\HeadquartersController.cs" />
