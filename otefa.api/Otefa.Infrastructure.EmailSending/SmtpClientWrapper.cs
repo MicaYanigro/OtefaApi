@@ -25,7 +25,7 @@ namespace Otefa.Infrastructure.EmailSending
 
                 foreach (var email in replyTo)
                 {
-                    message.ReplyToList.Add(email);
+                    message.ReplyToList.Add(new MailAddress(email));
                 }
 
                 base.Send(message);

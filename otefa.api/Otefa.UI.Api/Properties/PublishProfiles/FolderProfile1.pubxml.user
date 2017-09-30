@@ -119,28 +119,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/07/2016 22:12:08</publishTime>
     </File>
     <File Include="bin/Otefa.Domain.dll">
-      <publishTime>09/13/2017 17:07:45</publishTime>
+      <publishTime>09/22/2017 10:34:28</publishTime>
     </File>
     <File Include="bin/Otefa.Infrastructure.dll">
       <publishTime>08/01/2017 18:55:08</publishTime>
     </File>
     <File Include="bin/Otefa.Infrastructure.EmailSending.dll">
-      <publishTime>09/13/2017 17:07:50</publishTime>
+      <publishTime>09/22/2017 12:11:01</publishTime>
     </File>
     <File Include="bin/Otefa.Infrastructure.IoC.Ninject.dll">
       <publishTime>08/01/2017 18:55:16</publishTime>
     </File>
     <File Include="bin/Otefa.Infrastructure.Persistence.EF.dll">
-      <publishTime>09/13/2017 17:07:48</publishTime>
+      <publishTime>09/22/2017 10:34:31</publishTime>
     </File>
     <File Include="bin/Otefa.Infrastructure.Persistence.EF.dll.config">
       <publishTime>07/06/2017 13:31:41</publishTime>
     </File>
     <File Include="bin/Otefa.UI.Api.dll">
-      <publishTime>09/13/2017 19:01:37</publishTime>
+      <publishTime>09/29/2017 12:33:46</publishTime>
     </File>
     <File Include="bin/Otefa.UI.Api.ViewModel.dll">
-      <publishTime>09/13/2017 17:07:51</publishTime>
+      <publishTime>09/22/2017 11:48:25</publishTime>
     </File>
     <File Include="bin/Owin.dll">
       <publishTime>11/13/2012 12:19:34</publishTime>
@@ -308,7 +308,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/06/2017 13:20:04</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/13/2017 18:36:00</publishTime>
+      <publishTime>09/22/2017 12:11:03</publishTime>
     </File>
   </ItemGroup>
 </Project>

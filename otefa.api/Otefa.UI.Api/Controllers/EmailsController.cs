@@ -2,6 +2,8 @@
 using Otefa.Infrastructure.IoC;
 using Otefa.UI.Api.ViewModel.Emails;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -26,11 +28,11 @@ namespace Otefa.UI.Api.Controllers
             }
             catch (ArgumentException e)
             {
-                return Request.CreateResponse(HttpStatusCode.BadRequest, new HttpError(e.Message));
+                return Request.CreateResponse(HttpStatusCode.BadRequest, new HttpError(e.Message + e.StackTrace + e.Source));
             }
             catch (Exception e)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, new HttpError("Email could not be sent"));
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new HttpError("Email could not be sent" + e.Message + e.StackTrace + e.Source));
             }
         }
 

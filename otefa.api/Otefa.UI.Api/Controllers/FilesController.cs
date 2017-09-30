@@ -46,18 +46,18 @@ namespace UI.Api.Controllers
                 {
                     folder = new DirectoryInfo(path);
 
-                    await Task.Factory.StartNew(() =>
-                    {
-                        files = folder.EnumerateFiles()
-                            .Select(fi => new FileViewModel
-                            {
-                                Name = fi.Name,
-                                Created = fi.CreationTime,
-                                Modified = fi.LastWriteTime,
-                                Size = fi.Length / 1024,
-                                Type = MimeMapping.GetMimeMapping(fi.Name)
-                            }).ToList();
-                    });
+                    //await Task.Factory.StartNew(() =>
+                    //{
+                    files = folder.GetFiles()
+                        .Select(fi => new FileViewModel
+                        {
+                            Name = fi.Name,
+                            Created = fi.CreationTime,
+                            Modified = fi.LastWriteTime,
+                            Size = fi.Length / 1024,
+                            Type = MimeMapping.GetMimeMapping(fi.Name)
+                        }).ToList();
+                    //});
                 }
 
                 return Ok(new { Files = files, Message = path });
@@ -66,7 +66,7 @@ namespace UI.Api.Controllers
             {
                 logger.Error(ex);
                 return BadRequest(ex.Message);
-            
+
             }
         }
 
