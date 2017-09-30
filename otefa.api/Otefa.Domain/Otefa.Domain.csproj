@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Entities\Group.cs" />
     <Compile Include="Model\Entities\PlayerDetails.cs" />
     <Compile Include="Model\Entities\Player.cs" />
     <Compile Include="Model\Entities\IEntity.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Model\Factories\HeadquarterFactory.cs" />
     <Compile Include="Model\Factories\TeamFactory.cs" />
     <Compile Include="Model\Factories\PlayerFactory.cs" />
+    <Compile Include="Model\Repositories\IGroupRepository.cs" />
     <Compile Include="Model\Repositories\IMatchTeamRepository.cs" />
     <Compile Include="Model\Repositories\IMatchRepository.cs" />
     <Compile Include="Model\Repositories\ITournamentRepository.cs" />

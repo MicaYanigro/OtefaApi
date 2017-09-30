@@ -20,10 +20,11 @@ namespace Otefa.Domain.Model.Entities
         private int? finalPoints;
         private MatchResult result;
 
-        public MatchTeam(Tournament tournament, Match match, Team team, int? goals, int? againstGoals, bool? hasBonusPoint)
+        public MatchTeam(Tournament tournament, Group group, Match match, Team team, int? goals, int? againstGoals, bool? hasBonusPoint)
         {
             this.tournament = tournament;
             this.match = match;
+            this.group = group;
 
             Team = team;
             Goals = goals;
@@ -203,6 +204,24 @@ namespace Otefa.Domain.Model.Entities
             set
             {
                 Tournament = value;
+            }
+#pragma warning restore 612, 618
+        }
+
+        [Obsolete]
+        public virtual Group Group { get; set; }
+
+        [NotMapped]
+        private Group group
+        {
+#pragma warning disable 612, 618
+            get
+            {
+                return Group;
+            }
+            set
+            {
+                Group = value;
             }
 #pragma warning restore 612, 618
         }

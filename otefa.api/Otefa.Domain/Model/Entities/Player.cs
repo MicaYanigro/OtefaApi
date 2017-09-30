@@ -176,8 +176,8 @@ namespace Otefa.Domain.Model.Entities
 
         public void Update(string name, string lastName, string dni, DateTime birthDate, string email, string celNumber, string medicalInsurance)
         {
-
-            VerifyThatAnotherPlayerWithSameDniDoesNotExist(dni);
+            if (dni != Dni)
+                VerifyThatAnotherPlayerWithSameDniDoesNotExist(dni);
 
             Name = name;
             LastName = lastName;

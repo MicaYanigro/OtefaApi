@@ -8,6 +8,8 @@ namespace Otefa.UI.Api.ViewModel.Team
     {
         public int Tournament { get; set; }
 
+        public int Group { get; set; }
+
         public int Headquarter { get; set; }
 
         public DateTime Date { get; set; }

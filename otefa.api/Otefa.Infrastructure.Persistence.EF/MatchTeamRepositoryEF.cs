@@ -58,6 +58,50 @@ namespace Otefa.Infrastructure.Persistence
 
         }
 
+        public IEnumerable<ExpandoObject> GetTournamentPositionsByGroups(int tournamentID)
+        {
+
+            var TeamGroups = GetDbSet().Where(x => x.Tournament.Id == tournamentID).GroupBy(x => x.Team);
+            var items = new List<ExpandoObject>();
+
+            foreach (var team in TeamGroups)
+            {
+                if (team.Key.Name != "Bye")
+                {
+                 //   var group = team.Select(x => x.Tournament.GroupList).Where(y => y.TeamList.contains(team.Key.Id));
+                    var teamName = team.Key.Name;
+                    int? teamPoints = team.Sum(x => x.FinalPoints);
+                    var playedGames = team.Where(x => x.FinalPoints != null).Count();
+                    var wonGames = team.Where(x => x.Result == MatchResult.Win).Count();
+                    var drawGames = team.Where(x => x.Result == MatchResult.Draw).Count();
+                    var looseGames = team.Where(x => x.Result == MatchResult.Loose).Count();
+                    var totalGoals = team.Sum(x => x.Goals);
+                    var againstGoals = team.Sum(x => x.AgainstGoals);
+                    var difGoal = totalGoals - againstGoals;
+
+
+                    dynamic item = new ExpandoObject();
+
+                    item.Team = teamName;
+                    item.FinalPoints = teamPoints;
+                    item.PlayedGames = playedGames;
+                    item.WonGames = wonGames;
+                    item.DrawGames = drawGames;
+                    item.LooseGames = looseGames;
+                    item.Goals = totalGoals;
+                    item.AgainstGoals = againstGoals;
+                    item.DifGoal = difGoal;
+
+                    items.Add(item);
+                }
+            }
+
+            var result = items.OrderByDescending(x => ((IDictionary<string, object>)x)["FinalPoints"]);
+
+            return result;
+
+        }
+
         public IEnumerable<ExpandoObject> GetTeamStadistics(int teamID)
         {
 

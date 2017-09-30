@@ -30,7 +30,8 @@ namespace Otefa.Domain.Model.Services
         [Injectable]
         public IMatchRepository MatchRepository { get; set; }
 
-
+        [Injectable]
+        public IGroupRepository GroupRepository { get; set; }
 
 
         public Tournament GetByID(int id)
@@ -45,11 +46,13 @@ namespace Otefa.Domain.Model.Services
 
         }
 
-        public IEnumerable<Match> GetAllMatches(int tournamentID)
+        public object GetAllMatches(int tournamentID)
         {
             var tournament = GetByID(tournamentID);
-            var result = tournament.GetMatches().OrderBy(x => x.Round); //Se ordena por fecha (ronda)
-            return result;
+
+            return GroupRepository.GetMatchesByTournament(tournamentID);
+            // var result = tournament.GetMatches().OrderBy(x => x.Round); //Se ordena por fecha (ronda)
+   
         }
 
         public Tournament Create(string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers)
@@ -68,11 +71,8 @@ namespace Otefa.Domain.Model.Services
         public void GenerateFixture(int tournamentID)
         {
             var tournament = TournamentRepository.GetById(tournamentID);
-            var teamsPlayersList = tournament.GetTeamPlayers();
-            var teamsList = teamsPlayersList.Select(x => x.Team).ToList();
-            //var fixture = FixtureGenerator.GenerateRoundRobin(teamsList.Count());
 
-            var result = FixtureGenerator.CreateMatches(teamsList, tournament);
+            var result = FixtureGenerator.CreateMatches(tournament);
 
             foreach (var match in result)
             {

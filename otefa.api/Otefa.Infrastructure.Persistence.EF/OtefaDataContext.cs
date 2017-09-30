@@ -34,6 +34,8 @@ namespace Otefa.Infrastructure.Persistence
 
         public DbSet<TeamPlayers> TeamPlayers { get; set; }
 
+        public DbSet<Group> Groups { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TeamPlayers>().ToTable("TournamentTeamPlayers");
@@ -54,6 +56,9 @@ namespace Otefa.Infrastructure.Persistence
             .WithMany()
             .Map(m => m.ToTable("TeamPlayers"));
 
+            modelBuilder.Entity<Group>()
+           .HasMany(m => m.TeamList)
+           .WithMany();
 
         }
 

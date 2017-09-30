@@ -31,11 +31,11 @@ namespace Otefa.Domain.Model.Services
 
 
 
-        public Match Create(int tournamentID, int headquarterID, DateTime date, int round, IEnumerable<int> teamsID)
+        public Match Create(int tournamentID, int groupID, int headquarterID, DateTime date, int round, IEnumerable<int> teamsID)
         {
             {
                 var headquarter = HeadquarterRepository.GetById(headquarterID);
-                var Match = MatchFactory.Create(tournamentID, headquarter, date, round, teamsID);
+                var Match = MatchFactory.Create(tournamentID, groupID, headquarter, date, round, teamsID);
 
                 MatchRepository.Add(Match);
                 MatchRepository.Context.Commit();

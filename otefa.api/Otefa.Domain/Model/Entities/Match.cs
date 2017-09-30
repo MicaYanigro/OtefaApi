@@ -173,6 +173,24 @@ namespace Otefa.Domain.Model.Entities
 #pragma warning restore 612, 618
         }
 
+        [Obsolete]
+        public virtual Group Group { get; set; }
+
+        [NotMapped]
+        private Group group
+        {
+#pragma warning disable 612, 618
+            get
+            {
+                return Group;
+            }
+            set
+            {
+                Group = value;
+            }
+#pragma warning restore 612, 618
+        }
+
     }
 
 }

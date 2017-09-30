@@ -43,7 +43,7 @@ namespace Otefa.UI.Api.Controllers
 
         [HttpGet]
         [Route("{tournamentID}/matches")]
-        public IEnumerable<Match> GetMatches(int tournamentID)
+        public object GetMatches(int tournamentID)
         {
             return Tournamentservice.GetAllMatches(tournamentID);
         }

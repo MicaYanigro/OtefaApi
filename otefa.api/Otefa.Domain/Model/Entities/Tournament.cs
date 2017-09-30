@@ -31,7 +31,7 @@ namespace Otefa.Domain.Model.Entities
             Prices = prices;
             IsActive = true;
 
-            matchesList = new Collection<Match>();
+            //matchesList = new Collection<Match>();
             tournamentDateList = new Collection<TournamentDate>();
             teamPlayersList = new Collection<TeamPlayers>();
             headquartersList = new Collection<Headquarter>();
@@ -168,15 +168,20 @@ namespace Otefa.Domain.Model.Entities
             this.teamPlayersList.Add(teamPlayers);
         }
 
-        public IEnumerable<Match> GetMatches()
+        public IEnumerable<Group> GetGroups()
         {
-            return matchesList;
+            return groupList;
         }
 
-        public void AddMatch(Match match)
-        {
-            this.matchesList.Add(match);
-        }
+        //public IEnumerable<Match> GetMatches()
+        //{
+        //    return matchesList;
+        //}
+
+        //public void AddMatch(Match match)
+        //{
+        //    this.matchesList.Add(match);
+        //}
 
         public void Update(string name, TournamentFormat tournamentFormat, ClasificationFormat clasificationFormat, string rules, string prices, IEnumerable<Headquarter> headquarters, IEnumerable<TournamentDate> tournamentDates, IEnumerable<TeamPlayers> teamPlayers)
         {
@@ -280,20 +285,36 @@ namespace Otefa.Domain.Model.Entities
         }
 
         [Obsolete]
-        public virtual ICollection<Match> MatchesList { get; set; }
-        protected ICollection<Match> matchesList
+        public virtual ICollection<Group> GroupList { get; set; }
+        protected ICollection<Group> groupList
         {
 #pragma warning disable 612, 618
             get
             {
-                return MatchesList;
+                return GroupList;
             }
             set
             {
-                MatchesList = value;
+                GroupList = value;
             }
 #pragma warning restore 612, 618
         }
+
+//        [Obsolete]
+//        public virtual ICollection<Match> MatchesList { get; set; }
+//        protected ICollection<Match> matchesList
+//        {
+//#pragma warning disable 612, 618
+//            get
+//            {
+//                return MatchesList;
+//            }
+//            set
+//            {
+//                MatchesList = value;
+//            }
+//#pragma warning restore 612, 618
+//        }
 
         [Obsolete]
         public virtual ICollection<TeamPlayers> TeamPlayersList { get; set; }
