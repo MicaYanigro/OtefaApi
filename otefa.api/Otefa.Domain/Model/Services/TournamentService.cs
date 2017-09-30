@@ -33,6 +33,9 @@ namespace Otefa.Domain.Model.Services
         [Injectable]
         public IGroupRepository GroupRepository { get; set; }
 
+        [Injectable]
+        public ITeamRepository TeamRepository { get; set; }
+
 
         public Tournament GetByID(int id)
         {
@@ -52,8 +55,23 @@ namespace Otefa.Domain.Model.Services
 
             return GroupRepository.GetMatchesByTournament(tournamentID);
             // var result = tournament.GetMatches().OrderBy(x => x.Round); //Se ordena por fecha (ronda)
-   
+
         }
+
+        public void AddGroups(int tournamentID, string name, List<int> teams)
+        {
+            var tournament = GetByID(tournamentID);
+            var group = new Group(name);
+            foreach (var teamID in teams)
+            {
+                var team = TeamRepository.GetById(teamID);
+                group.AddTeam(team);
+            }
+
+            tournament.AddGroup(group);
+
+        }
+
 
         public Tournament Create(string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers)
         {

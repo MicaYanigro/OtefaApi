@@ -66,6 +66,25 @@ namespace Otefa.UI.Api.Controllers
         }
 
         [HttpPost]
+        [Route("{tournamentID}/groups")]
+        public HttpResponseMessage PostGroups([FromUri] int tournamentID, [FromBody] List<GroupsViewModel> GroupsViewModel)
+        {
+            try
+            {
+                foreach (var Group in GroupsViewModel)
+                {
+                    Tournamentservice.AddGroups(tournamentID, Group.Name, Group.TeamsID);
+                }
+
+                return Request.CreateResponse(HttpStatusCode.Created);
+            }
+            catch (ExceptionBase e)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, new HttpError(e.Message));
+            }
+        }
+
+        [HttpPost]
         [Route("{tournamentID}/fixture")]
         public HttpResponseMessage GenerateFixture(int tournamentID)
         {
