@@ -58,48 +58,60 @@ namespace Otefa.Infrastructure.Persistence
 
         }
 
-        public IEnumerable<ExpandoObject> GetTournamentPositionsByGroups(int tournamentID)
+        public List<List<ExpandoObject>> GetTournamentPositionsByGroups(int tournamentID)
         {
+            var tournament = GetDbSet().Select(x => x.Tournament).Where(x => x.Id == tournamentID).SingleOrDefault();
+        
+            var FinalList = new List<List<ExpandoObject>>();
+            var groups = tournament.GetGroups();
 
-            var TeamGroups = GetDbSet().Where(x => x.Tournament.Id == tournamentID).GroupBy(x => x.Team);
-            var items = new List<ExpandoObject>();
-
-            foreach (var team in TeamGroups)
+            foreach (var group in groups)
             {
-                if (team.Key.Name != "Bye")
+                var groupList = new List<ExpandoObject>();
+                var TeamGroups = GetDbSet().Where(x => x.Tournament.Id == tournamentID && x.Group.Id == group.Id).GroupBy(x => x.Team);
+
+                foreach (var team in TeamGroups)
                 {
-                 //   var group = team.Select(x => x.Tournament.GroupList).Where(y => y.TeamList.contains(team.Key.Id));
-                    var teamName = team.Key.Name;
-                    int? teamPoints = team.Sum(x => x.FinalPoints);
-                    var playedGames = team.Where(x => x.FinalPoints != null).Count();
-                    var wonGames = team.Where(x => x.Result == MatchResult.Win).Count();
-                    var drawGames = team.Where(x => x.Result == MatchResult.Draw).Count();
-                    var looseGames = team.Where(x => x.Result == MatchResult.Loose).Count();
-                    var totalGoals = team.Sum(x => x.Goals);
-                    var againstGoals = team.Sum(x => x.AgainstGoals);
-                    var difGoal = totalGoals - againstGoals;
+                    if (team.Key.Name != "Bye")
+                    {
+                        var teamName = team.Key.Name;
+                        int? teamPoints = team.Sum(x => x.FinalPoints);
+                        var playedGames = team.Where(x => x.FinalPoints != null).Count();
+                        var wonGames = team.Where(x => x.Result == MatchResult.Win).Count();
+                        var drawGames = team.Where(x => x.Result == MatchResult.Draw).Count();
+                        var looseGames = team.Where(x => x.Result == MatchResult.Loose).Count();
+                        var totalGoals = team.Sum(x => x.Goals);
+                        var againstGoals = team.Sum(x => x.AgainstGoals);
+                        var difGoal = totalGoals - againstGoals;
 
 
-                    dynamic item = new ExpandoObject();
+                        dynamic item = new ExpandoObject();
 
-                    item.Team = teamName;
-                    item.FinalPoints = teamPoints;
-                    item.PlayedGames = playedGames;
-                    item.WonGames = wonGames;
-                    item.DrawGames = drawGames;
-                    item.LooseGames = looseGames;
-                    item.Goals = totalGoals;
-                    item.AgainstGoals = againstGoals;
-                    item.DifGoal = difGoal;
+                        item.Team = teamName;
+                        item.FinalPoints = teamPoints;
+                        item.PlayedGames = playedGames;
+                        item.WonGames = wonGames;
+                        item.DrawGames = drawGames;
+                        item.LooseGames = looseGames;
+                        item.Goals = totalGoals;
+                        item.AgainstGoals = againstGoals;
+                        item.DifGoal = difGoal;
 
-                    items.Add(item);
+                        groupList.Add(item);
+                    }
                 }
+
+                var result = groupList.OrderByDescending(x => ((IDictionary<string, object>)x)["FinalPoints"]).ToList();
+
+                dynamic groupList2 = new ExpandoObject();
+                groupList2.Group = group.Name;
+                groupList2.Positions = result;
+
+                FinalList.Add(groupList2);
+                
             }
-
-            var result = items.OrderByDescending(x => ((IDictionary<string, object>)x)["FinalPoints"]);
-
-            return result;
-
+            
+            return FinalList;
         }
 
         public IEnumerable<ExpandoObject> GetTeamStadistics(int teamID)

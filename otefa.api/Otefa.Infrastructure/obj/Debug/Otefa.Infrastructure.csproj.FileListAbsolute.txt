@@ -6,3 +6,4 @@ C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure\bin\Debug
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure\bin\Debug\Otefa.Infrastructure.pdb
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure\obj\Debug\Otefa.Infrastructure.dll
 C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure\obj\Debug\Otefa.Infrastructure.pdb
+C:\Users\Micaela\Desktop\Otefa\OtefaApi\otefa.api\Otefa.Infrastructure\obj\Debug\Otefa.Infrastructure.csprojResolveAssemblyReference.cache

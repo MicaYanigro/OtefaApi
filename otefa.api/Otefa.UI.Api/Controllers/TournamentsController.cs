@@ -115,6 +115,12 @@ namespace Otefa.UI.Api.Controllers
             return Tournamentservice.GetTournamentPositions(tournamentID);
         }
 
+        [Route("{tournamentID}/positionsByGroups")]
+        public List<List<ExpandoObject>> GetPositionsByGroups([FromUri] int tournamentID)
+        {
+            return Tournamentservice.GetTournamentPositionsByGroups(tournamentID);
+        }
+
         [HttpPut]
         [Route("{tournamentID}")]
         public HttpResponseMessage Put([FromUri] int tournamentID, [FromBody]PutTournamentViewModel PutTournamentViewModel)

@@ -19,6 +19,8 @@ namespace Otefa.Domain.Model.Services
 
         IEnumerable<ExpandoObject> GetTournamentPositions(int tournamentID);
 
+        List<List<ExpandoObject>> GetTournamentPositionsByGroups(int tournamentID);
+
         void GenerateFixture(int tournamentID);
 
         object GetAllMatches(int tournamentID);

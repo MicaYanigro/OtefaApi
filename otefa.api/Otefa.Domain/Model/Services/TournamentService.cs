@@ -162,5 +162,12 @@ namespace Otefa.Domain.Model.Services
 
         }
 
+        public List<List<ExpandoObject>> GetTournamentPositionsByGroups(int tournamentID)
+        {
+
+            return MatchTeamRepository.GetTournamentPositionsByGroups(tournamentID);
+
+        }
+
     }
 }
