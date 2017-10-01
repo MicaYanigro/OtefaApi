@@ -69,7 +69,9 @@ namespace Otefa.Domain.Model.Services
             }
 
             tournament.AddGroup(group);
-
+            GroupRepository.Add(group);
+            TournamentRepository.Update(tournament);
+            TournamentRepository.Context.Commit();
         }
 
 
