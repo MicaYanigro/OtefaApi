@@ -9,5 +9,7 @@ namespace Otefa.Domain.Model.Services
         New Create(DateTime date, string title, string body, string image);
         void Update(int NewID, DateTime date, string title, string body, string image);
         IEnumerable<New> GetAll();
+        void Activate(int newID);
+        void Delete(int newID);
     }
 }

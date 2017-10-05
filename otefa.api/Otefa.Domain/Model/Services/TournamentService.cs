@@ -103,6 +103,22 @@ namespace Otefa.Domain.Model.Services
             TournamentRepository.Context.Commit();
         }
 
+        public void GenerateFixtureByGroup(int tournamentID, int groupID)
+        {
+            var tournament = TournamentRepository.GetById(tournamentID);
+            var group = GroupRepository.GetById(groupID);
+
+            var result = FixtureGenerator.CreateMatchesByGroup(tournament, group);
+
+            foreach (var match in result)
+            {
+                MatchRepository.Add(match);
+            }
+
+            TournamentRepository.Update(tournament);
+            TournamentRepository.Context.Commit();
+        }
+
         public void Update(int tournamentID, string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers)
         {
             var Tournament = TournamentRepository.GetById(tournamentID);

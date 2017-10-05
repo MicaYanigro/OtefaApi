@@ -67,5 +67,39 @@ namespace Otefa.UI.Api.Controllers
             }
         }
 
+
+        [HttpDelete]
+        [Route("{newID}")]
+        public HttpResponseMessage Delete([FromUri] int newID)
+        {
+            try
+            {
+                NewService.Delete(newID);
+
+
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (ExceptionBase e)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, new HttpError(e.Message));
+            }
+        }
+
+        [HttpPut]
+        [Route("{newID}/activate")]
+        public HttpResponseMessage Activate([FromUri] int newID)
+        {
+            try
+            {
+                NewService.Activate(newID);
+                
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (ExceptionBase e)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, new HttpError(e.Message));
+            }
+        }
+
     }
 }

@@ -103,6 +103,22 @@ namespace Otefa.UI.Api.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("{tournamentID}/{groupID}/fixture")]
+        public HttpResponseMessage GenerateFixtureByGroup([FromUri] int tournamentID, [FromUri] int groupID)
+        {
+            try
+            {
+                Tournamentservice.GenerateFixtureByGroup(tournamentID, groupID);
+
+                return Request.CreateResponse(HttpStatusCode.Created);
+            }
+            catch (ExceptionBase e)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, new HttpError(e.Message));
+            }
+        }
+
         [Route("")]
         public IEnumerable<Tournament> Get()
         {

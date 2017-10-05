@@ -7,6 +7,8 @@ namespace Otefa.Domain.Model.Services
     {
         int[,] GenerateRoundRobin(int num_teams);
 
-        IEnumerable<Match> CreateMatches(/*List<Team> ListTeam, */Tournament tournament);
+        IEnumerable<Match> CreateMatches(Tournament tournament);
+
+        IEnumerable<Match> CreateMatchesByGroup(Tournament tournament, Group group);  
     }
 }

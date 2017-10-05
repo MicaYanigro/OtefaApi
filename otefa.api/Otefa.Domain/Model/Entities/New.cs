@@ -12,7 +12,9 @@ namespace Otefa.Domain.Model.Entities
         private string title;
         private string body;
         private string image;
-     
+        private bool isActive;
+        
+
         public New(DateTime date, string title, string body, string image)
         {
          
@@ -20,6 +22,7 @@ namespace Otefa.Domain.Model.Entities
             Title = title;
             Body = body;
             Image = image;
+            IsActive = true;
             
         }
         
@@ -82,14 +85,41 @@ namespace Otefa.Domain.Model.Entities
 
         }
 
-        public void Update(DateTime date, string title, string body)
+        public bool IsActive
+        {
+
+            get
+            {
+                return isActive;
+            }
+
+            protected set
+            {
+                isActive = value;
+            }
+
+        }
+
+
+        public void Update(DateTime date, string title, string body, string image)
         {
             Date = date;
             Title = title;
             Body = body;
             Image = image;
         }
-        
+
+        public void Delete()
+        {
+            IsActive = false;
+        }
+
+        public void Active()
+        {
+            IsActive = true;
+        }
+
+
 
     }
 

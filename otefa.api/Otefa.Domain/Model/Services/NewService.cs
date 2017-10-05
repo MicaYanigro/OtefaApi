@@ -34,7 +34,8 @@ namespace Otefa.Domain.Model.Services
 
             New.Update(date,
                         title,
-                        body);
+                        body,
+                        image);
 
             NewRepository.Update(New);
             NewRepository.Context.Commit();
@@ -44,6 +45,24 @@ namespace Otefa.Domain.Model.Services
         {
             return NewRepository.All();
 
+        }
+
+        public void Delete(int newID)
+        {
+            var New = NewRepository.GetById(newID);
+            New.Delete();
+
+            NewRepository.Update(New);
+            NewRepository.Context.Commit();
+        }
+
+        public void Activate(int newID)
+        {
+            var New = NewRepository.GetById(newID);
+            New.Active();
+
+            NewRepository.Update(New);
+            NewRepository.Context.Commit();
         }
 
     }

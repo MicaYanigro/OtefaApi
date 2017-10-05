@@ -23,6 +23,8 @@ namespace Otefa.Domain.Model.Services
 
         void GenerateFixture(int tournamentID);
 
+        void GenerateFixtureByGroup(int tournamentID, int groupID);
+
         object GetAllMatches(int tournamentID);
 
         void AddGroups(int tournamentID, string name, List<int> teams);
