@@ -5,6 +5,7 @@ using Otefa.Domain.Model.Repositories;
 using Otefa.Infrastructure.IoC;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Otefa.Domain.Model.Services
 {
@@ -20,11 +21,11 @@ namespace Otefa.Domain.Model.Services
         public Player FindPlayerByDni(string dni)
         {
             return PlayerRepository.GetByDni(dni);
-          
+
         }
 
 
-        public Player Create(string name, string lastName, string dni, DateTime birthDate, string email, string celNumber, string medicalInsurance)
+        public async Task<Player> Create(string name, string lastName, string dni, DateTime birthDate, string email, string celNumber, string medicalInsurance)
         {
             {
 
@@ -32,13 +33,13 @@ namespace Otefa.Domain.Model.Services
                                                 celNumber, medicalInsurance);
 
                 PlayerRepository.Add(player);
-                PlayerRepository.Context.Commit();
+                await PlayerRepository.Context.Commit();
 
                 return player;
             }
         }
 
-        public void Update(int playerID, string name, string lastName, string dni, DateTime birthDate, string email, string celNumber, string medicalInsurance)
+        public async Task Update(int playerID, string name, string lastName, string dni, DateTime birthDate, string email, string celNumber, string medicalInsurance)
         {
             var player = PlayerRepository.GetById(playerID);
 
@@ -51,7 +52,7 @@ namespace Otefa.Domain.Model.Services
                           medicalInsurance);
 
             PlayerRepository.Update(player);
-            PlayerRepository.Context.Commit();
+            await PlayerRepository.Context.Commit();
         }
 
         public IEnumerable<Player> GetAll()

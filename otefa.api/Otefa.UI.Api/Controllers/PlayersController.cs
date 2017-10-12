@@ -6,6 +6,7 @@ using Otefa.UI.Api.ViewModel.Player;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Otefa.UI.Api.Controllers
@@ -35,11 +36,11 @@ namespace Otefa.UI.Api.Controllers
 
         [HttpPost]
         [Route("")]
-        public HttpResponseMessage Post(PlayerViewModel playerViewModel)
+        public async Task<HttpResponseMessage> Post(PlayerViewModel playerViewModel)
         {
             try
             {
-                var player = Playerservice.Create(playerViewModel.Name, playerViewModel.Lastname, playerViewModel.Dni,
+                var player = await Playerservice.Create(playerViewModel.Name, playerViewModel.Lastname, playerViewModel.Dni,
                                  playerViewModel.BirthDate, playerViewModel.Email, playerViewModel.CelNumber, playerViewModel.MedicalInsurance);
 
                 return Request.CreateResponse(HttpStatusCode.Created, player.GetId());

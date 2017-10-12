@@ -64,7 +64,7 @@ namespace Otefa.Domain.Model.Services
             var group = new Group(name);
             foreach (var teamID in teams)
             {
-                var team = TeamRepository.GetById(teamID);
+                var team = await TeamRepository.GetByIDAsync(teamID);
                 group.AddTeam(team);
             }
 
@@ -178,7 +178,7 @@ namespace Otefa.Domain.Model.Services
 
         }
 
-        public List<List<ExpandoObject>> GetTournamentPositionsByGroups(int tournamentID)
+        public List<ExpandoObject> GetTournamentPositionsByGroups(int tournamentID)
         {
 
             return MatchTeamRepository.GetTournamentPositionsByGroups(tournamentID);

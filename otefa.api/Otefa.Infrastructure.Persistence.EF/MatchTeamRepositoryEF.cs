@@ -23,7 +23,7 @@ namespace Otefa.Infrastructure.Persistence
 
             foreach (var team in TeamGroups)
             {
-                if (team.Key.Name != "Bye")
+                if (team.Key.Name != "Libre")
                 {
                     var teamName = team.Key.Name;
                     int? teamPoints = team.Sum(x => x.FinalPoints);
@@ -58,11 +58,11 @@ namespace Otefa.Infrastructure.Persistence
 
         }
 
-        public List<List<ExpandoObject>> GetTournamentPositionsByGroups(int tournamentID)
+        public List<ExpandoObject> GetTournamentPositionsByGroups(int tournamentID)
         {
             var tournament = GetDbSet().Select(x => x.Tournament).Where(x => x.Id == tournamentID).FirstOrDefault();
         
-            var FinalList = new List<List<ExpandoObject>>();
+            var FinalList = new List<ExpandoObject>();
             var groups = tournament.GetGroups();
 
             foreach (var group in groups)
@@ -72,7 +72,7 @@ namespace Otefa.Infrastructure.Persistence
 
                 foreach (var team in TeamGroups)
                 {
-                    if (team.Key.Name != "Bye")
+                    if (team.Key.Name != "Libre")
                     {
                         var teamName = team.Key.Name;
                         int? teamPoints = team.Sum(x => x.FinalPoints);

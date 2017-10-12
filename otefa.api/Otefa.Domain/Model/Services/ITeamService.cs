@@ -1,6 +1,7 @@
 ﻿using Otefa.Domain.Model.Entities;
 using System.Collections.Generic;
 using System.Dynamic;
+using System.Threading.Tasks;
 
 namespace Otefa.Domain.Model.Services
 {
@@ -8,13 +9,13 @@ namespace Otefa.Domain.Model.Services
     {
         Team FindTeamByName(string name);
 
-        Team Create(string name, string teamDelegate, string shieldImage, string teamImage, IEnumerable<int> playersList);
+        Task<Team> Create(string name, string teamDelegate, string shieldImage, string teamImage, IEnumerable<int> playersList);
 
-        void Update(int teamID, string name, string teamDelegate, string shieldImage, string teamImage, IEnumerable<int> playersList);
+        Task Update(int teamID, string name, string teamDelegate, string shieldImage, string teamImage, IEnumerable<int> playersList);
 
         IEnumerable<Team> GetAll();
 
-        Team GetByID(int id);
+        Task<Team> GetByID(int id);
 
         IEnumerable<ExpandoObject> GetTeamStadistics(int teamID);
 

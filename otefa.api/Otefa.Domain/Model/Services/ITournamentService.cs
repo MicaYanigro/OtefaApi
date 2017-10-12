@@ -20,7 +20,7 @@ namespace Otefa.Domain.Model.Services
 
         IEnumerable<ExpandoObject> GetTournamentPositions(int tournamentID);
 
-        List<List<ExpandoObject>> GetTournamentPositionsByGroups(int tournamentID);
+        List<ExpandoObject> GetTournamentPositionsByGroups(int tournamentID);
 
         Task GenerateFixture(int tournamentID);
 

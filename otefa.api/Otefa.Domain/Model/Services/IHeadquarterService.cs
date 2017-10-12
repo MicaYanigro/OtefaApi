@@ -1,5 +1,6 @@
 ﻿using Otefa.Domain.Model.Entities;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Otefa.Domain.Model.Services
 {
@@ -7,9 +8,9 @@ namespace Otefa.Domain.Model.Services
     {
         Headquarter FindHeadquarterByName(string name);
 
-        Headquarter Create(string name, string address, string city);
+        Task<Headquarter> Create(string name, string address, string city);
 
-        void Update(int headquarterID, string name, string address, string city);
+        Task Update(int headquarterID, string name, string address, string city);
 
         IEnumerable<Headquarter> GetAll();
     }

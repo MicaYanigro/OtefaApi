@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Otefa.UI.Api.Controllers
@@ -30,11 +31,11 @@ namespace Otefa.UI.Api.Controllers
         
         [HttpPost]
         [Route("")]
-        public HttpResponseMessage Post(MatchViewModel MatchViewModel)
+        public async Task<HttpResponseMessage> Post(MatchViewModel MatchViewModel)
         {
             try
             {
-                var Match = MatchService.Create(MatchViewModel.Tournament, MatchViewModel.Group, MatchViewModel.Headquarter, MatchViewModel.Date, MatchViewModel.Round, MatchViewModel.Teams);
+                var Match = await MatchService.Create(MatchViewModel.Tournament, MatchViewModel.Group, MatchViewModel.Headquarter, MatchViewModel.Date, MatchViewModel.Round, MatchViewModel.Teams);
 
                 return Request.CreateResponse(HttpStatusCode.Created, Match.GetId());
             }
@@ -53,11 +54,11 @@ namespace Otefa.UI.Api.Controllers
      
         [HttpPut]
         [Route("{matchID}")]
-        public HttpResponseMessage Put([FromUri] int matchID, [FromBody]PutMatchViewModel PutMatchViewModel)
+        public async Task<HttpResponseMessage> Put([FromUri] int matchID, [FromBody]PutMatchViewModel PutMatchViewModel)
         {
             try
             {
-                MatchService.Update(matchID, PutMatchViewModel.Headquarter, PutMatchViewModel.Date);
+               await MatchService.Update(matchID, PutMatchViewModel.Headquarter, PutMatchViewModel.Date);
 
 
                 return Request.CreateResponse(HttpStatusCode.OK);
@@ -70,13 +71,13 @@ namespace Otefa.UI.Api.Controllers
 
         [HttpPut]
         [Route("results/{matchID}")]
-        public HttpResponseMessage LoadResults([FromUri] int matchID, [FromBody] ResultsMatchViewModel ResultsMatchViewModel)
+        public async Task<HttpResponseMessage> LoadResults([FromUri] int matchID, [FromBody] ResultsMatchViewModel ResultsMatchViewModel)
         {
             try
             {
 
                 var playersDetails = ConvertPlayerDetailsViewModelCollectionToDynamicCollection(ResultsMatchViewModel.PlayersDetails);
-                MatchService.LoadResults(matchID, ResultsMatchViewModel.MatchTeamID, ResultsMatchViewModel.Goals, ResultsMatchViewModel.AgainstGoals, ResultsMatchViewModel.HasBonusPoint, ResultsMatchViewModel.FigureID, playersDetails);
+                await MatchService.LoadResults(matchID, ResultsMatchViewModel.MatchTeamID, ResultsMatchViewModel.Goals, ResultsMatchViewModel.AgainstGoals, ResultsMatchViewModel.HasBonusPoint, ResultsMatchViewModel.FigureID, playersDetails);
 
 
                 return Request.CreateResponse(HttpStatusCode.OK);

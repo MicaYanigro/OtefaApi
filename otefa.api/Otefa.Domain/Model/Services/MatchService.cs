@@ -5,6 +5,7 @@ using Otefa.Infrastructure.IoC;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
+using System.Threading.Tasks;
 
 namespace Otefa.Domain.Model.Services
 {
@@ -31,14 +32,14 @@ namespace Otefa.Domain.Model.Services
 
 
 
-        public Match Create(int tournamentID, int groupID, int headquarterID, DateTime date, int round, IEnumerable<int> teamsID)
+        public async Task<Match> Create(int tournamentID, int groupID, int headquarterID, DateTime date, int round, IEnumerable<int> teamsID)
         {
             {
                 var headquarter = HeadquarterRepository.GetById(headquarterID);
                 var Match = MatchFactory.Create(tournamentID, groupID, headquarter, date, round, teamsID);
 
                 MatchRepository.Add(Match);
-                MatchRepository.Context.Commit();
+                await MatchRepository.Context.Commit();
 
                 return Match;
             }
@@ -52,7 +53,7 @@ namespace Otefa.Domain.Model.Services
         }
 
 
-        public void Update(int matchID, int headquarterID, DateTime date)
+        public async Task Update(int matchID, int headquarterID, DateTime date)
         {
             var match = MatchRepository.GetById(matchID);
 
@@ -61,15 +62,15 @@ namespace Otefa.Domain.Model.Services
             match.Update(headquarter, date);
 
             MatchRepository.Update(match);
-            MatchRepository.Context.Commit();
+            await MatchRepository.Context.Commit();
         }
         
 
-        public void LoadResults(int matchID, int matchTeamID, int goals, int againstGoals, bool hasBonusPoint, int figureID, IEnumerable<ExpandoObject> playersDetails)
+        public async Task LoadResults(int matchID, int matchTeamID, int goals, int againstGoals, bool hasBonusPoint, int figureID, IEnumerable<ExpandoObject> playersDetails)
         {
-            var match = MatchRepository.GetById(matchID);
-            var matchTeam = MatchTeamRepository.GetById(matchTeamID); 
-            var figure = PlayerRepository.GetById(figureID);
+            var match = await MatchRepository.GetByIDAsync(matchID);
+            var matchTeam = await MatchTeamRepository.GetByIDAsync(matchTeamID); 
+            var figure = await PlayerRepository.GetByIDAsync(figureID);
             var playerDetailsList = new List<PlayerDetails>();
 
             foreach (dynamic playerDetail in playersDetails)
@@ -82,7 +83,7 @@ namespace Otefa.Domain.Model.Services
             match.CalculateFinalPoints();
 
             MatchRepository.Update(match);
-            MatchRepository.Context.Commit();
+            await MatchRepository.Context.Commit();
         }
 
 

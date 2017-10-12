@@ -7,6 +7,7 @@ using Otefa.UI.Api.ViewModel.Team;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Otefa.UI.Api.Controllers
@@ -30,11 +31,11 @@ namespace Otefa.UI.Api.Controllers
 
         [HttpPost]
         [Route("")]
-        public HttpResponseMessage Post(NewViewModel newViewModel)
+        public async Task<HttpResponseMessage> Post(NewViewModel newViewModel)
         {
             try
             {
-                var newObject = NewService.Create(newViewModel.Date, newViewModel.Title, newViewModel.Body, newViewModel.Image);
+                var newObject = await NewService.Create(newViewModel.Date, newViewModel.Title, newViewModel.Body, newViewModel.Image);
 
                 return Request.CreateResponse(HttpStatusCode.Created, newObject.GetId());
             }
@@ -52,11 +53,11 @@ namespace Otefa.UI.Api.Controllers
 
         [HttpPut]
         [Route("{newID}")]
-        public HttpResponseMessage Put([FromUri] int newID, [FromBody]PutNewViewModel PutnewViewModel)
+        public async Task<HttpResponseMessage> Put([FromUri] int newID, [FromBody]PutNewViewModel PutnewViewModel)
         {
             try
             {
-                NewService.Update(newID, PutnewViewModel.Date, PutnewViewModel.Title, PutnewViewModel.Body, PutnewViewModel.Image);
+                 await NewService.Update(newID, PutnewViewModel.Date, PutnewViewModel.Title, PutnewViewModel.Body, PutnewViewModel.Image);
 
 
                 return Request.CreateResponse(HttpStatusCode.OK);
@@ -70,11 +71,11 @@ namespace Otefa.UI.Api.Controllers
 
         [HttpDelete]
         [Route("{newID}")]
-        public HttpResponseMessage Delete([FromUri] int newID)
+        public async Task<HttpResponseMessage> Delete([FromUri] int newID)
         {
             try
             {
-                NewService.Delete(newID);
+                await NewService.Delete(newID);
 
 
                 return Request.CreateResponse(HttpStatusCode.OK);
@@ -87,11 +88,11 @@ namespace Otefa.UI.Api.Controllers
 
         [HttpPut]
         [Route("{newID}/activate")]
-        public HttpResponseMessage Activate([FromUri] int newID)
+        public async Task<HttpResponseMessage> Activate([FromUri] int newID)
         {
             try
             {
-                NewService.Activate(newID);
+                await NewService.Activate(newID);
                 
                 return Request.CreateResponse(HttpStatusCode.OK);
             }

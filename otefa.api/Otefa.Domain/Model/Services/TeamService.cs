@@ -6,6 +6,7 @@ using Otefa.Infrastructure.IoC;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
+using System.Threading.Tasks;
 
 namespace Otefa.Domain.Model.Services
 {
@@ -32,27 +33,27 @@ namespace Otefa.Domain.Model.Services
 
         }
 
-        public Team GetByID(int id)
+        public async Task<Team> GetByID(int id)
         {
-            return TeamRepository.GetById(id);
+            return await TeamRepository.GetByIDAsync(id);
 
         }
 
 
-        public Team Create(string name, string teamDelegate, string shieldImage, string teamImage, IEnumerable<int> playersList)
+        public async Task<Team> Create(string name, string teamDelegate, string shieldImage, string teamImage, IEnumerable<int> playersList)
         {
             {
 
                 var Team = TeamFactory.Create(name, teamDelegate, shieldImage, teamImage, playersList);
 
                 TeamRepository.Add(Team);
-                TeamRepository.Context.Commit();
+                await TeamRepository.Context.Commit();
 
                 return Team;
             }
         }
 
-        public void Update(int teamID, string name, string teamDelegate, string shieldImage, string teamImage, IEnumerable<int> playersList)
+        public async Task Update(int teamID, string name, string teamDelegate, string shieldImage, string teamImage, IEnumerable<int> playersList)
         {
             var team = TeamRepository.GetById(teamID);
 
@@ -70,7 +71,7 @@ namespace Otefa.Domain.Model.Services
                         players);
 
             TeamRepository.Update(team);
-            TeamRepository.Context.Commit();
+            await TeamRepository.Context.Commit();
         }
 
         public IEnumerable<Team> GetAll()

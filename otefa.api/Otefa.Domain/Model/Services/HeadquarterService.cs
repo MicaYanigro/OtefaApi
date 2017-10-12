@@ -3,6 +3,7 @@ using Otefa.Domain.Model.Factories;
 using Otefa.Domain.Model.Repositories;
 using Otefa.Infrastructure.IoC;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Otefa.Domain.Model.Services
 {
@@ -21,29 +22,29 @@ namespace Otefa.Domain.Model.Services
 
         }
 
-        public Headquarter Create(string name, string address, string city)
+        public async Task<Headquarter> Create(string name, string address, string city)
         {
             {
 
                 var Headquarter = HeadquarterFactory.Create(name, address, city);
 
                 HeadquarterRepository.Add(Headquarter);
-                HeadquarterRepository.Context.Commit();
+                await HeadquarterRepository.Context.Commit();
 
                 return Headquarter;
             }
         }
 
-        public void Update(int headquarterID, string name, string address, string city)
+        public async Task Update(int headquarterID, string name, string address, string city)
         {
-            var Headquarter = HeadquarterRepository.GetById(headquarterID);
+            var Headquarter = await HeadquarterRepository.GetByIDAsync(headquarterID);
 
             Headquarter.Update(name,
                         address,
                         city);
 
             HeadquarterRepository.Update(Headquarter);
-            HeadquarterRepository.Context.Commit();
+            await HeadquarterRepository.Context.Commit();
         }
 
         public IEnumerable<Headquarter> GetAll()

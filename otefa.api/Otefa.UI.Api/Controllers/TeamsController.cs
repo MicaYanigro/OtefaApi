@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Otefa.UI.Api.Controllers
@@ -28,9 +29,9 @@ namespace Otefa.UI.Api.Controllers
         }
 
         [Route("{id}")]
-        public Team GetByID(int id)
+        public async Task<Team> GetByID(int id)
         {
-            return Teamservice.GetByID(id);
+            return await Teamservice.GetByID(id);
         }
 
         [Route("Get/{name}")]
@@ -41,11 +42,11 @@ namespace Otefa.UI.Api.Controllers
 
         [HttpPost]
         [Route("")]
-        public HttpResponseMessage Post(TeamViewModel TeamViewModel)
+        public async Task<HttpResponseMessage> Post(TeamViewModel TeamViewModel)
         {
             try
             {
-                var team = Teamservice.Create(TeamViewModel.Name, TeamViewModel.TeamDelegate, TeamViewModel.ShieldImage,
+                var team = await Teamservice.Create(TeamViewModel.Name, TeamViewModel.TeamDelegate, TeamViewModel.ShieldImage,
                                  TeamViewModel.TeamImage, TeamViewModel.PlayersList);
 
                 return Request.CreateResponse(HttpStatusCode.Created, team.GetId());
@@ -82,11 +83,11 @@ namespace Otefa.UI.Api.Controllers
 
         [HttpPut]
         [Route("{teamID}")]
-        public HttpResponseMessage Put([FromUri] int teamID, [FromBody]PutTeamViewModel PutTeamViewModel)
+        public async Task<HttpResponseMessage> Put([FromUri] int teamID, [FromBody]PutTeamViewModel PutTeamViewModel)
         {
             try
             {
-                Teamservice.Update(teamID, PutTeamViewModel.Name, PutTeamViewModel.TeamDelegate, PutTeamViewModel.ShieldImage,
+                await Teamservice.Update(teamID, PutTeamViewModel.Name, PutTeamViewModel.TeamDelegate, PutTeamViewModel.ShieldImage,
                                     PutTeamViewModel.TeamImage, PutTeamViewModel.PlayersList);
 
 
