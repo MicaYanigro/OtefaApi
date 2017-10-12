@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Otefa.Domain.Model.Services
 {
@@ -37,10 +38,9 @@ namespace Otefa.Domain.Model.Services
         public ITeamRepository TeamRepository { get; set; }
 
 
-        public Tournament GetByID(int id)
+        public async Task<Tournament> GetByID(int id)
         {
-            return TournamentRepository.GetById(id);
-
+            return await TournamentRepository.GetByIDAsync(id);
         }
 
         public Tournament FindTournamentByName(string name)
@@ -49,18 +49,18 @@ namespace Otefa.Domain.Model.Services
 
         }
 
-        public object GetAllMatches(int tournamentID)
+        public async Task<object> GetAllMatches(int tournamentID)
         {
-            var tournament = GetByID(tournamentID);
+            var tournament = await GetByID(tournamentID);
 
             return GroupRepository.GetMatchesByTournament(tournamentID);
             // var result = tournament.GetMatches().OrderBy(x => x.Round); //Se ordena por fecha (ronda)
 
         }
 
-        public void AddGroups(int tournamentID, string name, List<int> teams)
+        public async Task AddGroups(int tournamentID, string name, List<int> teams)
         {
-            var tournament = GetByID(tournamentID);
+            var tournament = await GetByID(tournamentID);
             var group = new Group(name);
             foreach (var teamID in teams)
             {
@@ -71,26 +71,26 @@ namespace Otefa.Domain.Model.Services
             tournament.AddGroup(group);
             GroupRepository.Add(group);
             TournamentRepository.Update(tournament);
-            TournamentRepository.Context.Commit();
+            await TournamentRepository.Context.Commit();
         }
 
 
-        public Tournament Create(string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers)
+        public async Task<Tournament> Create(string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers)
         {
             {
 
                 var tournament = TournamentFactory.Create(name, tournamentFormat, clasificationFormat, rules, prices, headquarters, tournamentDates, teamsPlayers);
 
                 TournamentRepository.Add(tournament);
-                TournamentRepository.Context.Commit();
+                await TournamentRepository.Context.Commit();
 
                 return tournament;
             }
         }
 
-        public void GenerateFixture(int tournamentID)
+        public async Task GenerateFixture(int tournamentID)
         {
-            var tournament = TournamentRepository.GetById(tournamentID);
+            var tournament = await TournamentRepository.GetByIDAsync(tournamentID);
 
             var result = FixtureGenerator.CreateMatches(tournament);
 
@@ -100,13 +100,13 @@ namespace Otefa.Domain.Model.Services
             }
 
             TournamentRepository.Update(tournament);
-            TournamentRepository.Context.Commit();
+            await TournamentRepository.Context.Commit();
         }
 
-        public void GenerateFixtureByGroup(int tournamentID, int groupID)
+        public async Task GenerateFixtureByGroup(int tournamentID, int groupID)
         {
-            var tournament = TournamentRepository.GetById(tournamentID);
-            var group = GroupRepository.GetById(groupID);
+            var tournament = await TournamentRepository.GetByIDAsync(tournamentID);
+            var group = await GroupRepository.GetByIDAsync(groupID);
 
             var result = FixtureGenerator.CreateMatchesByGroup(tournament, group);
 
@@ -116,19 +116,19 @@ namespace Otefa.Domain.Model.Services
             }
 
             TournamentRepository.Update(tournament);
-            TournamentRepository.Context.Commit();
+            await TournamentRepository.Context.Commit();
         }
 
-        public void Update(int tournamentID, string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers)
+        public async Task Update(int tournamentID, string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers)
         {
-            var Tournament = TournamentRepository.GetById(tournamentID);
+            var Tournament = await TournamentRepository.GetByIDAsync(tournamentID);
 
             var headquarterList = new List<Headquarter> { };
             var ttpList = new List<TeamPlayers>();
 
             foreach (var headquarterID in headquarters)
             {
-                var headquarter = HeadquarterRepository.GetById(headquarterID);
+                var headquarter = await HeadquarterRepository.GetByIDAsync(headquarterID);
                 headquarterList.Add(headquarter);
             }
 
@@ -147,13 +147,13 @@ namespace Otefa.Domain.Model.Services
                 var teamID = dictionary.Key;
                 var players = dictionary.Value;
 
-                var team = Container.Current.Resolve<ITeamRepository>().GetById(teamID);
+                var team = await Container.Current.Resolve<ITeamRepository>().GetByIDAsync(teamID);
 
                 var teamPlayers = new TeamPlayers(team);
 
                 foreach (var playerID in players)
                 {
-                    var player = Container.Current.Resolve<IPlayerRepository>().GetById(playerID);
+                    var player = await Container.Current.Resolve<IPlayerRepository>().GetByIDAsync(playerID);
                     teamPlayers.AddPlayer(player);
                 }
                 ttpList.Add(teamPlayers);
@@ -162,7 +162,7 @@ namespace Otefa.Domain.Model.Services
             Tournament.Update(name, (TournamentFormat)tournamentFormat, (ClasificationFormat)clasificationFormat, rules, prices, headquarterList, tournamentDateList, ttpList);
 
             TournamentRepository.Update(Tournament);
-            TournamentRepository.Context.Commit();
+            await TournamentRepository.Context.Commit();
         }
 
         public IEnumerable<Tournament> GetAll()

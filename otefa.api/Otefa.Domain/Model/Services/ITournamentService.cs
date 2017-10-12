@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
+using System.Threading.Tasks;
 
 namespace Otefa.Domain.Model.Services
 {
@@ -9,24 +10,24 @@ namespace Otefa.Domain.Model.Services
     {
         Tournament FindTournamentByName(string name);
 
-        Tournament Create(string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers);
+        Task<Tournament> Create(string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers);
 
-        void Update(int tournamentID, string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers);
+        Task Update(int tournamentID, string name, int tournamentFormat, int clasificationFormat, string rules, string prices, IEnumerable<int> headquarters, IEnumerable<DateTime> tournamentDates, Dictionary<int, List<int>> teamsPlayers);
 
         IEnumerable<Tournament> GetAll();
 
-        Tournament GetByID(int id);
+        Task<Tournament> GetByID(int id);
 
         IEnumerable<ExpandoObject> GetTournamentPositions(int tournamentID);
 
         List<List<ExpandoObject>> GetTournamentPositionsByGroups(int tournamentID);
 
-        void GenerateFixture(int tournamentID);
+        Task GenerateFixture(int tournamentID);
 
-        void GenerateFixtureByGroup(int tournamentID, int groupID);
+        Task GenerateFixtureByGroup(int tournamentID, int groupID);
 
-        object GetAllMatches(int tournamentID);
+        Task<object> GetAllMatches(int tournamentID);
 
-        void AddGroups(int tournamentID, string name, List<int> teams);
+        Task AddGroups(int tournamentID, string name, List<int> teams);
     }
 }

@@ -3,6 +3,7 @@ using Otefa.Domain.Model.Repositories;
 using Otefa.Infrastructure.IoC;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Otefa.Domain.Model.Factories
 {

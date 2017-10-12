@@ -2,6 +2,7 @@
 using Otefa.Domain.Model.Repositories;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Otefa.Infrastructure.Persistence
 {
@@ -52,6 +53,11 @@ namespace Otefa.Infrastructure.Persistence
         TEntity IRepository<TEntity>.GetById(int id)
         {
             return GetDbSet().Find(id);
+        }
+
+        public async Task<TEntity> GetByIDAsync(int? id)
+        {
+            return await GetDbSet().FindAsync(id);
         }
 
         IQueryable<TEntity> IRepository<TEntity>.All()

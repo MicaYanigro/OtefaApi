@@ -1,5 +1,6 @@
 ﻿using Otefa.Domain.Model.Repositories;
 using System;
+using System.Threading.Tasks;
 
 namespace Otefa.Infrastructure.Persistence
 {
@@ -14,9 +15,9 @@ namespace Otefa.Infrastructure.Persistence
             return (otefaDataContext ?? (otefaDataContext = new OtefaDataContext()));
         }
 
-        public int Commit()
+        public async Task<int> Commit()
         {
-            return otefaDataContext.SaveChanges();
+            return await otefaDataContext.SaveChangesAsync();
         }
 
         public void Dispose()

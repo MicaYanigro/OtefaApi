@@ -60,7 +60,7 @@ namespace Otefa.Infrastructure.Persistence
 
         public List<List<ExpandoObject>> GetTournamentPositionsByGroups(int tournamentID)
         {
-            var tournament = GetDbSet().Select(x => x.Tournament).Where(x => x.Id == tournamentID).SingleOrDefault();
+            var tournament = GetDbSet().Select(x => x.Tournament).Where(x => x.Id == tournamentID).FirstOrDefault();
         
             var FinalList = new List<List<ExpandoObject>>();
             var groups = tournament.GetGroups();

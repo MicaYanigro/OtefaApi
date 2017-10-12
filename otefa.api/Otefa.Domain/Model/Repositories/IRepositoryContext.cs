@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace Otefa.Domain.Model.Repositories
 {
     public interface IRepositoryContext : IDisposable
     {
-        int Commit();
+        Task<int> Commit();
     }
 }
