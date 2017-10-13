@@ -13,5 +13,6 @@ namespace Otefa.Domain.Model.Services
         IEnumerable<Match> GetAll();
         Task Update(int matchID, int headquarterID, DateTime date);
         Task<Match> GetById(int matchId);
+        object GetByTournamentId(int tournamentId);
     }
 }

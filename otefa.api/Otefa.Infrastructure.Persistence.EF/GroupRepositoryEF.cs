@@ -20,5 +20,11 @@ namespace Otefa.Infrastructure.Persistence
             var result = GetDbSet().Where(x => x.Id == group.Id).SelectMany(x => x.TeamList).ToList();
             return result;
         }
+
+        public List<Match> GetMatches(Group group)
+        {
+            var result = GetDbSet().Where(x => x.Id == group.Id).SelectMany(x => x.MatchesList).OrderBy(x => x.Round).ToList();
+            return result;
+        }
     }
 }

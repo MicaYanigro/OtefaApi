@@ -30,6 +30,11 @@ namespace Otefa.Domain.Model.Services
         [Injectable]
         public IPlayerRepository PlayerRepository { get; set; }
 
+        [Injectable]
+        public ITournamentRepository TournamentRepository { get; set; }
+
+        [Injectable]
+        public IGroupRepository GroupRepository { get; set; }
 
 
         public async Task<Match> Create(int tournamentID, int groupID, int headquarterID, DateTime date, int round, IEnumerable<int> teamsID)
@@ -98,6 +103,33 @@ namespace Otefa.Domain.Model.Services
             return await MatchRepository.GetByIDAsync(matchId);
 
         }
+
+        public object GetByTournamentId(int tournamentId)
+        {
+            var tournament = TournamentRepository.GetById(tournamentId);
+            var groups = tournament.GetGroups();
+            var matchesList = new List<Match>();
+            dynamic objectList = new ExpandoObject();
+            var groupList = new List<ExpandoObject>();
+
+            foreach (var group in groups)
+            {
+                var matches = GroupRepository.GetMatches(group);
+
+                dynamic item = new ExpandoObject();
+
+                item.Group = group.Name;
+                item.Matches = matches;
+
+                groupList.Add(item);
+            }
+
+            objectList.Tournament = tournament.GetId();
+            objectList.Groups = groupList;
+
+            return objectList;
+        }
+
 
     }
 }

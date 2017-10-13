@@ -61,6 +61,17 @@ namespace Otefa.UI.Api.Controllers
         }
 
 
+        [HttpGet]
+        [Route("getByTournament/{tournamentID}")]
+        public HttpResponseMessage GetByTournamentID(int tournamentID)
+        {
+            var result =  MatchService.GetByTournamentId(tournamentID);
+
+            return Request.CreateResponse(HttpStatusCode.OK, result);
+        }
+
+
+
         [HttpPut]
         [Route("{matchID}")]
         public async Task<HttpResponseMessage> Put([FromUri] int matchID, [FromBody]PutMatchViewModel PutMatchViewModel)

@@ -6,5 +6,7 @@ namespace Otefa.Domain.Model.Repositories
     public interface IGroupRepository : IRepository<Group>
     {
         List<Team> GetTeams(Group group);
+
+        List<Match> GetMatches(Group group);
     }
 }
