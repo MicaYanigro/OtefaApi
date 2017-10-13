@@ -51,7 +51,16 @@ namespace Otefa.UI.Api.Controllers
             return MatchService.GetAll();
         }
 
-     
+        [HttpGet]
+        [Route("{matchID}")]
+        public async Task<HttpResponseMessage> GetById(int matchID)
+        {
+            var result =  await MatchService.GetById(matchID);
+
+            return Request.CreateResponse(HttpStatusCode.OK, result);
+        }
+
+
         [HttpPut]
         [Route("{matchID}")]
         public async Task<HttpResponseMessage> Put([FromUri] int matchID, [FromBody]PutMatchViewModel PutMatchViewModel)
@@ -71,13 +80,13 @@ namespace Otefa.UI.Api.Controllers
 
         [HttpPut]
         [Route("results/{matchID}")]
-        public async Task<HttpResponseMessage> LoadResults([FromUri] int matchID, [FromBody] ResultsMatchViewModel ResultsMatchViewModel)
+        public HttpResponseMessage LoadResults([FromUri] int matchID, [FromBody] ResultsMatchViewModel ResultsMatchViewModel)
         {
             try
             {
 
                 var playersDetails = ConvertPlayerDetailsViewModelCollectionToDynamicCollection(ResultsMatchViewModel.PlayersDetails);
-                await MatchService.LoadResults(matchID, ResultsMatchViewModel.MatchTeamID, ResultsMatchViewModel.Goals, ResultsMatchViewModel.AgainstGoals, ResultsMatchViewModel.HasBonusPoint, ResultsMatchViewModel.FigureID, playersDetails);
+                MatchService.LoadResults(matchID, ResultsMatchViewModel.MatchTeamID, ResultsMatchViewModel.Goals, ResultsMatchViewModel.AgainstGoals, ResultsMatchViewModel.HasBonusPoint, ResultsMatchViewModel.FigureID, playersDetails);
 
 
                 return Request.CreateResponse(HttpStatusCode.OK);

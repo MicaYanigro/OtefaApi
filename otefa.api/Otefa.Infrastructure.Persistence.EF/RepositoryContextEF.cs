@@ -20,6 +20,11 @@ namespace Otefa.Infrastructure.Persistence
             return await otefaDataContext.SaveChangesAsync();
         }
 
+        public int CommitNoAsync()
+        {
+            return otefaDataContext.SaveChanges();
+        }
+
         public void Dispose()
         {
             Dispose(true);

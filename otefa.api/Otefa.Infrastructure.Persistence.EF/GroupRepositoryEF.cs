@@ -15,12 +15,10 @@ namespace Otefa.Infrastructure.Persistence
         {
         }
 
-        public object GetMatchesByTournament(int tournamentID)
+        public List<Team> GetTeams(Group group)
         {
-            var result = GetDbSet().Where(x => x.Tournament.Id == tournamentID).SelectMany(x => x.MatchesList).OrderBy(x => x.Round).ToList().GroupBy(g => g.Group);
+            var result = GetDbSet().Where(x => x.Id == group.Id).SelectMany(x => x.TeamList).ToList();
             return result;
         }
-
-
     }
 }

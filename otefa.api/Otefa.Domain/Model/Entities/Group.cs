@@ -72,7 +72,7 @@ namespace Otefa.Domain.Model.Entities
 
 
         [Obsolete]
-        public virtual ICollection<Team> TeamList { get; set; }
+        public ICollection<Team> TeamList { get; set; }
         protected ICollection<Team> teamList
         {
 #pragma warning disable 612, 618
@@ -103,23 +103,23 @@ namespace Otefa.Domain.Model.Entities
 #pragma warning restore 612, 618
         }
 
-        [Obsolete]
-        public virtual Tournament Tournament { get; set; }
+//        [Obsolete]
+//        public virtual Tournament Tournament { get; set; }
 
-        [NotMapped]
-        private Tournament tournament
-        {
-#pragma warning disable 612, 618
-            get
-            {
-                return Tournament;
-            }
-            set
-            {
-                Tournament = value;
-            }
-#pragma warning restore 612, 618
-        }
+//        [NotMapped]
+//        private Tournament tournament
+//        {
+//#pragma warning disable 612, 618
+//            get
+//            {
+//                return Tournament;
+//            }
+//            set
+//            {
+//                Tournament = value;
+//            }
+//#pragma warning restore 612, 618
+//        }
 
     }
 

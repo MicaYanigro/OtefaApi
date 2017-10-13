@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Otefa.Domain.Model.Entities
 {
@@ -110,8 +111,13 @@ namespace Otefa.Domain.Model.Entities
 
         public void CalculateFinalPoints()
         {
+            //var teams = await Container.Current.Resolve<IMatchRepository>().GetOrderedTeams(this.GetId());
+
             var team1 = matchTeamList.OrderByDescending(x => x.Goals).First();
-            var team2 = matchTeamList.OrderByDescending(x => x.Goals).Last();
+            var team2 =  matchTeamList.OrderByDescending(x => x.Goals).Last();
+
+        //    var team1 = teams[0]; //matchTeamList.OrderByDescending(x => x.Goals).First();
+          //  var team2 = teams[1]; // matchTeamList.OrderByDescending(x => x.Goals).Last();
 
             if (team1.Goals > team2.Goals)
             {
@@ -139,7 +145,7 @@ namespace Otefa.Domain.Model.Entities
 
             var matchTeam = Container.Current.Resolve<IMatchTeamRepository>().GetById(matchTeamID);
             matchTeam.Update(goals, againstGoals, hasBonusPoint, playerDetailsList);
-         //   CalculateFinalPoints();
+        
         }
     }
 
@@ -174,7 +180,7 @@ namespace Otefa.Domain.Model.Entities
         }
 
         [Obsolete]
-        public virtual Group Group { get; set; }
+        public Group Group { get; set; }
 
         [NotMapped]
         private Group group

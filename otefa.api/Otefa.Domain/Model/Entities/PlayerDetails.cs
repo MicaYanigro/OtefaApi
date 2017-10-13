@@ -116,7 +116,7 @@ namespace Otefa.Domain.Model.Entities
         { }
 
         [Obsolete]
-        public virtual MatchTeam MatchTeam { get; set; }
+        public MatchTeam MatchTeam { get; set; }
 
         [NotMapped]
         private MatchTeam matchTeam

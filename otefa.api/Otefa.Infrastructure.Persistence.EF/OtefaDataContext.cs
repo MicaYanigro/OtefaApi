@@ -1,5 +1,6 @@
 ﻿using Otefa.Domain.Model.Entities;
 using System.Data.Entity;
+using System.Runtime.Remoting.Contexts;
 
 namespace Otefa.Infrastructure.Persistence
 {

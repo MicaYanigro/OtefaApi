@@ -66,11 +66,11 @@ namespace Otefa.Domain.Model.Services
         }
         
 
-        public async Task LoadResults(int matchID, int matchTeamID, int goals, int againstGoals, bool hasBonusPoint, int figureID, IEnumerable<ExpandoObject> playersDetails)
+        public void LoadResults(int matchID, int matchTeamID, int goals, int againstGoals, bool hasBonusPoint, int figureID, IEnumerable<ExpandoObject> playersDetails)
         {
-            var match = await MatchRepository.GetByIDAsync(matchID);
-            var matchTeam = await MatchTeamRepository.GetByIDAsync(matchTeamID); 
-            var figure = await PlayerRepository.GetByIDAsync(figureID);
+            var match = MatchRepository.GetById(matchID);
+            var matchTeam = MatchTeamRepository.GetById(matchTeamID); 
+            var figure = PlayerRepository.GetById(figureID);
             var playerDetailsList = new List<PlayerDetails>();
 
             foreach (dynamic playerDetail in playersDetails)
@@ -83,13 +83,19 @@ namespace Otefa.Domain.Model.Services
             match.CalculateFinalPoints();
 
             MatchRepository.Update(match);
-            await MatchRepository.Context.Commit();
+            MatchRepository.Context.CommitNoAsync();
         }
 
 
         public IEnumerable<Match> GetAll()
         {
             return MatchRepository.All();
+
+        }
+
+        public async Task<Match> GetById(int matchId)
+        {
+            return await MatchRepository.GetByIDAsync(matchId);
 
         }
 

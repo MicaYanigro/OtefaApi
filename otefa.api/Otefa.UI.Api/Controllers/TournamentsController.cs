@@ -46,7 +46,7 @@ namespace Otefa.UI.Api.Controllers
         [Route("{tournamentID}/matches")]
         public async Task<HttpResponseMessage> GetMatches(int tournamentID)
         {
-            var response = await Tournamentservice.GetAllMatches(tournamentID);
+           var response = await Tournamentservice.GetAllMatchesByTournament(tournamentID);
 
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
@@ -92,11 +92,11 @@ namespace Otefa.UI.Api.Controllers
 
         [HttpPost]
         [Route("{tournamentID}/fixture")]
-        public async Task<HttpResponseMessage> GenerateFixture(int tournamentID)
+        public HttpResponseMessage GenerateFixture(int tournamentID)
         {
             try
             {
-                await Tournamentservice.GenerateFixture(tournamentID);
+                Tournamentservice.GenerateFixture(tournamentID);
 
                 return Request.CreateResponse(HttpStatusCode.Created);
             }
@@ -108,11 +108,11 @@ namespace Otefa.UI.Api.Controllers
 
         [HttpPost]
         [Route("{tournamentID}/{groupID}/fixture")]
-        public async Task<HttpResponseMessage> GenerateFixtureByGroup([FromUri] int tournamentID, [FromUri] int groupID)
+        public HttpResponseMessage GenerateFixtureByGroup([FromUri] int tournamentID, [FromUri] int groupID)
         {
             try
             {
-                await Tournamentservice.GenerateFixtureByGroup(tournamentID, groupID);
+                Tournamentservice.GenerateFixtureByGroup(tournamentID, groupID);
 
                 return Request.CreateResponse(HttpStatusCode.Created);
             }

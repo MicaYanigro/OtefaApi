@@ -1,4 +1,5 @@
 ﻿using Otefa.Domain.Model.Exceptions;
+using Otefa.Domain.Model.Repositories;
 using Otefa.Domain.Model.Services;
 using Otefa.Infrastructure.IoC;
 using System;
@@ -159,7 +160,14 @@ namespace Otefa.Domain.Model.Entities
             this.againstGoals = againstGoals;
             this.hasBonusPoint = hasBonusPoint;
 
-            this.playersDetails.Clear();
+            foreach (var playerDetail in playersDetails)
+            {
+                playersDetails.Remove(playerDetail);
+            }
+
+            //  this.playersDetails.Clear();
+            // await Container.Current.Resolve<IMatchTeamRepository>().ClearPlayersDetails(playersDetails);
+
             foreach (var playerDetail in playerDetailsList)
             {
                 playersDetails.Add(playerDetail);
@@ -191,7 +199,7 @@ namespace Otefa.Domain.Model.Entities
         }
 
         [Obsolete]
-        public virtual Tournament Tournament { get; set; }
+        public Tournament Tournament { get; set; }
 
         [NotMapped]
         private Tournament tournament
@@ -209,7 +217,7 @@ namespace Otefa.Domain.Model.Entities
         }
 
         [Obsolete]
-        public virtual Group Group { get; set; }
+        public Group Group { get; set; }
 
         [NotMapped]
         private Group group
@@ -227,7 +235,7 @@ namespace Otefa.Domain.Model.Entities
         }
 
         [Obsolete]
-        public virtual Match Match { get; set; }
+        public Match Match { get; set; }
 
         [NotMapped]
         private Match match

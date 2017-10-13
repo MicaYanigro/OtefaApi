@@ -304,23 +304,7 @@ namespace Otefa.Domain.Model.Entities
             }
 #pragma warning restore 612, 618
         }
-
-        //        [Obsolete]
-        //        public virtual ICollection<Match> MatchesList { get; set; }
-        //        protected ICollection<Match> matchesList
-        //        {
-        //#pragma warning disable 612, 618
-        //            get
-        //            {
-        //                return MatchesList;
-        //            }
-        //            set
-        //            {
-        //                MatchesList = value;
-        //            }
-        //#pragma warning restore 612, 618
-        //        }
-
+           
         [Obsolete]
         public virtual ICollection<TeamPlayers> TeamPlayersList { get; set; }
         protected ICollection<TeamPlayers> teamPlayersList

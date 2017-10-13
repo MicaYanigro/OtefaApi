@@ -5,6 +5,7 @@ namespace Otefa.Domain.Model.Repositories
     public interface ITournamentRepository : IRepository<Tournament>
     {
         Tournament GetByName(string name);
+        object GetMatchesByTournament(int tournamentID);
 
     }
 }

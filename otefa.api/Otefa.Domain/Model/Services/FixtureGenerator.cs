@@ -14,7 +14,11 @@ namespace Otefa.Domain.Model.Services
 
         [Injectable]
         public ITeamRepository TeamRepository { get; set; }
+
+        [Injectable]
+        public IGroupRepository GroupRepository { get; set; }
         
+
         public IEnumerable<Match> CreateMatches(Tournament tournament)
         {
             var headquarterDefault = tournament.GetHeadquarter().FirstOrDefault();
@@ -23,7 +27,7 @@ namespace Otefa.Domain.Model.Services
 
             foreach (var group in groupsList)
             {
-                var ListTeam = group.GetTeams().ToList();
+                var ListTeam = GroupRepository.GetTeams(group); //group.GetTeams().ToList();
 
                 if (ListTeam.Count() % 2 != 0)
                 {
@@ -84,7 +88,7 @@ namespace Otefa.Domain.Model.Services
             var headquarterDefault = tournament.GetHeadquarter().FirstOrDefault();
             List<Match> MatchesList = new List<Match>();
 
-            var ListTeam = group.GetTeams().ToList();
+            var ListTeam = GroupRepository.GetTeams(group); //group.GetTeams().ToList();
 
             if (ListTeam.Count() % 2 != 0)
             {

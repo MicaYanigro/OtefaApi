@@ -3,8 +3,11 @@ using Otefa.Domain.Model.Repositories;
 using Otefa.Infrastructure.Persistence;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Dynamic;
 using System.Linq;
+using System.Threading.Tasks;
+
 
 namespace Otefa.Infrastructure.Persistence
 {
@@ -14,6 +17,7 @@ namespace Otefa.Infrastructure.Persistence
         public MatchTeamRepositoryEF(IRepositoryContext repositoryContext) : base(repositoryContext)
         {
         }
+              
 
         public IEnumerable<ExpandoObject> GetTournamentPositions(int tournamentID)
         {
@@ -61,7 +65,7 @@ namespace Otefa.Infrastructure.Persistence
         public List<ExpandoObject> GetTournamentPositionsByGroups(int tournamentID)
         {
             var tournament = GetDbSet().Select(x => x.Tournament).Where(x => x.Id == tournamentID).FirstOrDefault();
-        
+
             var FinalList = new List<ExpandoObject>();
             var groups = tournament.GetGroups();
 
@@ -108,7 +112,55 @@ namespace Otefa.Infrastructure.Persistence
                 groupList2.Positions = result;
 
                 FinalList.Add(groupList2);
-                
+
+            }
+
+            return FinalList;
+        }
+
+        public async Task<List<ExpandoObject>> GetTournamentMatchesByGroups(int tournamentID)
+        {
+            var tournament = await GetDbSet().Select(x => x.Tournament).Where(x => x.Id == tournamentID).FirstOrDefaultAsync();
+
+            var FinalList = new List<ExpandoObject>();
+            var groups = tournament.GetGroups();
+
+            foreach (var group in groups)
+            {
+                var matchesList = new List<ExpandoObject>();
+                var Matches = GetDbSet().Where(x => x.Tournament.Id == tournamentID && x.Group.Id == group.Id).Select(x => x.Match).Distinct();
+
+
+                foreach (var match in Matches)
+                {
+
+                    var round = match.Round;
+                    var team1 = match.MatchTeamList.First().Team.Name;
+                    var team2 = match.MatchTeamList.Last().Team.Name;
+                    var date = match.Date;
+                    var goals1 = match.MatchTeamList.First().Goals;
+                    var goals2 = match.MatchTeamList.Last().Goals;
+                    var id = match.GetId(); 
+                    dynamic item = new ExpandoObject();
+
+                    item.Id = id;
+                    item.Round = round;
+                    item.Team1 = team1;
+                    item.Team2 = team2;
+                    item.Date = date;
+                    item.Goals1 = goals1;
+                    item.Goals2 = goals2;
+
+                    matchesList.Add(item);
+                }
+
+                var result = matchesList.OrderByDescending(x => ((IDictionary<string, object>)x)["Round"]).ToList();
+
+                dynamic groupList2 = new ExpandoObject();
+                groupList2.Group = group.Name;
+                groupList2.Matches = result;
+
+                FinalList.Add(groupList2);
             }
             
             return FinalList;
@@ -128,8 +180,8 @@ namespace Otefa.Infrastructure.Persistence
                 var totalGoals = player.Sum(x => x.Goals);
                 var redCards = player.Where(x => x.Card == Card.Red).Count();
                 var yellowCards = player.Where(x => x.Card == Card.Yellow).Count();
-                var figure = player.Where(x => x.MatchTeam.Match.Figure.Id == player.Key.Id).Count();
-
+                //var figure = player.Where(x => x.MatchTeam.Match.Figure.Id == player.Key.Id).Count();
+                var figure = GetDbSet().Where(x => x.Team.Id == teamID).Where(x => x.Match.Figure.Id == player.Key.Id).Count();
 
                 dynamic item = new ExpandoObject();
 

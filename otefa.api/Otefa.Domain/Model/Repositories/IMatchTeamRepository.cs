@@ -1,6 +1,7 @@
 ﻿using Otefa.Domain.Model.Entities;
 using System.Collections.Generic;
 using System.Dynamic;
+using System.Threading.Tasks;
 
 namespace Otefa.Domain.Model.Repositories
 {
@@ -11,5 +12,6 @@ namespace Otefa.Domain.Model.Repositories
         ExpandoObject GetHistoricalStadistics(int teamID);
         IEnumerable<Match> GetUpcomingMatches(int teamID);
         List<ExpandoObject> GetTournamentPositionsByGroups(int tournamentID);
+        Task<List<ExpandoObject>> GetTournamentMatchesByGroups(int tournamentID);
     }
 }

@@ -22,11 +22,11 @@ namespace Otefa.Domain.Model.Services
 
         List<ExpandoObject> GetTournamentPositionsByGroups(int tournamentID);
 
-        Task GenerateFixture(int tournamentID);
+        void GenerateFixture(int tournamentID);
 
-        Task GenerateFixtureByGroup(int tournamentID, int groupID);
+        void GenerateFixtureByGroup(int tournamentID, int groupID);
 
-        Task<object> GetAllMatches(int tournamentID);
+        Task<object> GetAllMatchesByTournament(int tournamentID);
 
         Task AddGroups(int tournamentID, string name, List<int> teams);
     }
