@@ -90,8 +90,8 @@ namespace UI.Api.Controllers
                 {
                     var fileInfo = new FileInfo(path);
 
-                    await Task.Factory.StartNew(() =>
-                    {
+                    //await Task.Factory.StartNew(() =>
+                    //{
                         file = new FileViewModel
                         {
                             Name = fileInfo.Name,
@@ -100,7 +100,7 @@ namespace UI.Api.Controllers
                             Size = fileInfo.Length / 1024,
                             Type = MimeMapping.GetMimeMapping(fileInfo.Name)
                         };
-                    });
+                    //});
                 }
 
                 return Ok(new { Files = file });
