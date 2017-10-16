@@ -160,13 +160,7 @@ namespace Otefa.Domain.Model.Entities
             this.againstGoals = againstGoals;
             this.hasBonusPoint = hasBonusPoint;
 
-            foreach (var playerDetail in playersDetails)
-            {
-                playersDetails.Remove(playerDetail);
-            }
-
-            //  this.playersDetails.Clear();
-            // await Container.Current.Resolve<IMatchTeamRepository>().ClearPlayersDetails(playersDetails);
+            this.playersDetails.Clear();
 
             foreach (var playerDetail in playerDetailsList)
             {
