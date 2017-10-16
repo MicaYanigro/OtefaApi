@@ -46,8 +46,8 @@ namespace UI.Api.Controllers
                 {
                     folder = new DirectoryInfo(path);
 
-                    await Task.Factory.StartNew(() =>
-                    {
+                    //await Task.Factory.StartNew(() =>
+                    //{
                         files = folder.GetFiles()
                         .Select(fi => new FileViewModel
                         {
@@ -57,7 +57,7 @@ namespace UI.Api.Controllers
                             Size = fi.Length / 1024,
                             Type = MimeMapping.GetMimeMapping(fi.Name)
                         }).ToList();
-                    });
+                    //});
                 }
 
                 return Ok(new { Files = files, Message = path });
@@ -90,8 +90,8 @@ namespace UI.Api.Controllers
                 {
                     var fileInfo = new FileInfo(path);
 
-                    //await Task.Factory.StartNew(() =>
-                    //{
+                    await Task.Factory.StartNew(() =>
+                    {
                         file = new FileViewModel
                         {
                             Name = fileInfo.Name,
@@ -100,7 +100,7 @@ namespace UI.Api.Controllers
                             Size = fileInfo.Length / 1024,
                             Type = MimeMapping.GetMimeMapping(fileInfo.Name)
                         };
-                    //});
+                    });
                 }
 
                 return Ok(new { Files = file });
