@@ -175,12 +175,11 @@ namespace Otefa.Infrastructure.Persistence
 
             foreach (var player in PlayersDetails)
             {
-                var playerName = player.Key.Name;
+                var playerName = player.Key.Name + " " + player.Key.LastName;
                 var playedGames = player.Where(x => x.Played == true).Count();
                 var totalGoals = player.Sum(x => x.Goals);
                 var redCards = player.Where(x => x.Card == Card.Red).Count();
                 var yellowCards = player.Where(x => x.Card == Card.Yellow).Count();
-                //var figure = player.Where(x => x.MatchTeam.Match.Figure.Id == player.Key.Id).Count();
                 var figure = GetDbSet().Where(x => x.Team.Id == teamID).Where(x => x.Match.Figure.Id == player.Key.Id).Count();
 
                 dynamic item = new ExpandoObject();
