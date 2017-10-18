@@ -135,10 +135,10 @@ namespace Otefa.Domain.Model.Entities
                     this.FinalPoints = 3;
                     break;
                 case MatchResult.Draw:
-                    this.FinalPoints = 2;
+                    this.FinalPoints = 1;
                     break;
                 case MatchResult.Loose:
-                    this.FinalPoints = 1;
+                    this.FinalPoints = 0;
                     break;
 
             }
