@@ -108,7 +108,10 @@ namespace Otefa.Infrastructure.Persistence
                     }
                 }
 
-                var result = groupList.OrderByDescending(x => ((IDictionary<string, object>)x)["FinalPoints"]).ToList();
+                var result = groupList.OrderByDescending(x => ((IDictionary<string, object>)x)["FinalPoints"])
+                                      .ThenByDescending(x => ((IDictionary<string, object>)x)["DifGoal"])
+                                      .ThenByDescending(x => ((IDictionary<string, object>)x)["Goals"])
+                                      .ThenByDescending(x => ((IDictionary<string, object>)x)["AgainstGoals"]).ToList();
 
                 dynamic groupList2 = new ExpandoObject();
                 groupList2.Group = group.Name;
