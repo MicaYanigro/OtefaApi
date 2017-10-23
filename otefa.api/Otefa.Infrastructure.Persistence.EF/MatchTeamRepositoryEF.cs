@@ -38,7 +38,7 @@ namespace Otefa.Infrastructure.Persistence
                     var totalGoals = team.Sum(x => x.Goals);
                     var againstGoals = team.Sum(x => x.AgainstGoals);
                     var difGoal = totalGoals - againstGoals;
-
+                    var bonus = team.Where(x => x.HasBonusPoint == true).Count();
 
                     dynamic item = new ExpandoObject();
 
@@ -51,6 +51,7 @@ namespace Otefa.Infrastructure.Persistence
                     item.Goals = totalGoals;
                     item.AgainstGoals = againstGoals;
                     item.DifGoal = difGoal;
+                    item.Bonus = bonus;
 
                     items.Add(item);
                 }
@@ -87,6 +88,7 @@ namespace Otefa.Infrastructure.Persistence
                         var totalGoals = team.Sum(x => x.Goals);
                         var againstGoals = team.Sum(x => x.AgainstGoals);
                         var difGoal = totalGoals - againstGoals;
+                        var bonus = team.Where(x => x.HasBonusPoint == true).Count();
 
 
                         dynamic item = new ExpandoObject();
@@ -100,6 +102,7 @@ namespace Otefa.Infrastructure.Persistence
                         item.Goals = totalGoals;
                         item.AgainstGoals = againstGoals;
                         item.DifGoal = difGoal;
+                        item.Bonus = bonus;
 
                         groupList.Add(item);
                     }
