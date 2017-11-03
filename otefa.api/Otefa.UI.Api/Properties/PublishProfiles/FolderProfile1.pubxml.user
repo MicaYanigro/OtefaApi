@@ -131,13 +131,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/01/2017 18:55:16</publishTime>
     </File>
     <File Include="bin/Otefa.Infrastructure.Persistence.EF.dll">
-      <publishTime>10/18/2017 11:17:35</publishTime>
+      <publishTime>10/23/2017 22:07:26</publishTime>
     </File>
     <File Include="bin/Otefa.Infrastructure.Persistence.EF.dll.config">
       <publishTime>07/06/2017 13:31:41</publishTime>
     </File>
     <File Include="bin/Otefa.UI.Api.dll">
-      <publishTime>10/18/2017 11:17:39</publishTime>
+      <publishTime>10/23/2017 22:07:34</publishTime>
     </File>
     <File Include="bin/Otefa.UI.Api.ViewModel.dll">
       <publishTime>10/18/2017 11:17:37</publishTime>
@@ -308,7 +308,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/06/2017 13:20:04</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/18/2017 11:17:41</publishTime>
+      <publishTime>10/23/2017 22:07:36</publishTime>
     </File>
   </ItemGroup>
 </Project>

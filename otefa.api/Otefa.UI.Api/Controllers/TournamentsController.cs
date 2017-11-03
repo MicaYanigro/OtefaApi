@@ -146,6 +146,14 @@ namespace Otefa.UI.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
+        [Route("{tournamentID}/scorers")]
+        public HttpResponseMessage GetScorers([FromUri] int tournamentID)
+        {
+            var result = Tournamentservice.GetTournamentScorers(tournamentID);
+
+            return Request.CreateResponse(HttpStatusCode.OK, result);
+        }
+
         [HttpPut]
         [Route("{tournamentID}")]
         public async Task<HttpResponseMessage> Put([FromUri] int tournamentID, [FromBody]PutTournamentViewModel PutTournamentViewModel)

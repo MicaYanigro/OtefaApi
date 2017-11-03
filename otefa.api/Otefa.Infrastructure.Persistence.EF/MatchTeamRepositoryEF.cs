@@ -17,7 +17,7 @@ namespace Otefa.Infrastructure.Persistence
         public MatchTeamRepositoryEF(IRepositoryContext repositoryContext) : base(repositoryContext)
         {
         }
-              
+
 
         public IEnumerable<ExpandoObject> GetTournamentPositions(int tournamentID)
         {
@@ -124,6 +124,41 @@ namespace Otefa.Infrastructure.Persistence
             return FinalList;
         }
 
+        public List<ExpandoObject> GetScorersByTournament(int tournamentID)
+        {
+            var tournament = GetDbSet().Select(x => x.Tournament).Where(x => x.Id == tournamentID).FirstOrDefault();
+
+              var Teams = GetDbSet().Where(x => x.Tournament.Id == tournamentID).GroupBy(x => x.Team);
+            var playersList = new List<ExpandoObject>();
+
+            foreach (var team in Teams)
+            {
+                var players = team.SelectMany(x => x.PlayersDetails.GroupBy(p => p.Player)).ToList();
+
+                foreach (var player in players)
+                {
+                    if (player.Key.Name != "Libre")
+                    {
+                        var playerName = player.Key.Name + player.Key.LastName;
+                        var teamName = team.Key.Name;
+                        int ? goals = player.Sum(x => x.Goals);
+
+                        dynamic item = new ExpandoObject();
+
+                        item.Player = playerName;
+                        item.Team = teamName;
+                        item.Goals = goals;
+
+                        playersList.Add(item);
+                    }
+                }
+            }
+           
+            var result = playersList.OrderByDescending(x => ((IDictionary<string, object>)x)["Goals"]).ToList();
+
+            return result;
+        }
+
         public async Task<List<ExpandoObject>> GetTournamentMatchesByGroups(int tournamentID)
         {
             var tournament = await GetDbSet().Select(x => x.Tournament).Where(x => x.Id == tournamentID).FirstOrDefaultAsync();
@@ -146,7 +181,7 @@ namespace Otefa.Infrastructure.Persistence
                     var date = match.Date;
                     var goals1 = match.MatchTeamList.First().Goals;
                     var goals2 = match.MatchTeamList.Last().Goals;
-                    var id = match.GetId(); 
+                    var id = match.GetId();
                     dynamic item = new ExpandoObject();
 
                     item.Id = id;
@@ -168,7 +203,7 @@ namespace Otefa.Infrastructure.Persistence
 
                 FinalList.Add(groupList2);
             }
-            
+
             return FinalList;
         }
 

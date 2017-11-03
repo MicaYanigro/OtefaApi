@@ -13,5 +13,6 @@ namespace Otefa.Domain.Model.Repositories
         IEnumerable<Match> GetUpcomingMatches(int teamID);
         List<ExpandoObject> GetTournamentPositionsByGroups(int tournamentID);
         Task<List<ExpandoObject>> GetTournamentMatchesByGroups(int tournamentID);
+        List<ExpandoObject> GetScorersByTournament(int tournamentID);
     }
 }

@@ -29,5 +29,7 @@ namespace Otefa.Domain.Model.Services
         Task<object> GetAllMatchesByTournament(int tournamentID);
 
         Task AddGroups(int tournamentID, string name, List<int> teams);
+
+        List<ExpandoObject> GetTournamentScorers(int tournamentID);
     }
 }

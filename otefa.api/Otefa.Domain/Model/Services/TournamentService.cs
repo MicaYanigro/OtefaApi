@@ -185,5 +185,12 @@ namespace Otefa.Domain.Model.Services
 
         }
 
+        public List<ExpandoObject> GetTournamentScorers(int tournamentID)
+        {
+
+            return MatchTeamRepository.GetScorersByTournament(tournamentID);
+
+        }
+
     }
 }
