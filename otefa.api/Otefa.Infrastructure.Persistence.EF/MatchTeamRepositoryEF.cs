@@ -139,7 +139,7 @@ namespace Otefa.Infrastructure.Persistence
                 {
                     if (player.Key.Name != "Libre")
                     {
-                        var playerName = player.Key.Name + player.Key.LastName;
+                        var playerName = player.Key.Name + " " +  player.Key.LastName;
                         var teamName = team.Key.Name;
                         int? goals = player.Sum(x => x.Goals);
 
@@ -154,7 +154,7 @@ namespace Otefa.Infrastructure.Persistence
                 }
             }
 
-            var result = playersList.OrderByDescending(x => ((IDictionary<string, object>)x)["Goals"]).ToList();
+            var result = playersList.OrderByDescending(x => ((IDictionary<string, object>)x)["Goals"]).Take(10).ToList();
 
             return result;
         }
@@ -201,7 +201,7 @@ namespace Otefa.Infrastructure.Persistence
                 resultList.Add(groupMatches);
             }
 
-            var result = resultList.OrderByDescending(x => x.GroupMatches.Select(m => m.Date).Distinct().FirstOrDefault()).ToList();
+            var result = resultList.OrderByDescending(x => x.GroupMatches.Select(m => m.Date.Date).Distinct().FirstOrDefault()).ToList();
             return result;
         }
 
