@@ -162,8 +162,7 @@ namespace Otefa.Infrastructure.Persistence
         public async Task<List<TournamentGroupMatches>> GetTournamentMatchesByGroups(int tournamentID)
         {
             var tournament = await GetDbSet().Select(x => x.Tournament).Where(x => x.Id == tournamentID).FirstOrDefaultAsync();
-
-            var FinalList = new List<ExpandoObject>();
+            
             var resultList = new List<TournamentGroupMatches>();
 
             var groups = tournament.GetGroups();
@@ -187,21 +186,10 @@ namespace Otefa.Infrastructure.Persistence
                     var goals2 = match.MatchTeamList.Last().Goals;
                     var id = match.GetId();
 
-                    dynamic item = new ExpandoObject();
-
-                    item.Id = id;
-                    item.Round = round;
-                    item.Team1 = team1;
-                    item.Team2 = team2;
-                    item.Date = date;
-                    item.Goals1 = goals1;
-                    item.Goals2 = goals2;
-
-                    var fixtureGroupMatch = new FixtureGroupMatches(round, team1, team2, date, goals1, goals2);
+                    var fixtureGroupMatch = new FixtureGroupMatches(id, round, team1, team2, date, goals1, goals2);
 
                     matchesGroupList.Add(fixtureGroupMatch);
 
-                    //matchesList.Add(item);
                 }
 
                 var result2 = matchesGroupList.OrderByDescending(x => x.Round).ToList();
@@ -210,22 +198,11 @@ namespace Otefa.Infrastructure.Persistence
                     groupMatches.addMatch(match);
                 }
 
-                ////////////////
-                var result = matchesList.OrderByDescending(x => ((IDictionary<string, object>)x)["Round"]).ToList();
-
-                dynamic groupList2 = new ExpandoObject();
-                groupList2.Group = group.Name;
-                groupList2.Matches = result;
-
-                FinalList.Add(groupList2);
-                ////////////////
-
                 resultList.Add(groupMatches);
             }
 
-            return resultList.OrderByDescending(x => x.GroupMatches.Select(m => m.Date).Distinct().FirstOrDefault()).ToList();
-            //return resultList;
-           // return FinalList;
+            var result = resultList.OrderByDescending(x => x.GroupMatches.Select(m => m.Date).Distinct().FirstOrDefault()).ToList();
+            return result;
         }
 
         public IEnumerable<ExpandoObject> GetTeamStadistics(int teamID)

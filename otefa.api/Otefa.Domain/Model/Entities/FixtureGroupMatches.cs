@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Otefa.Domain.Model.Entities
 {
 
-    public partial class FixtureGroupMatches : Entity
+    public class FixtureGroupMatches
     {
         protected FixtureGroupMatches() { }
 
@@ -18,9 +18,11 @@ namespace Otefa.Domain.Model.Entities
         private DateTime date;
         private int? goals1;
         private int? goals2;
+        private int id;
 
-        public FixtureGroupMatches(int round, string team1, string team2, DateTime date, int? goals1, int? goals2)
+        public FixtureGroupMatches(int id, int round, string team1, string team2, DateTime date, int? goals1, int? goals2)
         {
+            this.Id = id; 
             this.round = round;
             this.team1 = team1;
             this.team2 = team2;
@@ -30,6 +32,20 @@ namespace Otefa.Domain.Model.Entities
 
         }
 
+        public int Id
+        {
+
+            get
+            {
+                return id;
+            }
+
+            protected set
+            {
+                id = value;
+            }
+
+        }
 
         public int Round
         {

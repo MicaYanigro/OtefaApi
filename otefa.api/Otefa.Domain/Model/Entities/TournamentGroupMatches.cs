@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Otefa.Domain.Model.Entities
 {
 
-    public partial class TournamentGroupMatches : Entity
+    public partial class TournamentGroupMatches
     {
 
         protected TournamentGroupMatches()
