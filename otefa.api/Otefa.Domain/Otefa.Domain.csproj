@@ -65,6 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Entities\Group.cs" />
+    <Compile Include="Model\Entities\FixtureGroupMatches.cs" />
+    <Compile Include="Model\Entities\TournamentGroupMatches.cs" />
     <Compile Include="Model\Entities\New.cs" />
     <Compile Include="Model\Entities\PlayerDetails.cs" />
     <Compile Include="Model\Entities\Player.cs" />

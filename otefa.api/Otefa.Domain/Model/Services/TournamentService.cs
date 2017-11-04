@@ -54,7 +54,6 @@ namespace Otefa.Domain.Model.Services
             var tournament = await GetByID(tournamentID);
             var result = await MatchTeamRepository.GetTournamentMatchesByGroups(tournamentID);
             return result;
-            //  return TournamentRepository.GetMatchesByTournament(tournamentID);
              
         }
 
