@@ -126,20 +126,22 @@ namespace Otefa.Infrastructure.Persistence
 
         public List<ExpandoObject> GetScorersByTournament(int tournamentID)
         {
-            var tournament = GetDbSet().Select(x => x.Tournament).Where(x => x.Id == tournamentID).FirstOrDefault();
+            //   var tournament = GetDbSet().Select(x => x.Tournament).Where(x => x.Id == tournamentID).FirstOrDefault();
 
             var Teams = GetDbSet().Where(x => x.Tournament.Id == tournamentID).GroupBy(x => x.Team);
             var playersList = new List<ExpandoObject>();
 
             foreach (var team in Teams)
             {
-                var players = team.SelectMany(x => x.PlayersDetails.GroupBy(p => p.Player)).ToList();
+                var playerDetails = team.SelectMany(x => x.PlayersDetails).ToList(); // .PlayersDetails.GroupBy(p => p.Player)).ToList();
+                var players = playerDetails.GroupBy(x => x.Player).ToList();
 
                 foreach (var player in players)
                 {
+
                     if (player.Key.Name != "Libre")
                     {
-                        var playerName = player.Key.Name + " " +  player.Key.LastName;
+                        var playerName = player.Key.Name + " " + player.Key.LastName;
                         var teamName = team.Key.Name;
                         int? goals = player.Sum(x => x.Goals);
 
@@ -151,6 +153,7 @@ namespace Otefa.Infrastructure.Persistence
 
                         playersList.Add(item);
                     }
+
                 }
             }
 
@@ -162,7 +165,7 @@ namespace Otefa.Infrastructure.Persistence
         public async Task<List<TournamentGroupMatches>> GetTournamentMatchesByGroups(int tournamentID)
         {
             var tournament = await GetDbSet().Select(x => x.Tournament).Where(x => x.Id == tournamentID).FirstOrDefaultAsync();
-            
+
             var resultList = new List<TournamentGroupMatches>();
 
             var groups = tournament.GetGroups();

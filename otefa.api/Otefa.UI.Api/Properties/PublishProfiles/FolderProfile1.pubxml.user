@@ -131,13 +131,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/01/2017 18:55:16</publishTime>
     </File>
     <File Include="bin/Otefa.Infrastructure.Persistence.EF.dll">
-      <publishTime>11/03/2017 22:59:13</publishTime>
+      <publishTime>11/03/2017 23:17:30</publishTime>
     </File>
     <File Include="bin/Otefa.Infrastructure.Persistence.EF.dll.config">
       <publishTime>07/06/2017 13:31:41</publishTime>
     </File>
     <File Include="bin/Otefa.UI.Api.dll">
-      <publishTime>11/03/2017 22:59:18</publishTime>
+      <publishTime>11/03/2017 23:17:36</publishTime>
     </File>
     <File Include="bin/Otefa.UI.Api.ViewModel.dll">
       <publishTime>11/03/2017 22:59:15</publishTime>
